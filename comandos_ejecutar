@@ -1,0 +1,7 @@
+mvn package -DskipTests
+
+java -jar target/contactos-1.0.0.jar
+
+npm install
+
+ng serve -o

@@ -1,0 +1,6 @@
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/Aplicación CON backend/contactos-backend-httpclient/src/main/java/es/uma/informatica/sii/contactos/controladores/ControladorRest.java
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/Aplicación CON backend/contactos-backend-httpclient/src/main/java/es/uma/informatica/sii/contactos/servicios/LogicaContactos.java
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/Aplicación CON backend/contactos-backend-httpclient/src/main/java/es/uma/informatica/sii/contactos/entidades/Contacto.java
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/Aplicación CON backend/contactos-backend-httpclient/src/main/java/es/uma/informatica/sii/contactos/repositorios/ContactoRepo.java
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/Aplicación CON backend/contactos-backend-httpclient/src/main/java/es/uma/informatica/sii/contactos/servicios/excepciones/ContactoNoEncontrado.java
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/Aplicación CON backend/contactos-backend-httpclient/src/main/java/es/uma/informatica/sii/contactos/ContactosApplication.java

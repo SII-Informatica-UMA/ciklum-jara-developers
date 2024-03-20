@@ -1,0 +1,6 @@
+es/uma/informatica/sii/contactos/controladores/ControladorRest.class
+es/uma/informatica/sii/contactos/entidades/Contacto.class
+es/uma/informatica/sii/contactos/repositorios/ContactoRepo.class
+es/uma/informatica/sii/contactos/servicios/excepciones/ContactoNoEncontrado.class
+es/uma/informatica/sii/contactos/servicios/LogicaContactos.class
+es/uma/informatica/sii/contactos/ContactosApplication.class
