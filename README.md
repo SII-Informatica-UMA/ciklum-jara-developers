@@ -4,7 +4,7 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=javimp2003uma&label=Profile%20views&color=0e75b6&style=flat" alt="javimp2003uma" /> </p>
 
-<img align="right" alt="Coding" width="400" src="team-programmers-working-software-flat-illustration_74855-18772.avif">
+<img align="right" alt="Coding" width="400" src="images/team-programmers-working-software-flat-illustration_74855-18772.avif">
 
 - 🔭 We're currently studyng on [Universidad de Málaga (UMA)](https://www.uma.es/)
 
