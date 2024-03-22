@@ -1,0 +1,33 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{accion}} entrenador</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cierre entrenador')"></button>
+</div>
+<div class="modal-body">
+    <div class="form-group">
+        <label for="idUsuario">ID Usuario:</label>
+        <input class="form-control" id="idUsuario" [(ngModel)]="entrenador.idUsuario" placeholder="ID Usuario">
+        <label for="telefono">Teléfono:</label>
+        <input class="form-control" id="telefono" [(ngModel)]="entrenador.telefono" placeholder="Teléfono">
+        <label for="direccion">Dirección:</label>
+        <input class="form-control" id="direccion" [(ngModel)]="entrenador.direccion" placeholder="Dirección">
+        <label for="dni">DNI:</label>
+        <input class="form-control" id="dni" [(ngModel)]="entrenador.dni" placeholder="DNI">
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" class="form-control" id="fechaNacimiento" [(ngModel)]="entrenador.fechaNacimiento">
+        <label for="fechaAlta">Fecha de Alta:</label>
+        <input type="date" class="form-control" id="fechaAlta" [(ngModel)]="entrenador.fechaAlta">
+        <label for="fechaBaja">Fecha de Baja:</label>
+        <input type="date" class="form-control" id="fechaBaja" [(ngModel)]="entrenador.fechaBaja">
+        <label for="especialidad">Especialidad:</label>
+        <input class="form-control" id="especialidad" [(ngModel)]="entrenador.especialidad" placeholder="Especialidad">
+        <label for="titulacion">Titulación:</label>
+        <input class="form-control" id="titulacion" [(ngModel)]="entrenador.titulacion" placeholder="Titulación">
+        <label for="experiencia">Experiencia:</label>
+        <input class="form-control" id="experiencia" [(ngModel)]="entrenador.experiencia" placeholder="Experiencia">
+        <label for="observaciones">Observaciones:</label>
+        <input class="form-control" id="observaciones" [(ngModel)]="entrenador.observaciones" placeholder="Observaciones">
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="guardarEntrenador()">Guardar</button>
+</div>

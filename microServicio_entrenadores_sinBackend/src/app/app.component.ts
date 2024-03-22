@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Contacto } from './contacto';
-import {ContactosService } from './contactos.service';
+import { Entrenador } from './entrenador';
+import { Centro } from './centro';
+import { Gerente } from './gerente';
+import { EntrenadoresService } from './entrenadores.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {FormularioContactoComponent} from './formulario-contacto/formulario-contacto.component'
+import { FormularioEntrenadorComponent } from './formulario-entrenador/formulario-entrenador.component';
 
 @Component({
   selector: 'app-root',
@@ -10,38 +12,84 @@ import {FormularioContactoComponent} from './formulario-contacto/formulario-cont
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  contactos: Contacto [] = [];
-  contactoElegido?: Contacto;
+  
+  gerentes_entrenadores: Map<[Centro, Gerente], Entrenador[]> = new Map();
+  centroElegido?: Centro;
+  gerenteElegido?: Gerente;
+  entrenadorElegido?: Entrenador;
 
-  constructor(private contactosService: ContactosService, private modalService: NgbModal) { }
+  constructor(private entrenadoresService: EntrenadoresService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    this.contactos = this.contactosService.getContactos();
+    this.gerentes_entrenadores = this.entrenadoresService.getAllEntrenadores();
   }
 
-  elegirContacto(contacto: Contacto): void {
-    this.contactoElegido = contacto;
+  getEntrenadoresDelCentroElegido(): Entrenador[] | undefined {
+    if (!this.centroElegido || !this.gerenteElegido) {
+      console.error("No se ha seleccionado un centro");
+      return;
+    } else {
+      return this.entrenadoresService.getEntrenadores(this.centroElegido, this.gerenteElegido);
+    }
   }
 
-  aniadirContacto(): void {
-    let ref = this.modalService.open(FormularioContactoComponent);
+  elegirCentro(centro: Centro): void {
+    this.centroElegido = centro;
+    this.gerenteElegido = this.entrenadoresService.getGerentePorCentro(centro);
+  }
+
+  elegirEntrenador(entrenador: Entrenador): void {
+    this.entrenadorElegido = entrenador;
+  }
+
+  aniadirEntrenador(): void {
+
+    if (!this.centroElegido || !this.gerenteElegido) {
+      console.error("No se ha seleccionado un centro");
+      return;
+    }
+
+    
+    let ref = this.modalService.open(FormularioEntrenadorComponent);
     ref.componentInstance.accion = "Añadir";
-    ref.componentInstance.contacto = {id: 0, nombre: '', apellidos: '', email: '', telefono: ''};
-    ref.result.then((contacto: Contacto) => {
-      this.contactosService.addContacto(contacto);
-      this.contactos = this.contactosService.getContactos();
+    ref.componentInstance.entrenador = { idUsuario: 0, telefono: '', direccion: '', dni: '',
+                                        fechaNacimiento: new Date(), fechaAlta: new Date(), fechaBaja: new Date(),
+                                        especialidad: '', titulacion: '', experiencia: '',
+                                        observaciones: '', id: 0 };
+    ref.result.then((entrenador: Entrenador) => {
+      if (this.centroElegido && this.gerenteElegido) {
+          this.entrenadoresService.agregarEntrenador(this.centroElegido,this.gerenteElegido,entrenador);
+          this.gerentes_entrenadores = this.entrenadoresService.getAllEntrenadores();
+      }
     }, (reason) => {});
 
   }
-  contactoEditado(contacto: Contacto): void {
-    this.contactosService.editarContacto(contacto);
-    this.contactos = this.contactosService.getContactos();
-    this.contactoElegido = this.contactos.find(c => c.id == contacto.id);
+
+  entrenadorEditado(entrenador: Entrenador): void {
+    if (!this.centroElegido || !this.gerenteElegido) {
+      console.error("No se ha seleccionado un centro");
+      return;
+    } else {
+      this.entrenadoresService.editarEntrenador(this.centroElegido, this.gerenteElegido, entrenador);
+      this.gerentes_entrenadores = this.entrenadoresService.getAllEntrenadores();
+      this.entrenadorElegido = this.gerentes_entrenadores.get([this.centroElegido, this.gerenteElegido])?.find(c => c.id === entrenador.id);
+
+      if (!this.entrenadorElegido) {
+          console.error("No se encontró el entrenador editado en la lista actualizada.");
+      }
+    }
   }
 
-  eliminarContacto(id: number): void {
-    this.contactosService.eliminarContacto(id);
-    this.contactos = this.contactosService.getContactos();
-    this.contactoElegido = undefined;
+  eliminarEntrenador(id: number): void {
+    if (!this.centroElegido || !this.gerenteElegido) {
+      console.error("No se ha seleccionado un centro");
+      return;
+    } else if (!this.entrenadorElegido) {
+      console.error("No se ha seleccioado un entrenador");
+    } else {
+      this.entrenadoresService.eliminarEntrenador(this.centroElegido, this.gerenteElegido, id);
+      this.gerentes_entrenadores = this.entrenadoresService.getAllEntrenadores();
+      this.entrenadorElegido = undefined;
+    }
   }
 }

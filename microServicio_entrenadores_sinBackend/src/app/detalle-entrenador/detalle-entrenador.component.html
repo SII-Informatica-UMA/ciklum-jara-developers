@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+      <h2 >Detalles de {{entrenador?.idUsuario}}</h2>
+    </div>
+  
+    <div class="row">
+      <label class="col-md-3" for="nombre">Nombre:</label>
+      <span class="col-md-9 offset-2 offset-md-0">{{entrenador?.idUsuario}}</span>
+    </div>
+    <div class="row">
+      <label class="col-md-3" for="telefono">Teléfono:</label>
+      <span class="col-md-9 offset-2 offset-md-0">{{entrenador?.telefono}}</span>
+    </div>
+    <div class="row">
+      <label class="col-md-3" for="direccion">Dirección:</label>
+      <span class="col-md-9 offset-2 offset-md-0">{{entrenador?.direccion}}</span>
+    </div>
+    <div class="row">
+      <label class="col-md-3" for="dni">DNI:</label>
+      <span class="col-md-9 offset-2 offset-md-0">{{entrenador?.dni}}</span>
+    </div>
+    <div class="row">
+      <label class="col-md-3" for="fechaNacimiento">Fecha de Nacimiento:</label>
+      <span class="col-md-9 offset-2 offset-md-0">{{entrenador?.fechaNacimiento | date}}</span>
+    </div>
+    <div class="row">
+      <label class="col-md-3" for="fechaAlta">Fecha de Alta:</label>
+      <span class="col-md-9 offset-2 offset-md-0">{{entrenador?.fechaAlta | date}}</span>
+    </div>
+    <div class="row">
+      <label class="col-md-3" for="fechaBaja">Fecha de Baja:</label>
+      <span class="col-md-9 offset-2 offset-md-0">{{entrenador?.fechaBaja | date}}</span>
+    </div>
+    <div class="row">
+      <label class="col-md-3" for="especialidad">Especialidad:</label>
+      <span class="col-md-9 offset-2 offset-md-0">{{entrenador?.especialidad}}</span>
+    </div>
+    <div class="row">
+      <label class="col-md-3" for="titulacion">Titulación:</label>
+      <span class="col-md-9 offset-2 offset-md-0">{{entrenador?.titulacion}}</span>
+    </div>
+    <div class="row">
+      <label class="col-md-3" for="experiencia">Experiencia:</label>
+      <span class="col-md-9 offset-2 offset-md-0">{{entrenador?.experiencia}}</span>
+    </div>
+    <div class="row">
+      <label class="col-md-3" for="observaciones">Observaciones:</label>
+      <span class="col-md-9 offset-2 offset-md-0">{{entrenador?.observaciones}}</span>
+    </div>
+  
+    <div class="row">
+      <button class="col-auto btn btn-outline-primary" (click)="eliminarEntrenador()">Eliminar <i class="bi bi-trash-fill"></i></button>
+      <div class="col-1"></div>
+      <button class="col-auto btn btn-outline-primary" (click)="editarEntrenador()">Editar <i class="bi bi-pencil-fill"></i></button>
+    </div>
+  
+  </div>
+  
