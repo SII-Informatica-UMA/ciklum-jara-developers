@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Contacto } from './contacto';
-import {ContactosService } from './contactos.service';
+import { Entrenador } from './entrenador';
+import {EntrenadorService } from './entrenador.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {FormularioContactoComponent} from './formulario-contacto/formulario-contacto.component'
+import {FormularioEntrenadorComponent} from './formulario-contacto/formulario-contacto.component'
 
 @Component({
   selector: 'app-root',
@@ -10,42 +10,44 @@ import {FormularioContactoComponent} from './formulario-contacto/formulario-cont
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  contactos: Contacto [] = [];
-  contactoElegido?: Contacto;
+  entrenadores: Entrenador [] = [];
+  entrenadorElegido?: Entrenador;
+  centro: number = 0;
 
-  constructor(private contactosService: ContactosService, private modalService: NgbModal) { }
+  constructor(private entrenadorService: EntrenadorService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    this.actualizaContactos();
+    this.actualizaEntrenadores();
   }
 
-  private actualizaContactos(id?: number): void {
-    this.contactosService.getContactos()
-      .subscribe(contactos => {
-        this.contactos = contactos;
+  private actualizaEntrenadores(id?: number): void {
+    this.entrenadorService.getEntrenadoresCentro(this.centro)
+      .subscribe(entrenadores => {
+        this.entrenadores = entrenadores;
         if (id) {
-          this.contactoElegido = this.contactos.find(c => c.id == id);
+          this.entrenadorElegido = this.entrenadores.find(c => c.id == id);
         }
       });
   }
 
-  elegirContacto(contacto: Contacto): void {
-    this.contactoElegido = contacto;
+  elegirEntrenador(entrenador: Entrenador): void {
+    this.entrenadorElegido = entrenador;
   }
 
-  aniadirContacto(): void {
-    let ref = this.modalService.open(FormularioContactoComponent);
+  aniadirEntrenador(): void {
+    let ref = this.modalService.open(FormularioEntrenadorComponent);
     ref.componentInstance.accion = "Añadir";
-    ref.componentInstance.contacto = {id: 0, nombre: '', apellidos: '', email: '', telefono: ''};
-    ref.result.then((contacto: Contacto) => {
-      this.contactosService.addContacto(contacto)
+    ref.componentInstance.entrenador = { idUsuario: 0, telefono: '', direccion: '', dni: '', fechaNacimiento: new Date(), fechaAlta: new Date(), fechaBaja: new Date(), especialidad: '', titulacion: '', experiencia: '', observaciones: '', id: 0 };
+    ref.result.then((entrenador: Entrenador) => {
+      this.entrenadorService.anadirEntrenadorCentro(entrenador, this.centro)
         .subscribe(c => {
-          this.actualizaContactos();
+          this.actualizaEntrenadores();
         })
     }, (reason) => {});
 
   }
-  contactoEditado(contacto: Contacto): void {
+
+  contactoEditado(entrenador: Contacto): void {
     this.contactosService.editarContacto(contacto)
       .subscribe(c => {
         this.actualizaContactos(contacto.id);

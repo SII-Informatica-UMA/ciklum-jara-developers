@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import {Contacto } from '../contacto';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormularioContactoComponent} from '../formulario-contacto/formulario-contacto.component'
-import { ContactosService } from '../contactos.service';
+import { ContactosService } from '../entrenador.service';
 
 @Component({
   selector: 'app-detalle-contacto',
