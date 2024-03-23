@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Entrenador } from './entrenador';
 import { Centro } from './centro';
 import { Gerente } from './gerente';
+import { KeyedRead } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -87,33 +88,53 @@ export class EntrenadoresService {
   }
 
   editarEntrenador(centro: Centro, gerente: Gerente, entrenador: Entrenador) {
-    const key: [Centro, Gerente] = [centro, gerente];
-    const entrenadores = this.gerentes_entrenadores.get(key);
-    if (entrenadores) {
+    let keyExistente: [Centro, Gerente] | undefined;
+    for (const [key, value] of this.gerentes_entrenadores) {
+        if (key[0].idCentro === centro.idCentro && key[1].id === gerente.id) {
+            keyExistente = key;
+            break;
+        }
+    }
+
+    if (keyExistente) {
+      const entrenadores = this.gerentes_entrenadores.get(keyExistente);
+      if (entrenadores) {
         let indice = entrenadores.findIndex(c => c.id === entrenador.id);
         if (indice !== -1) {
             entrenadores[indice] = entrenador;
         } else {
             console.error("No se encontró el entrenador con el ID especificado.");
         }
-    } else {
+      } else {
         console.error("No se encontraron entrenadores para el centro y gerente especificados.");
+      }
     }
   }
 
   eliminarEntrenador(centro: Centro, gerente: Gerente, idArray: number) {
-    const key: [Centro, Gerente] = [centro, gerente];
-    const entrenadores = this.gerentes_entrenadores.get(key);
-    if (entrenadores) {
+    
+    let keyExistente: [Centro, Gerente] | undefined;
+    for (const [key, value] of this.gerentes_entrenadores) {
+        if (key[0].idCentro === centro.idCentro && key[1].id === gerente.id) {
+            keyExistente = key;
+            break;
+        }
+    }
+
+    if (keyExistente) {
+      const entrenadores = this.gerentes_entrenadores.get(keyExistente);
+      if (entrenadores) {
         let indice = entrenadores.findIndex(c => c.id == idArray);
         if (indice !== -1) {
             entrenadores.splice(indice, 1);
         } else {
             console.error("No se encontró el entrenador con el ID especificado.");
         }
-    } else {
+      } else {
         console.error("No se encontraron entrenadores para el centro y gerente especificados.");
+      }
     }
+
   }
 
   getGerentePorCentro(centro: Centro): Gerente | undefined {
