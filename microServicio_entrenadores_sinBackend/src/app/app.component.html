@@ -1,36 +1,39 @@
-<div class="container">
+<div class="container"> 
   <div class="row">
     <!-- Columna de la izquierda con la lista de centros/gerentes -->
     <div class="col-md-4">
       <h3>Centros/Gerentes</h3>
-      <div class = "list-group">
-        <button *ngFor="let item of gerentes_entrenadores | keyvalue"
-        class="list-group-item list-group-item-action"
-        (click)="elegirCentro(item.key[0])"
-        [class.active]="item.key[0] === centroElegido">{{ item.key[0].nombre }} - {{ item.key[1].idUsuario }}</button>
-      </div>
+      <div class="list-group">
+        <button *ngFor="let centro of gerentes_entrenadores.keys()"
+          class="list-group-item list-group-item-action"
+          (click)="elegirCentro(centro[0])"
+          [class.active]="centro[0] === centroElegido">{{ centro[0].nombre }} - {{ centro[1].idUsuario }}</button>
       </div>
     </div>
     
     <!-- Columna de la derecha con la lista de entrenadores -->
-  <div class="col-md-8">
-  <div *ngIf="centroElegido" class="list-group">
-    <h3>Entrenadores del Centro: {{ centroElegido.nombre }}</h3>
-    <button *ngFor="let entrenador of getEntrenadoresDelCentroElegido()"
-      class="list-group-item list-group-item-action"
-      (click)="elegirEntrenador(entrenador)"
-      [class.active]="entrenador === entrenadorElegido">{{entrenador.idUsuario}}</button>
+    <div class="col-md-8">
+      <div *ngIf="centroElegido" class="list-group">
+        <h3>Entrenadores del Centro: {{ centroElegido.nombre }}</h3>
+        <button *ngFor="let entrenador of getEntrenadoresDelCentroElegido()"
+          class="list-group-item list-group-item-action"
+          (click)="elegirEntrenador(entrenador)"
+          [class.active]="entrenador === entrenadorElegido">{{entrenador.idUsuario}}</button>
+      </div>
+
+      <!-- Mostrar detalles del entrenador seleccionado -->
+      <div class="col-md-4" *ngIf="entrenadorElegido">
+        <br>
+        <app-detalle-entrenador [entrenador]="entrenadorElegido"
+          (entrenadorEditado)="entrenadorEditado($event)"
+          (entrenadorEliminado)="eliminarEntrenador($event)"
+        ></app-detalle-entrenador>
+        
+      </div>
+      <div *ngIf="centroElegido">
+        <br>
+        <button type="button" class="btn btn-outline-primary bi bi-plus-lg" (click)="aniadirEntrenador()"></button>
+      </div>
+    </div>
   </div>
-  <br>
-  <button type="button" class="btn btn-outline-primary bi bi-plus-lg" (click)="aniadirEntrenador()"></button>
-</div>
-
-  <!-- Mostrar detalles del entrenador seleccionado -->
-<div class="col-md-4" *ngIf="entrenadorElegido">
-  <app-detalle-entrenador [entrenador]="entrenadorElegido"
-        (entrenadorEditado)="entrenadorEditado($event)"
-        (entrenadorEliminado)="eliminarEntrenador($event)"
-  ></app-detalle-entrenador>
-</div>
-
 </div>

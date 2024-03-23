@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
   }
 
   getEntrenadoresDelCentroElegido(): Entrenador[] | undefined {
+    console.log("He entrado");
     if (!this.centroElegido || !this.gerenteElegido) {
       console.error("No se ha seleccionado un centro");
       return;
@@ -36,6 +37,7 @@ export class AppComponent implements OnInit {
   elegirCentro(centro: Centro): void {
     this.centroElegido = centro;
     this.gerenteElegido = this.entrenadoresService.getGerentePorCentro(centro);
+    this.entrenadorElegido = undefined;
   }
 
   elegirEntrenador(entrenador: Entrenador): void {

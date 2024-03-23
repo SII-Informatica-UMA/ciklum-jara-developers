@@ -44,7 +44,18 @@ export class EntrenadoresService {
   }
 
   getEntrenadores(centro: Centro, gerente: Gerente): Entrenador[] | undefined {
-    return this.gerentes_entrenadores.get([centro, gerente]);
+    let centroExistente: [Centro, Gerente] | undefined;
+    for (const [key, value] of this.gerentes_entrenadores) {
+        if (key[0].idCentro === centro.idCentro && key[1].id === gerente.id) {
+            centroExistente = key;
+            break;
+        }
+    }
+    if (centroExistente) {
+      return this.gerentes_entrenadores.get(centroExistente);
+    } else {
+      return undefined;
+    }
   }
 
   agregarEntrenador(centro: Centro, gerente: Gerente, entrenador: Entrenador) {
@@ -54,14 +65,25 @@ export class EntrenadoresService {
     // Encontrar el ID máximo
     entrenador.id = allEntrenadores.length > 0 ? Math.max(...allEntrenadores.map(c => c.id)) + 1 : 1;
 
-    const key: [Centro, Gerente] = [centro, gerente];
-    if (this.gerentes_entrenadores.has(key)) {
-        // El centro y gerente ya existen, simplemente agregamos el entrenador al array existente
-        this.gerentes_entrenadores.get(key)?.push(entrenador);
-    } else {
-        // El centro y gerente no existen, creamos un nuevo array y agregamos el entrenador
-        this.gerentes_entrenadores.set(key, [entrenador]);
+    // Verificar si el centro ya existe en el mapa
+    let centroExistente: [Centro, Gerente] | undefined;
+    for (const [key, value] of this.gerentes_entrenadores) {
+        if (key[0].idCentro === centro.idCentro && key[1].id === gerente.id) {
+            centroExistente = key;
+            break;
+        }
     }
+
+    if (centroExistente) {
+      console.log("El centro ya existe en el mapa.");
+      // El centro y gerente ya existen, simplemente agregamos el entrenador al array existente
+      this.gerentes_entrenadores.get(centroExistente)?.push(entrenador);
+    } else {
+      console.log("Agregando nuevo centro al mapa.");
+      // El centro y gerente no existen, creamos un nuevo array y agregamos el entrenador
+      this.gerentes_entrenadores.set([centro, gerente], [entrenador]);
+    }
+
   }
 
   editarEntrenador(centro: Centro, gerente: Gerente, entrenador: Entrenador) {
