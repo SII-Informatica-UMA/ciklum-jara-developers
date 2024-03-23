@@ -1,54 +1,113 @@
-<div class="row">
-  <h2 class="col-md-12">Detalles de {{entrenador?.idUsuario}}</h2>
-</div>
+<div class="container">
+  <div class="row">
+    <h2 class="col-md-12">Detalles de {{entrenador?.idUsuario}}</h2>
+  </div>
 
-<div class="row">
-  <label class="col-md-3" for="nombre">Nombre:</label>
-  <span class="col-md-9">{{entrenador?.idUsuario}}</span>
-</div>
-<div class="row">
-  <label class="col-md-3" for="telefono">Teléfono:</label>
-  <span class="col-md-9">{{entrenador?.telefono}}</span>
-</div>
-<div class="row">
-  <label class="col-md-3" for="direccion">Dirección:</label>
-  <span class="col-md-9">{{entrenador?.direccion}}</span>
-</div>
-<div class="row">
-  <label class="col-md-3" for="dni">DNI:</label>
-  <span class="col-md-9">{{entrenador?.dni}}</span>
-</div>
-<div class="row">
-  <label class="col-md-3" for="fechaNacimiento">Fecha de Nacimiento:</label>
-  <span class="col-md-9">{{entrenador?.fechaNacimiento | date}}</span>
-</div>
-<div class="row">
-  <label class="col-md-3" for="fechaAlta">Fecha de Alta:</label>
-  <span class="col-md-9">{{entrenador?.fechaAlta | date}}</span>
-</div>
-<div class="row">
-  <label class="col-md-3" for="fechaBaja">Fecha de Baja:</label>
-  <span class="col-md-9">{{entrenador?.fechaBaja | date}}</span>
-</div>
-<div class="row">
-  <label class="col-md-3" for="especialidad">Especialidad:</label>
-  <span class="col-md-9">{{entrenador?.especialidad}}</span>
-</div>
-<div class="row">
-  <label class="col-md-3" for="titulacion">Titulación:</label>
-  <span class="col-md-9">{{entrenador?.titulacion}}</span>
-</div>
-<div class="row">
-  <label class="col-md-3" for="experiencia">Experiencia:</label>
-  <span class="col-md-9">{{entrenador?.experiencia}}</span>
-</div>
-<div class="row">
-  <label class="col-md-3" for="observaciones">Observaciones:</label>
-  <span class="col-md-9">{{entrenador?.observaciones}}</span>
-</div>
-<br>
-<div class="row">
-  <button class="col-auto btn btn-outline-primary" (click)="eliminarEntrenador()">Eliminar <i class="bi bi-trash-fill"></i></button>
-  <div class="col-1"></div>
-  <button class="col-auto btn btn-outline-primary" (click)="editarEntrenador()">Editar <i class="bi bi-pencil-fill"></i></button>
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Nombre:</strong>
+    </div>
+    <div class="col-md-9">
+      {{entrenador?.idUsuario}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teléfono:</strong>
+    </div>
+    <div class="col-md-9">
+      {{entrenador?.telefono}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Dirección:</strong>
+    </div>
+    <div class="col-md-9">
+      {{entrenador?.direccion}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>DNI:</strong>
+    </div>
+    <div class="col-md-9">
+      {{entrenador?.dni}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Fecha de Nacimiento:</strong>
+    </div>
+    <div class="col-md-9">
+      {{entrenador?.fechaNacimiento | date}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Fecha de Alta:</strong>
+    </div>
+    <div class="col-md-9">
+      {{entrenador?.fechaAlta | date}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Fecha de Baja:</strong>
+    </div>
+    <div class="col-md-9">
+      {{entrenador?.fechaBaja | date}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Especialidad:</strong>
+    </div>
+    <div class="col-md-9">
+      {{entrenador?.especialidad}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Titulación:</strong>
+    </div>
+    <div class="col-md-9">
+      {{entrenador?.titulacion}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Experiencia:</strong>
+    </div>
+    <div class="col-md-9">
+      {{entrenador?.experiencia}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Observaciones:</strong>
+    </div>
+    <div class="col-md-9">
+      {{entrenador?.observaciones}}
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <button class="col-auto btn btn-outline-primary me-2" (click)="eliminarEntrenador()">
+      Eliminar <i class="bi bi-trash-fill"></i>
+    </button>
+    <button class="col-auto btn btn-outline-primary" (click)="editarEntrenador()">
+      Editar <i class="bi bi-pencil-fill"></i>
+    </button>
+  </div>
 </div>
