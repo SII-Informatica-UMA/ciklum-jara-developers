@@ -7,7 +7,7 @@
         <button *ngFor="let centro of gerentes_entrenadores.keys()"
           class="list-group-item list-group-item-action"
           (click)="elegirCentro(centro[0])"
-          [class.active]="centro[0] === centroElegido">{{ centro[0].nombre }} - {{ centro[1].idUsuario }}</button>
+          [class.active]="centro[0] === centroElegido">{{ centro[0].nombre }} - {{ getUsuarioGerenteActual().nombre }}</button>
 
           <!-- Mostrar detalles del centro seleccionado -->
         <div *ngIf="centroElegido" class="card mt-2">

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Entrenador } from './entrenador';
 import { Centro } from './centro';
 import { Gerente } from './gerente';
+import { Usuario } from './usuario';
 import { EntrenadoresService } from './entrenadores.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { FormularioEntrenadorComponent } from './formulario-entrenador/formulario-entrenador.component';
@@ -22,6 +23,25 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.gerentes_entrenadores = this.entrenadoresService.getAllEntrenadores();
+  }
+
+  getUsuarioGerenteActual(): Usuario {
+    if (this.gerenteElegido) {
+      return this.entrenadoresService.obtenerUsuarioPorPersona(this.gerenteElegido);
+    } else {
+      console.log("No hay un gerente elegido");
+      const usuarioVacio: Usuario = { nombre: "", apellido1: "", apellido2: "", email: "", id: -1 };
+      return usuarioVacio;
+    }
+  }
+
+  getUsuarioEntrenadorActual() {
+    if (this.entrenadorElegido) {
+      return this.entrenadoresService.obtenerUsuarioPorPersona(this.entrenadorElegido);
+    } else {
+      console.log("No hay un entrenador elegido");
+      return undefined;
+    }
   }
 
   getEntrenadoresDelCentroElegido(): Entrenador[] | undefined {
