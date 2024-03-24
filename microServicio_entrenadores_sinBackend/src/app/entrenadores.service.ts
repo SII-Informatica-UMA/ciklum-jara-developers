@@ -3,6 +3,7 @@ import { Entrenador } from './entrenador';
 import { Centro } from './centro';
 import { Gerente } from './gerente';
 import { KeyedRead } from '@angular/compiler';
+import { Usuario } from './usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -27,9 +28,9 @@ export class EntrenadoresService {
                                       titulacion: "Entrenador personal avanzado", experiencia: "Especializado en rehabilitación y prevención de lesiones",
                                       observaciones: "Ofrece clases grupales de entrenamiento funcional", id: 3 };
 
-    const centro1: Centro = { nombre: "Nombre del Centro 1", direccion: "Dirección del Centro 1", idCentro: 1 };
+    const centro1: Centro = { nombre: "McFit", direccion: "Centro Comercial Carrefour Alameda", idCentro: 1 };
 
-    const centro2: Centro = { nombre: "Nombre del Centro 2", direccion: "Dirección del Centro 2", idCentro: 2 };
+    const centro2: Centro = { nombre: "BasicFit", direccion: "Blvr. Louis Pasteur, 20", idCentro: 2 };
 
     const gerente1: Gerente = { idUsuario: 101, empresa: "Empresa del Gerente 1", id: 1 };
 

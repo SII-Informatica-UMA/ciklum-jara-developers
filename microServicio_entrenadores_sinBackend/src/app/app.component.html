@@ -8,6 +8,16 @@
           class="list-group-item list-group-item-action"
           (click)="elegirCentro(centro[0])"
           [class.active]="centro[0] === centroElegido">{{ centro[0].nombre }} - {{ centro[1].idUsuario }}</button>
+
+          <!-- Mostrar detalles del centro seleccionado -->
+        <div *ngIf="centroElegido" class="card mt-2">
+          <div class="card-body">
+            <h5 class="card-title">Detalles del Centro: <i>{{ centroElegido.nombre }}</i></h5>
+            <p class="card-text">Dirección: <i>{{ centroElegido.direccion }}</i></p>
+            <!-- Agrega aquí más detalles según sea necesario -->
+          </div>
+        </div>
+
       </div>
     </div>
     
@@ -28,8 +38,8 @@
           (entrenadorEditado)="entrenadorEditado($event)"
           (entrenadorEliminado)="eliminarEntrenador($event)"
         ></app-detalle-entrenador>
-        
       </div>
+
       <div *ngIf="centroElegido">
         <br>
         <button type="button" class="btn btn-outline-primary bi bi-plus-lg" (click)="aniadirEntrenador()"></button>
