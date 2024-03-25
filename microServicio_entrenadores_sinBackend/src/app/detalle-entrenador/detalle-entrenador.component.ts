@@ -3,6 +3,8 @@ import { Entrenador } from '../entrenador';
 import { NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { FormularioEntrenadorComponent } from '../formulario-entrenador/formulario-entrenador.component';
 import { EntrenadoresService } from '../entrenadores.service';
+import { Usuario } from '../usuario';
+import { Gerente } from '../gerente';
 
 @Component({
   selector: 'app-detalle-entrenador',
@@ -27,5 +29,14 @@ export class DetalleEntrenadorComponent {
 
   eliminarEntrenador(): void {
     this.entrenadorEliminado.emit(this.entrenador?.id);
+  }
+
+  getUsuarioPorPersona(persona: Gerente | Entrenador | undefined): Usuario {
+    if (persona != undefined) {
+      return this.entrenadorService.obtenerUsuarioPorPersona(persona);
+    } else {
+      const usuarioVacio: Usuario = { nombre: "", apellido1: "", apellido2: "", email: "", id: -1, telefono: ""};
+      return usuarioVacio;
+    }
   }
 }

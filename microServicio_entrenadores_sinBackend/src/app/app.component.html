@@ -1,34 +1,52 @@
 <div class="container"> 
   <div class="row">
     <!-- Columna de la izquierda con la lista de centros/gerentes -->
-    <div class="col-md-4">
-      <h3>Centros/Gerentes</h3>
-      <div class="list-group">
-        <button *ngFor="let centro of gerentes_entrenadores.keys()"
-          class="list-group-item list-group-item-action"
-          (click)="elegirCentro(centro[0])"
-          [class.active]="centro[0] === centroElegido">{{ centro[0].nombre }} - {{ getUsuarioGerenteActual().nombre }}</button>
-
-          <!-- Mostrar detalles del centro seleccionado -->
-        <div *ngIf="centroElegido" class="card mt-2">
-          <div class="card-body">
-            <h5 class="card-title">Detalles del Centro: <i>{{ centroElegido.nombre }}</i></h5>
-            <p class="card-text">Dirección: <i>{{ centroElegido.direccion }}</i></p>
-            <!-- Agrega aquí más detalles según sea necesario -->
-          </div>
-        </div>
-
+    <div style= "margin-top: 10px;" class="col-md-5">
+      <div class="d-flex justify-content-center">
+        <h3 class="text-center">Centros/Gerentes</h3>
       </div>
+      <div class="list-group">
+        <ng-container *ngFor="let centro of gerentes_entrenadores.keys()">
+          <button class="list-group-item list-group-item-action"
+                  (click)="elegirCentro(centro[0])"
+                  [class.active]="centro[0] === centroElegido">
+                  <span style="font-weight: bold;">{{ centro[0].nombre }}</span>
+                  <!-- Mostrar la imagen del icono del gimnasio -->
+                  <img *ngIf="centro[0].rutaImagen" [src]="centro[0].rutaImagen" alt="Icono de gimnasio" class="imagen-centro" style="max-width: 50px; margin-left: 10px;">
+          </button>
+      
+          <!-- Tarjeta con detalles del centro seleccionado -->
+          <div *ngIf="centroElegido === centro[0]" class="card mt-2 card-centro">
+            <div class="card-body">
+              <h5 class="card-title">Detalles del centro: <i>{{ centroElegido.nombre }}</i></h5>
+              <p class="card-text"><span style="text-decoration: underline;">Dirección:</span><i> {{ centroElegido.direccion }}</i></p>
+              <p class="card-text"><span style="text-decoration: underline;">Año de fundación:</span><i> {{ centroElegido.anoFundacion }}</i></p>
+              <!-- Agrega aquí más detalles según sea necesario -->
+            </div>
+          </div>
+
+          <div *ngIf="centroElegido === centro[0]" class="card mt-2 card-centro">
+            <div class="card-body">
+              <h5 class="card-title">Detalles de su gerente: <i>{{ getUsuarioPorPersona(centro[1]).nombre }}</i></h5>
+              <p class="card-text"><span style="text-decoration: underline;">Nombre completo:</span><i> {{ getUsuarioPorPersona(centro[1]).nombre }} {{getUsuarioPorPersona(centro[1]).apellido1}} {{getUsuarioPorPersona(centro[1]).apellido2}}</i></p>
+              <p class="card-text"><span style="text-decoration: underline;">Correo electrónico:</span><i> {{ getUsuarioPorPersona(centro[1]).email }}</i></p>
+              <p class="card-text"><span style="text-decoration: underline;">Teléfono:</span><i> {{ getUsuarioPorPersona(centro[1]).telefono }}</i></p>
+              <!-- Agrega aquí más detalles según sea necesario -->
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      
     </div>
     
     <!-- Columna de la derecha con la lista de entrenadores -->
-    <div class="col-md-8">
+    <div style= "margin-top: 10px;" class="col-md-7">
       <div *ngIf="centroElegido" class="list-group">
-        <h3>Entrenadores del Centro: {{ centroElegido.nombre }}</h3>
+        <h3>Entrenadores del Centro: <i>{{ centroElegido.nombre }}</i></h3>
         <button *ngFor="let entrenador of getEntrenadoresDelCentroElegido()"
           class="list-group-item list-group-item-action"
           (click)="elegirEntrenador(entrenador)"
-          [class.active]="entrenador === entrenadorElegido">{{entrenador.idUsuario}}</button>
+          [class.active]="entrenador === entrenadorElegido">{{getUsuarioPorPersona(entrenador).nombre}} {{getUsuarioPorPersona(entrenador).apellido1}} {{getUsuarioPorPersona(entrenador).apellido2}}</button>
       </div>
 
       <!-- Mostrar detalles del entrenador seleccionado -->

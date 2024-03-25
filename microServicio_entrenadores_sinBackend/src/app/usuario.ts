@@ -5,4 +5,5 @@ export interface Usuario {
     apellido2: string;
     email: string;
     id: number;
+    telefono: string;
 }

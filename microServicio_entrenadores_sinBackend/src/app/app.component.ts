@@ -25,23 +25,8 @@ export class AppComponent implements OnInit {
     this.gerentes_entrenadores = this.entrenadoresService.getAllEntrenadores();
   }
 
-  getUsuarioGerenteActual(): Usuario {
-    if (this.gerenteElegido) {
-      return this.entrenadoresService.obtenerUsuarioPorPersona(this.gerenteElegido);
-    } else {
-      console.log("No hay un gerente elegido");
-      const usuarioVacio: Usuario = { nombre: "", apellido1: "", apellido2: "", email: "", id: -1 };
-      return usuarioVacio;
-    }
-  }
-
-  getUsuarioEntrenadorActual() {
-    if (this.entrenadorElegido) {
-      return this.entrenadoresService.obtenerUsuarioPorPersona(this.entrenadorElegido);
-    } else {
-      console.log("No hay un entrenador elegido");
-      return undefined;
-    }
+  getUsuarioPorPersona(persona: Gerente | Entrenador): Usuario {
+    return this.entrenadoresService.obtenerUsuarioPorPersona(persona);
   }
 
   getEntrenadoresDelCentroElegido(): Entrenador[] | undefined {

@@ -4,10 +4,13 @@
 </div>
 <div class="modal-body">
     <div class="form-group">
-        <label for="idUsuario">ID Usuario:</label>
-        <input class="form-control" id="idUsuario" [(ngModel)]="entrenador.idUsuario" placeholder="ID Usuario">
-        <label for="telefono">Teléfono:</label>
-        <input class="form-control" id="telefono" [(ngModel)]="entrenador.telefono" placeholder="Teléfono">
+        <label for="idUsuario">ID Usuario:&nbsp;&nbsp;</label>
+        <select aria-placeholder="form-control" id="idUsuario" [(ngModel)]="entrenador.idUsuario">
+            <option value="" disabled selected>Elige el usuario asociado al entrenador</option>
+            <option *ngFor="let usuario of usuariosDisponibles" [value]="usuario.id">{{ usuario.nombre }} {{ usuario.apellido1 }} <i>(id)</i></option>
+        </select><br><br>
+        <!--<label for="idUsuario">ID Usuario:</label>
+        <input class="form-control" id="idUsuario" type="number" [(ngModel)]="entrenador.idUsuario" placeholder="ID Usuario"> -->
         <label for="direccion">Dirección:</label>
         <input class="form-control" id="direccion" [(ngModel)]="entrenador.direccion" placeholder="Dirección">
         <label for="dni">DNI:</label>
