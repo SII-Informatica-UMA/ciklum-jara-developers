@@ -131,6 +131,10 @@ export class EntrenadoresService {
     return this.allUsuarios.filter(usuario => !usuariosAsignados.includes(usuario.id));
   }
 
+  getAllUsuarios(): Usuario[] {
+    return this.allUsuarios;
+  }
+
   getAllEntrenadores() {
     return this.gerentes_entrenadores;
   }

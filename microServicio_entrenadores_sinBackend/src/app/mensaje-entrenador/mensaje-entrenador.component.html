@@ -26,29 +26,33 @@
     </div>
     
     <div class="row justify-content-center mt-3 mb-4">
-      <div class="col-lg-10">
-        <div class="card">
-          <div class="card-header">
-            <h4 class="card-title" style="text-align: center;">Enviar Correo</h4>
-          </div>
-          <div class="card-body">
-            <form>
-              <div class="mb-3">
-                <label for="destinatario" class="form-label">Destinatario:</label>
-                <input type="text" class="form-control" id="destinatario" placeholder="Correo del destinatario">
-              </div>
-              <div class="mb-3">
-                <label for="asunto" class="form-label">Asunto:</label>
-                <input type="text" class="form-control" id="asunto" placeholder="Asunto del correo">
-              </div>
-              <div class="mb-3">
-                <label for="mensaje" class="form-label">Mensaje:</label>
-                <textarea class="form-control" id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-          </div>
+        <div class="col-lg-10">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" style="text-align: center;">Enviar Correo</h4>
+                </div>
+                <div class="card-body">
+                    <form (ngSubmit)="enviarMensaje()">
+                        <div class="mb-3">
+                            <label for="destinatario" class="form-label">Destinatario:</label>
+                            <select id="destinatario" class="form-select" [(ngModel)]="destinatario">
+                                <!--opciones de destinatario -->
+                                <option value="" disabled selected>Elige el usuario al cual enviar el mensaje</option>
+                                <option *ngFor="let usuario of usuariosDisponibles" [value]="usuario.id">{{ usuario.nombre }} {{ usuario.apellido1 }} (id)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="asunto" class="form-label">Asunto:</label>
+                            <input type="text" class="form-control" id="asunto" [(ngModel)]="asunto" placeholder="Asunto aquí" #asunto required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje:</label>
+                            <textarea class="form-control" id="mensaje" rows="5" [(ngModel)]="mensaje" placeholder="Escribe tu mensaje aquí" #mensaje required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
   </div>  
