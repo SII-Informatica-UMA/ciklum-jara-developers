@@ -1,0 +1,7 @@
+entrenadores pueden recibir mensajes de:
+    - centros
+    - sus clientes
+entrenadores pueden enviar mensajes a:
+    - centros
+    - sus clientes
+en principio, NO se pueden enviar mensajes entre sí.

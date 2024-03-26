@@ -23,6 +23,15 @@
 
   <div class="row">
     <div class="col-md-3">
+      <strong>Correo electrónico:</strong>
+    </div>
+    <div class="col-md-9">
+      {{getUsuarioPorPersona(entrenador).email}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
       <strong>Dirección:</strong>
     </div>
     <div class="col-md-9">
@@ -106,8 +115,11 @@
     <button class="col-auto btn btn-outline-primary me-2" (click)="eliminarEntrenador()">
       Eliminar <i class="bi bi-trash-fill"></i>
     </button>
-    <button class="col-auto btn btn-outline-primary" (click)="editarEntrenador()">
+    <button class="col-auto btn btn-outline-primary me-2" (click)="editarEntrenador()">
       Editar <i class="bi bi-pencil-fill"></i>
+    </button>
+    <button class="col-auto btn btn-outline-primary" (click)="mensajesEntrenador()">
+      Seccion de mensajes <i class="bi bi-envelope-fill"></i>
     </button>
   </div>
 </div>

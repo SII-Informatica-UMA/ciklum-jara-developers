@@ -1,7 +1,0 @@
-- En entrenadores.service.ts debo de crear un arrays de Usuarios, simulando como una base de datos
-total de TODOS los usuarios de mi app. De esta manera, como "Gerente" y "Entrenadores" tiene un campo
-"idUsuario", podré recoger el objeto Usuario al cual estan asociados y mostrar toda su información en
-"app.component.html".
-
-- Además hay que afinar un poco la estetica del front-end, añadiendo quizas colores en los boxes y
-algun fondo guay, y la distribución de las listas y botones que salen en la app.

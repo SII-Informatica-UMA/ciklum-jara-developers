@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Entrenador } from '../entrenador';
 import { NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { FormularioEntrenadorComponent } from '../formulario-entrenador/formulario-entrenador.component';
+import { MensajeEntrenadorComponent } from '../mensaje-entrenador/mensaje-entrenador.component';
 import { EntrenadoresService } from '../entrenadores.service';
 import { Usuario } from '../usuario';
 import { Gerente } from '../gerente';
@@ -29,6 +30,11 @@ export class DetalleEntrenadorComponent {
 
   eliminarEntrenador(): void {
     this.entrenadorEliminado.emit(this.entrenador?.id);
+  }
+
+  mensajesEntrenador(): void {
+    let ref = this.modalService.open(MensajeEntrenadorComponent);
+    ref.componentInstance.entrenador = {...this.entrenador};
   }
 
   getUsuarioPorPersona(persona: Gerente | Entrenador | undefined): Usuario {

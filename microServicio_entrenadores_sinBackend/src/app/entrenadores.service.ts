@@ -4,12 +4,15 @@ import { Centro } from './centro';
 import { Gerente } from './gerente';
 import { KeyedRead } from '@angular/compiler';
 import { Usuario } from './usuario';
+import { Mensaje } from './mensaje';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EntrenadoresService {
   private gerentes_entrenadores: Map<[Centro, Gerente], Entrenador[]> = new Map();
+
+  private mensajes: Map<number,Mensaje[]> = new Map();
 
   private allUsuarios: Usuario[] = [];
 
@@ -96,6 +99,16 @@ export class EntrenadoresService {
     console.log("El idUsuario de la persona es " + persona.idUsuario + " y el tipo es " + typeof persona.idUsuario);
     const usuarioEncontrado = this.allUsuarios.find(usuario => usuario.id === persona.idUsuario);
     console.log("El usuario extraido es " + usuarioEncontrado?.nombre + " .La longitud de allusuarios es " + this.allUsuarios.length);
+    if (usuarioEncontrado) {
+      return usuarioEncontrado;
+    } else {
+      const usuarioVacio: Usuario = { nombre: "", apellido1: "", apellido2: "", email: "", id: -1, telefono: ""};
+      return usuarioVacio;
+    }
+  }
+
+  obtenerUsuarioPorId(id: number): Usuario {
+    const usuarioEncontrado = this.allUsuarios.find(usuario => usuario.id === id);
     if (usuarioEncontrado) {
       return usuarioEncontrado;
     } else {

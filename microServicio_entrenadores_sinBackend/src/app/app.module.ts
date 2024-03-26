@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetalleEntrenadorComponent } from './detalle-entrenador/detalle-entrenador.component';
 import { FormularioEntrenadorComponent } from './formulario-entrenador/formulario-entrenador.component';
+import { MensajeEntrenadorComponent } from './mensaje-entrenador/mensaje-entrenador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormularioEntrenadorComponent,
-    DetalleEntrenadorComponent
+    DetalleEntrenadorComponent,
+    MensajeEntrenadorComponent
   ],
   imports: [
     BrowserModule,
