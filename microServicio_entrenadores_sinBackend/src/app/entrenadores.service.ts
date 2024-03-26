@@ -97,14 +97,14 @@ export class EntrenadoresService {
                               rutaImagen: "https://www.vksport.eu/wp-content/uploads/2023/10/BF_Toolkit_Logo-Orange.png",
                               anoFundacion: "2015"};
 
-    const centro3: Centro = { nombre: "ValsSportTeatinos", direccion: "C/ Mesonero Romanos, 11", idCentro: 3,
+    const centro3: Centro = { nombre: "Vals Sport Teatinos", direccion: "C/ Mesonero Romanos, 11", idCentro: 3,
                               rutaImagen: "https://www.centrodeportivoaxarquia.com/uploads/muKxJIAL/vals-sport-blanco.png",
                               anoFundacion: "2016"};
            
     
-    const centro4: Centro = { nombre: "ValsSportConsul", direccion: "C. Sófocles, 11, Puerto de la Torre", idCentro: 4,
-                              rutaImagen: "https://www.centrodeportivoaxarquia.com/uploads/muKxJIAL/vals-sport-blanco.png",
-                              anoFundacion: "2016"};
+    const centro4: Centro = { nombre: "Real Club de Padel Marbella", direccion: "C. Río Amazonas, s/n, 29660 Marbella", idCentro: 4,
+                              rutaImagen: "https://www.bartolomeconsultores.com/wp-content/uploads/logo-superior-padel.png",
+                              anoFundacion: "2011"};
 
     const gerente1: Gerente = { idUsuario: 2, empresa: "McFit", id: 1};
 

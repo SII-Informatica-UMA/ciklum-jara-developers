@@ -6,6 +6,7 @@ import { Usuario } from './usuario';
 import { EntrenadoresService } from './entrenadores.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { FormularioEntrenadorComponent } from './formulario-entrenador/formulario-entrenador.component';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
