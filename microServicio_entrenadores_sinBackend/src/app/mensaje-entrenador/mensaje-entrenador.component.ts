@@ -83,6 +83,8 @@ export class MensajeEntrenadorComponent {
   
 
   enviarMensaje(): void {
+    console.log("ESTOY AQUI " + this.entrenador.idUsuario + ", " + this.destinatario + ", " + this.asunto + ", " + this.mensaje);
+
     // Crear un nuevo mensaje con los datos del formulario
     const nuevoMensaje: Mensaje = {
       asunto: this.asunto,
@@ -93,6 +95,7 @@ export class MensajeEntrenadorComponent {
       idMensaje: this.generarIdMensaje() // Generar un id único para el mensaje (puedes implementar esta función)
     };
 
+  
     // Obtener el array de mensajes del entrenador del Map
     let mensajesEntrenador = this.allMensajes.get(this.entrenador.idUsuario);
 
@@ -100,11 +103,15 @@ export class MensajeEntrenadorComponent {
       mensajesEntrenador = [];
     }
 
+    
+
     // Agregar el nuevo mensaje al array de mensajes del destinatario
     mensajesEntrenador.push(nuevoMensaje);
 
     // Actualizar el Map con el nuevo array de mensajes
     this.allMensajes.set(this.entrenador.idUsuario, mensajesEntrenador);
+
+    console.log("Una vez actualizado el mapa, length = " + this.allMensajes.get(this.entrenador.idUsuario)?.length);
   }
 
 

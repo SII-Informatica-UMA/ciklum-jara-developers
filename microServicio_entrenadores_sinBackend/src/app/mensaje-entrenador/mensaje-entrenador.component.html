@@ -32,25 +32,41 @@
                     <h4 class="card-title" style="text-align: center;">Enviar Correo</h4>
                 </div>
                 <div class="card-body">
-                    <form (ngSubmit)="enviarMensaje()">
+
+                  <label for="destinatario" class="form-label">Destinatario:</label>
+                  <select id="destinatario" class="form-select" [(ngModel)]="destinatario">
+                      <!--opciones de destinatario -->
+                      <option value="" disabled selected>Elige el usuario al cual enviar el mensaje</option>
+                      <option *ngFor="let usuario of usuariosDisponibles" [value]="usuario.id">{{ usuario.nombre }} {{ usuario.apellido1 }} (id)</option>
+                  </select>
+
+                  <label for="asunto" class="form-label">Asunto:</label>
+                  <input type="text" class="form-control" id="asunto" [(ngModel)]="asunto" placeholder="Asunto aquí">
+
+                  <label for="mensaje" class="form-label">Mensaje:</label>
+                  <textarea class="form-control" id="mensaje" rows="5" [(ngModel)]="mensaje" placeholder="Escribe tu mensaje aquí"></textarea>
+
+                  <button type="button" class="btn btn-outline-dark" (click)="enviarMensaje()">Enviar</button>
+
+                    <!--<form (ngSubmit)="enviarMensaje()">
                         <div class="mb-3">
                             <label for="destinatario" class="form-label">Destinatario:</label>
                             <select id="destinatario" class="form-select" [(ngModel)]="destinatario">
-                                <!--opciones de destinatario -->
+                                opciones de destinatario
                                 <option value="" disabled selected>Elige el usuario al cual enviar el mensaje</option>
                                 <option *ngFor="let usuario of usuariosDisponibles" [value]="usuario.id">{{ usuario.nombre }} {{ usuario.apellido1 }} (id)</option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="asunto" class="form-label">Asunto:</label>
-                            <input type="text" class="form-control" id="asunto" [(ngModel)]="asunto" placeholder="Asunto aquí" #asunto required>
+                            <input type="text" class="form-control" id="asunto" [(ngModel)]="asunto" placeholder="Asunto aquí">
                         </div>
                         <div class="mb-3">
                             <label for="mensaje" class="form-label">Mensaje:</label>
-                            <textarea class="form-control" id="mensaje" rows="5" [(ngModel)]="mensaje" placeholder="Escribe tu mensaje aquí" #mensaje required></textarea>
+                            <textarea class="form-control" id="mensaje" rows="5" [(ngModel)]="mensaje" placeholder="Escribe tu mensaje aquí"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Enviar</button>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>

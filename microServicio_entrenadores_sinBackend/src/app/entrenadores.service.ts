@@ -41,6 +41,7 @@ export class EntrenadoresService {
     const usuario11: Usuario = { nombre: "Juan", apellido1: "Martinez", apellido2: "Gomez", email: "juan.martinez@example.com", id: 11, telefono: "677765432" };
   
     const usuario12: Usuario = { nombre: "Maria", apellido1: "Lopez", apellido2: "Fernandez", email: "maria.lopez@example.com", id: 12, telefono: "666654321" };
+    
     this.allUsuarios.push(usuario1);
     this.allUsuarios.push(usuario2);
     this.allUsuarios.push(usuario3);
