@@ -16,7 +16,7 @@ export class MensajeEntrenadorComponent {
                               fechaNacimiento: new Date(), fechaAlta: new Date(), fechaBaja: new Date(),
                               especialidad: '', titulacion: '', experiencia: '',
                               observaciones: '', id: 0 };
-  destinatario: number = -1;
+  destinatario: number[] = [];
   asunto: string = "";
   mensaje: string = "";
 
@@ -84,32 +84,29 @@ export class MensajeEntrenadorComponent {
 
   enviarMensaje(): void {
     //console.log("ESTOY AQUI " + this.entrenador.idUsuario + ", " + this.destinatario + ", " + this.asunto + ", " + this.mensaje);
-    if(typeof this.destinatario == 'string') {
-      this.destinatario = parseInt(this.destinatario);
-
-    }
     // Crear un nuevo mensaje con los datos del formulario
-    const nuevoMensaje: Mensaje = {
-      asunto: this.asunto,
-      destinatarios: [{ id: this.destinatario, tipo: 'ENTRENADOR' }], // Aquí puedes ajustar el tipo según corresponda
-      copia: [],
-      copiaOculta: [],
-      contenido: this.mensaje,
-      idMensaje: this.generarIdMensaje() // Generar un id único para el mensaje (puedes implementar esta función)
-    };
-
-  
     // Obtener el array de mensajes del entrenador del Map
+
     let mensajesEntrenador = this.allMensajes.get(this.entrenador.idUsuario);
 
     if (!mensajesEntrenador) {
       mensajesEntrenador = [];
     }
-
     
 
-    // Agregar el nuevo mensaje al array de mensajes del destinatario
-    mensajesEntrenador.push(nuevoMensaje);
+    for(const id of this.destinatario){
+      const nuevoMensaje: Mensaje = {
+        asunto: this.asunto,
+        destinatarios: [{ id: id, tipo: 'ENTRENADOR' }], // Aquí puedes ajustar el tipo según corresponda
+        copia: [],
+        copiaOculta: [],
+        contenido: this.mensaje,
+        idMensaje: this.generarIdMensaje() // Generar un id único para el mensaje (puedes implementar esta función)
+      };
+      // Agregar el nuevo mensaje al array de mensajes del destinatario
+      mensajesEntrenador.push(nuevoMensaje);
+
+    }
 
     // Actualizar el Map con el nuevo array de mensajes
     this.allMensajes.set(this.entrenador.idUsuario, mensajesEntrenador);
