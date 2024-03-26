@@ -83,8 +83,11 @@ export class MensajeEntrenadorComponent {
   
 
   enviarMensaje(): void {
-    console.log("ESTOY AQUI " + this.entrenador.idUsuario + ", " + this.destinatario + ", " + this.asunto + ", " + this.mensaje);
+    //console.log("ESTOY AQUI " + this.entrenador.idUsuario + ", " + this.destinatario + ", " + this.asunto + ", " + this.mensaje);
+    if(typeof this.destinatario == 'string') {
+      this.destinatario = parseInt(this.destinatario);
 
+    }
     // Crear un nuevo mensaje con los datos del formulario
     const nuevoMensaje: Mensaje = {
       asunto: this.asunto,
