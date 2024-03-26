@@ -38,6 +38,9 @@ export class EntrenadoresService {
     
     const usuario10: Usuario = { nombre: "Elena", apellido1: "Serrano", apellido2: "Alonso", email: "elena.serrano@example.com", id: 10, telefono: "688876543"};
 
+    const usuario11: Usuario = { nombre: "Juan", apellido1: "Martinez", apellido2: "Gomez", email: "juan.martinez@example.com", id: 11, telefono: "677765432" };
+  
+    const usuario12: Usuario = { nombre: "Maria", apellido1: "Lopez", apellido2: "Fernandez", email: "maria.lopez@example.com", id: 12, telefono: "666654321" };
     this.allUsuarios.push(usuario1);
     this.allUsuarios.push(usuario2);
     this.allUsuarios.push(usuario3);
@@ -48,6 +51,9 @@ export class EntrenadoresService {
     this.allUsuarios.push(usuario8);
     this.allUsuarios.push(usuario9);
     this.allUsuarios.push(usuario10);
+    this.allUsuarios.push(usuario11);
+    this.allUsuarios.push(usuario12);
+    
 
     const entrenador1: Entrenador = { idUsuario: 4, direccion: "Calle Principal 123",
                                       dni: "12345678A", fechaNacimiento: new Date("1990-05-15"), fechaAlta: new Date("2023-01-10"),
@@ -70,6 +76,17 @@ export class EntrenadoresService {
                                       fechaBaja: new Date("2023-12-31"), especialidad: "Entrenamiento de flexibilidad",
                                       titulacion: "Entrenador de yoga certificado", experiencia: "Imparte clases de yoga desde hace 3 años",
                                       observaciones: "Promueve un enfoque holístico para la salud y el bienestar", id: 4};
+      
+    const entrenador5: Entrenador = { idUsuario: 12, direccion: "Calle Dr Miguel Diaz Recio",
+                                      dni: "54723580F", fechaNacimiento: new Date("2000-03-23"), fechaAlta: new Date("2023-02-25"),
+                                      fechaBaja: new Date("2023-12-23"), especialidad: "Entrenamiento de calistenia",
+                                      titulacion: "Cursos de nutricion y entrenamiento", experiencia: "Entrena calistenia desde hace 7 años",
+                                      observaciones: "Gan capacidad de enseñanza y motivacion", id: 5};
+    const entrenador6: Entrenador = { idUsuario: 8, direccion: "Calle Badajoz",
+                                      dni: "46765923G", fechaNacimiento: new Date("2000-04-23"), fechaAlta: new Date("2023-01-07"),
+                                      fechaBaja: new Date("2023-12-03"), especialidad: "Entrenamiento funcional",
+                                      titulacion: "Entrenador personal certificado", experiencia: "Experiencia en gimnasios de la competencia",
+                                      observaciones: "Mucha disciplina y constancia en su trabajo", id: 6};
 
     const centro1: Centro = { nombre: "McFit", direccion: "Centro Comercial Carrefour Alameda", idCentro: 1,
                               rutaImagen: "https://www.abba.es/wp-content/uploads/2023/03/EKFKDpia.png",
@@ -82,6 +99,11 @@ export class EntrenadoresService {
     const centro3: Centro = { nombre: "ValsSportTeatinos", direccion: "C/ Mesonero Romanos, 11", idCentro: 3,
                               rutaImagen: "https://www.centrodeportivoaxarquia.com/uploads/muKxJIAL/vals-sport-blanco.png",
                               anoFundacion: "2016"};
+           
+    
+    const centro4: Centro = { nombre: "ValsSportConsul", direccion: "C. Sófocles, 11, Puerto de la Torre", idCentro: 4,
+                              rutaImagen: "https://www.centrodeportivoaxarquia.com/uploads/muKxJIAL/vals-sport-blanco.png",
+                              anoFundacion: "2016"};
 
     const gerente1: Gerente = { idUsuario: 2, empresa: "McFit", id: 1};
 
@@ -89,10 +111,15 @@ export class EntrenadoresService {
 
     const gerente3: Gerente = { idUsuario: 1, empresa: "ValsSportTeatinos", id: 3};
 
+    const gerente4: Gerente = { idUsuario: 11, empresa: "ValsSportConsul", id: 4};
+
+
     this.agregarEntrenador(centro1, gerente1, entrenador1);
     this.agregarEntrenador(centro1, gerente1, entrenador2);
     this.agregarEntrenador(centro2, gerente2, entrenador3);
     this.agregarEntrenador(centro3, gerente3, entrenador4);
+    this.agregarEntrenador(centro4, gerente4, entrenador5);
+    this.agregarEntrenador(centro4, gerente4, entrenador6);
   }
 
   obtenerUsuarioPorPersona(persona: Gerente | Entrenador): Usuario {
