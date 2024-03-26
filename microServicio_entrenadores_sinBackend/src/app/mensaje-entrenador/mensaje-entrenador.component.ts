@@ -94,7 +94,7 @@ export class MensajeEntrenadorComponent {
     }
     
 
-    for(const id of this.destinatario){
+    for(const id of this.destinatario) {
       const nuevoMensaje: Mensaje = {
         asunto: this.asunto,
         destinatarios: [{ id: id, tipo: 'ENTRENADOR' }], // Aquí puedes ajustar el tipo según corresponda
