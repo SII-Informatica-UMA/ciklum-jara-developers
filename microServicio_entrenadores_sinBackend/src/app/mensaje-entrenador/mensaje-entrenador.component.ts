@@ -112,10 +112,14 @@ export class MensajeEntrenadorComponent {
     this.allMensajes.set(this.entrenador.idUsuario, mensajesEntrenador);
 
     console.log("Una vez actualizado el mapa, length = " + this.allMensajes.get(this.entrenador.idUsuario)?.length);
+
+    this.modal.close(this.entrenador);
   }
 
 
   seleccionarMensaje(num: number) {
     this.mensajeSeleccionado = num;
   }
+
+  
 }
