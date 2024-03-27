@@ -1,4 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/5-86A-DI)
+
+*Desde los días 20 de marzo hasta el 24 de marzo, el trabajo, desarrollo y proposición de ideas para nuestro microservicio sobre entrenadores y sus mensajes se hizo de manera presencial por parte de los 4 integrantes del equipo. Sin embargo, decidimos que sería una buena idea para centralizar las entregas hacerlas todas desde el equipo/portátil de Javier Montes. Es por ello por lo que los primeros commits del repositorio de nuestro microservicio, aparecen todos realizados desde la misma cuenta. No obstante, el trabajo ha sido elaborado por todos.*
+
 <h1 align="center">Hi 👋, We are JARA Developers</h1>
 <h3 align="center">A passionate group of developers eager to take on new challenges</h3>
 
