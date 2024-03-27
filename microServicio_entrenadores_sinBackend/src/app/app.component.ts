@@ -6,12 +6,27 @@ import { Usuario } from './usuario';
 import { EntrenadoresService } from './entrenadores.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { FormularioEntrenadorComponent } from './formulario-entrenador/formulario-entrenador.component';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { animate, style, transition, trigger } from '@angular/animations';
+
+const enterTransition = transition(':enter',[
+  style({
+    opacity: 0
+  }),
+  animate('1s ease-in', style({ opacity: 1 })),
+]);
+
+const exitTransition = transition(':leave',[
+  style({
+    opacity: 1
+  }),
+  animate('1s ease-out', style({ opacity: 0 }))
+]);
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [trigger('fadeIn', [enterTransition]), trigger('fadeOut', [exitTransition])]
 })
 export class AppComponent implements OnInit {
   

@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetalleEntrenadorComponent } from './detalle-entrenador/detalle-entrenador.component';
 import { FormularioEntrenadorComponent } from './formulario-entrenador/formulario-entrenador.component';
 import { MensajeEntrenadorComponent } from './mensaje-entrenador/mensaje-entrenador.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MensajeEntrenadorComponent } from './mensaje-entrenador/mensaje-entrena
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

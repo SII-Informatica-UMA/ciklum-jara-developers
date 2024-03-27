@@ -6,12 +6,15 @@ import { MensajeEntrenadorComponent } from '../mensaje-entrenador/mensaje-entren
 import { EntrenadoresService } from '../entrenadores.service';
 import { Usuario } from '../usuario';
 import { Gerente } from '../gerente';
+import { animate, keyframes, query, stagger, style, transition, trigger } from '@angular/animations';
+
 
 @Component({
   selector: 'app-detalle-entrenador',
   templateUrl: './detalle-entrenador.component.html',
   styleUrls: ['./detalle-entrenador.component.css']
 })
+
 export class DetalleEntrenadorComponent {
   @Input() entrenador?: Entrenador;
   @Output() entrenadorEditado = new EventEmitter<Entrenador>();

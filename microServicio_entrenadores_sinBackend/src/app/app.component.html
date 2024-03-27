@@ -16,7 +16,7 @@
           </button>
       
           <!-- Tarjeta con detalles del centro seleccionado -->
-          <div *ngIf="centroElegido === centro[0]" class="card mt-2 card-centro">
+          <div *ngIf="centroElegido === centro[0]" class="card mt-2 card-centro" @fadeIn>
             <div class="card-body">
               <h5 class="card-title">Detalles del centro: <i>{{ centroElegido.nombre }}</i></h5>
               <p class="card-text"><span style="text-decoration: underline;">Dirección:</span><i> {{ centroElegido.direccion }}</i></p>
@@ -25,7 +25,7 @@
             </div>
           </div>
 
-          <div *ngIf="centroElegido === centro[0]" class="card mt-2 card-centro">
+          <div *ngIf="centroElegido === centro[0]" class="card mt-2 card-centro" @fadeIn>
             <div class="card-body">
               <h5 class="card-title">Detalles de su gerente: <i>{{ getUsuarioPorPersona(centro[1]).nombre }}</i></h5>
               <p class="card-text"><span style="text-decoration: underline;">Nombre completo:</span><i> {{ getUsuarioPorPersona(centro[1]).nombre }} {{getUsuarioPorPersona(centro[1]).apellido1}} {{getUsuarioPorPersona(centro[1]).apellido2}}</i></p>
