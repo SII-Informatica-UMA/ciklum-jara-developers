@@ -175,9 +175,6 @@ export class EntrenadoresService {
                               anoFundacion: "2009"};
     
     
-    
-
-
     const gerente1: Gerente = { idUsuario: 2, empresa: "McFit", id: 1};
 
     const gerente2: Gerente = { idUsuario: 7, empresa: "BasicFit", id: 2};
@@ -199,6 +196,9 @@ export class EntrenadoresService {
     this.agregarEntrenador(centro5, gerente5, entrenador11);
     this.agregarEntrenador(centro5, gerente5, entrenador10);
     this.agregarEntrenador(centro5, gerente5, entrenador12);
+    this.agregarEntrenador(centro2, gerente2, entrenador7);
+    this.agregarEntrenador(centro5, gerente5, entrenador8);
+    this.agregarEntrenador(centro3, gerente3, entrenador9);
   }
 
   obtenerUsuarioPorPersona(persona: Gerente | Entrenador): Usuario {
