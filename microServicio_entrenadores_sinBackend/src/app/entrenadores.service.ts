@@ -42,6 +42,22 @@ export class EntrenadoresService {
   
     const usuario12: Usuario = { nombre: "Maria", apellido1: "Lopez", apellido2: "Fernandez", email: "maria.lopez@example.com", id: 12, telefono: "666654321" };
     
+    const usuario13: Usuario = { nombre: "David", apellido1: "González", apellido2: "Martínez", email: "david.gonzalez@example.com", id: 13, telefono: "645987321" };
+
+    const usuario14: Usuario = { nombre: "Sara", apellido1: "Torres", apellido2: "Sanz", email: "sara.torres@example.com", id: 14, telefono: "654123789" };
+
+    const usuario15: Usuario = { nombre: "Javier", apellido1: "Jiménez", apellido2: "Blanco", email: "javier.jimenez@example.com", id: 15, telefono: "632478965" };
+
+    const usuario16: Usuario = { nombre: "Eva", apellido1: "García", apellido2: "Martín", email: "eva.garcia@example.com", id: 16, telefono: "689753421" };
+
+    const usuario17: Usuario = { nombre: "Miguel", apellido1: "Fernández", apellido2: "Santos", email: "miguel.fernandez@example.com", id: 17, telefono: "678954321" };
+
+    const usuario18: Usuario = { nombre: "Lucía", apellido1: "Sanchez", apellido2: "Navarro", email: "lucia.sanchez@example.com", id: 18, telefono: "687456123" };
+
+    const usuario19: Usuario = { nombre: "Rubén", apellido1: "Hernández", apellido2: "García", email: "ruben.hernandez@example.com", id: 19, telefono: "665214789" };
+
+    const usuario20: Usuario = { nombre: "Carmen", apellido1: "Martín", apellido2: "Díaz", email: "carmen.martin@example.com", id: 20, telefono: "677894512" };
+
     this.allUsuarios.push(usuario1);
     this.allUsuarios.push(usuario2);
     this.allUsuarios.push(usuario3);
@@ -54,6 +70,17 @@ export class EntrenadoresService {
     this.allUsuarios.push(usuario10);
     this.allUsuarios.push(usuario11);
     this.allUsuarios.push(usuario12);
+    this.allUsuarios.push(usuario13);
+    this.allUsuarios.push(usuario14);
+    this.allUsuarios.push(usuario15);
+    this.allUsuarios.push(usuario16);
+    this.allUsuarios.push(usuario17);
+    this.allUsuarios.push(usuario18);
+    this.allUsuarios.push(usuario19);
+    this.allUsuarios.push(usuario20);
+
+
+
     
 
     const entrenador1: Entrenador = { idUsuario: 4, direccion: "Calle Principal 123",
@@ -89,6 +116,43 @@ export class EntrenadoresService {
                                       titulacion: "Entrenador personal certificado", experiencia: "Experiencia en gimnasios de la competencia",
                                       observaciones: "Mucha disciplina y constancia en su trabajo", id: 6};
 
+    const entrenador7: Entrenador = { idUsuario: 15, direccion: "Calle del Deporte 789",
+                                      dni: "98765432H", fechaNacimiento: new Date("1987-06-12"), fechaAlta: new Date("2023-05-20"),
+                                      fechaBaja: new Date("2024-06-30"), especialidad: "Entrenamiento de alta intensidad",
+                                      titulacion: "Entrenador personal especializado", experiencia: "Trayectoria en el entrenamiento deportivo profesional",
+                                      observaciones: "Enfoque en la superación personal y el rendimiento óptimo", id: 7 };
+    
+    const entrenador8: Entrenador = { idUsuario: 17, direccion: "Avenida de los Deportistas 456",
+                                      dni: "23456789I", fechaNacimiento: new Date("1984-09-28"), fechaAlta: new Date("2022-11-15"),
+                                      fechaBaja: new Date("2024-01-10"), especialidad: "Entrenamiento de resistencia muscular",
+                                      titulacion: "Entrenador personal profesional", experiencia: "Trabajó con atletas de élite",
+                                      observaciones: "Comprometido con el éxito de sus clientes", id: 8 };
+    
+    const entrenador9: Entrenador = { idUsuario: 20, direccion: "Calle Deportiva 101",
+                                      dni: "87654321J", fechaNacimiento: new Date("1995-02-17"), fechaAlta: new Date("2023-08-10"),
+                                      fechaBaja: new Date("2024-07-20"), especialidad: "Entrenamiento de Pilates",
+                                      titulacion: "Instructor de Pilates certificado", experiencia: "Especializado en Pilates terapéutico",
+                                      observaciones: "Fomenta el equilibrio entre cuerpo y mente", id: 9 };
+    
+    const entrenador10: Entrenador = { idUsuario: 16, direccion: "Avenida de la Salud 567",
+                                       dni: "76543210K", fechaNacimiento: new Date("1993-11-05"), fechaAlta: new Date("2023-04-05"),
+                                       fechaBaja: new Date("2024-03-20"), especialidad: "Entrenamiento de boxeo",
+                                       titulacion: "Entrenador de boxeo profesional", experiencia: "Experiencia en el mundo del boxeo amateur",
+                                       observaciones: "Apasionado por el arte del boxeo", id: 10 };
+    
+    const entrenador11: Entrenador = { idUsuario: 13, direccion: "Calle del Entrenamiento 321",
+                                       dni: "54321098L", fechaNacimiento: new Date("1989-07-30"), fechaAlta: new Date("2022-10-12"),
+                                       fechaBaja: new Date("2024-01-05"), especialidad: "Entrenamiento de artes marciales",
+                                       titulacion: "Instructor de artes marciales certificado", experiencia: "Practicante de artes marciales desde la infancia",
+                                       observaciones: "Transmite los valores del respeto y la disciplina", id: 11 };
+    
+    const entrenador12: Entrenador = { idUsuario: 14, direccion: "Avenida del Deporte 789",
+                                       dni: "87654321M", fechaNacimiento: new Date("1986-04-18"), fechaAlta: new Date("2023-03-15"),
+                                       fechaBaja: new Date("2024-02-28"), especialidad: "Entrenamiento de CrossFit",
+                                       titulacion: "Entrenador de CrossFit certificado", experiencia: "Participó en competiciones de CrossFit",
+                                       observaciones: "Fomenta el trabajo en equipo y la superación personal", id: 12 };
+    
+
     const centro1: Centro = { nombre: "McFit", direccion: "Centro Comercial Carrefour Alameda", idCentro: 1,
                               rutaImagen: "https://www.abba.es/wp-content/uploads/2023/03/EKFKDpia.png",
                               anoFundacion: "2012"};
@@ -105,6 +169,14 @@ export class EntrenadoresService {
     const centro4: Centro = { nombre: "Real Club de Padel Marbella", direccion: "C. Río Amazonas, s/n, 29660 Marbella", idCentro: 4,
                               rutaImagen: "https://www.bartolomeconsultores.com/wp-content/uploads/logo-superior-padel.png",
                               anoFundacion: "2011"};
+     
+    const centro5: Centro = { nombre: "Forus Gym", direccion: " C. Malasaña, 4, 6, Distrito Centro, 29009 Málaga", idCentro: 5,
+                              rutaImagen: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Logo_Forus.png",
+                              anoFundacion: "2009"};
+    
+    
+    
+
 
     const gerente1: Gerente = { idUsuario: 2, empresa: "McFit", id: 1};
 
@@ -114,6 +186,9 @@ export class EntrenadoresService {
 
     const gerente4: Gerente = { idUsuario: 11, empresa: "ValsSportConsul", id: 4};
 
+    const gerente5: Gerente = { idUsuario: 18, empresa: "Forus Gym", id: 5};
+
+
 
     this.agregarEntrenador(centro1, gerente1, entrenador1);
     this.agregarEntrenador(centro1, gerente1, entrenador2);
@@ -121,6 +196,9 @@ export class EntrenadoresService {
     this.agregarEntrenador(centro3, gerente3, entrenador4);
     this.agregarEntrenador(centro4, gerente4, entrenador5);
     this.agregarEntrenador(centro4, gerente4, entrenador6);
+    this.agregarEntrenador(centro5, gerente5, entrenador11);
+    this.agregarEntrenador(centro5, gerente5, entrenador10);
+    this.agregarEntrenador(centro5, gerente5, entrenador12);
   }
 
   obtenerUsuarioPorPersona(persona: Gerente | Entrenador): Usuario {
