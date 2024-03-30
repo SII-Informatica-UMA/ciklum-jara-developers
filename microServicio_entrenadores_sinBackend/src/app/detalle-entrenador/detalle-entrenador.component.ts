@@ -6,7 +6,6 @@ import { MensajeEntrenadorComponent } from '../mensaje-entrenador/mensaje-entren
 import { EntrenadoresService } from '../entrenadores.service';
 import { Usuario } from '../usuario';
 import { Gerente } from '../gerente';
-import { animate, keyframes, query, stagger, style, transition, trigger } from '@angular/animations';
 
 
 @Component({
