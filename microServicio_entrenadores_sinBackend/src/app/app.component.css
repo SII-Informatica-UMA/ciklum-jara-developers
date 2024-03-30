@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 .imagen-centro {
     max-width: 20px; /* Establece el ancho máximo para todas las imágenes */
     height: 20px; /* Ajusta automáticamente la altura para mantener la proporción de la imagen */
@@ -6,4 +8,19 @@
 .card-centro {
     margin-left: 30px;
     margin-bottom: 10px;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+.slide-in-from-left {
+    animation: slideInFromLeft 0.5s ease-out;
 }

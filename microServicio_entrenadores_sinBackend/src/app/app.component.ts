@@ -4,7 +4,7 @@ import { Centro } from './centro';
 import { Gerente } from './gerente';
 import { Usuario } from './usuario';
 import { EntrenadoresService } from './entrenadores.service';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormularioEntrenadorComponent } from './formulario-entrenador/formulario-entrenador.component';
 import { animate, style, transition, trigger } from '@angular/animations';
 
@@ -62,16 +62,21 @@ export class AppComponent implements OnInit {
   }
 
   elegirEntrenador(entrenador: Entrenador): void {
-    this.entrenadorElegido = entrenador;
+    if (this.entrenadorElegido) {
+      this.entrenadorElegido = undefined;
+      setTimeout(() => {
+        this.entrenadorElegido = entrenador;
+      }, 1000);
+    } else {
+      this.entrenadorElegido = entrenador;
+    }
   }
 
   aniadirEntrenador(): void {
-
     if (!this.centroElegido || !this.gerenteElegido) {
       console.error("No se ha seleccionado un centro");
       return;
     }
-
     
     let ref = this.modalService.open(FormularioEntrenadorComponent);
     ref.componentInstance.accion = "Añadir";
@@ -85,7 +90,6 @@ export class AppComponent implements OnInit {
           this.gerentes_entrenadores = this.entrenadoresService.getAllEntrenadores();
       }
     }, (reason) => {});
-
   }
 
   entrenadorEditado(entrenador: Entrenador): void {
