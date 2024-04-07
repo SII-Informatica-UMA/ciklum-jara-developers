@@ -23,4 +23,17 @@ describe('FormularioEntrenadorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should trainer id be the one initilized', () => {
+    expect(component.entrenador.idUsuario).toBe(0);
+  });
+
+  it('should usuarios disponibles not be empty', () => {
+    // Como al comienzo de la aplicacion quedan 8 usuarios sin asignar...
+    expect(component.usuariosDisponibles.length).toBe(8);
+  });
+
+  it('should accion be undefined', () => {
+    expect(component.accion).toBeUndefined();
+  });
 });
