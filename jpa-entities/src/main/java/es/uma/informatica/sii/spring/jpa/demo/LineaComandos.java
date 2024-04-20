@@ -5,12 +5,15 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import es.uma.informatica.sii.spring.jpa.demo.repositories.EntrenadorRepository;
+import es.uma.informatica.sii.spring.jpa.demo.repositories.MensajeRepository;
 
 @Component
 public class LineaComandos implements CommandLineRunner {
 	private EntrenadorRepository repository;
-	public LineaComandos(EntrenadorRepository repository) {
-		this.repository = repository;
+	private MensajeRepository mensaje;
+	public LineaComandos(EntrenadorRepository repositoryE, MensajeRepository repositoryM) {
+		this.repository = repositoryE;
+		this.mensaje = repositoryM;
 	}
 
 	@Override
