@@ -117,6 +117,10 @@ public class Entrenador {
         return idCentro;
     }
 
+    public List<Mensaje> getMensajes() {
+        return mensajes;
+    }
+
     public void setIdUsuario(Long idUsuario) {
         this.idUsuario = idUsuario;
     }
@@ -167,6 +171,10 @@ public class Entrenador {
 
     public void setIdCentro(Long idCentro) {
         this.idCentro = idCentro;
+    }
+
+    public void setMensajes(List<Mensaje> mensajes) {
+        this.mensajes = mensajes;
     }
 
     @Override
