@@ -1,0 +1,114 @@
+package es.uma.informatica.practica3.servicios;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import es.uma.informatica.practica3.entidades.Entrenador;
+import es.uma.informatica.practica3.entidades.Mensaje;
+import es.uma.informatica.practica3.repositorios.EntrenadorRepository;
+import es.uma.informatica.practica3.repositorios.MensajeRepository;
+import es.uma.informatica.practica3.servicios.excepciones.EntidadExistenteException;
+import es.uma.informatica.practica3.servicios.excepciones.EntidadNoEncontradaException;
+
+@Service
+@Transactional
+public class EntrenadorServicio {
+	
+	private EntrenadorRepository entrenadorRepo;
+    private MensajeRepository mensajeRepo;
+	
+	public EntrenadorServicio(EntrenadorRepository entrenadorRepo, 
+			MensajeRepository mensajeRepo) {
+		this.entrenadorRepo = entrenadorRepo;
+		this.mensajeRepo = mensajeRepo;
+	}
+	
+	public List<Entrenador> obtenerEntrenadores (Long idCentro) {
+        return entrenadorRepo.findByIdCentro(idCentro);
+    }
+
+    public Entrenador obtenerEntrenador (Long id) {
+        var trainer = entrenadorRepo.findById(id);
+        if (trainer.isPresent()) {
+            return trainer.get();
+        } else {
+            throw new EntidadNoEncontradaException();
+        }
+    }
+
+    public Entrenador aniadirEntrenador (Entrenador ent) {
+        if (entrenadorRepo.existsById(ent.getId())) {
+            throw new EntidadExistenteException();
+        }
+        refrescarMensajes(ent);
+        return entrenadorRepo.save(ent);
+    }
+
+    public void refrescarMensajes (Entrenador ent) {
+        var mensajesEnContexto = ent.getMensajes().stream()
+			.map(men -> refrescaMensaje(men)
+							.orElseThrow(() -> new EntidadNoEncontradaException()))
+			.collect(Collectors.toList());
+		ent.setMensajes(mensajesEnContexto);
+    }
+
+    private Optional<Mensaje> refrescaMensaje (Mensaje mensj) {
+		if (mensj.getIdMensaje()!=null) {
+			return mensajeRepo.findById(mensj.getIdMensaje());
+		} else {
+			return Optional.empty();
+		}
+	}
+
+    public void eliminarEntrenador (Long id) {
+        if (entrenadorRepo.existsById(id)) {
+            entrenadorRepo.deleteById(id);
+        } else {
+            throw new EntidadNoEncontradaException();
+        }
+    }
+
+    public Entrenador actualizarEntrenador (Entrenador newTrainer) {
+        if (entrenadorRepo.existsById(newTrainer.getId())) {
+            return entrenadorRepo.save(newTrainer);
+        } else {
+            throw new EntidadNoEncontradaException();
+        }
+    }
+
+    public List<Mensaje> obtenerMensajes (Long idEntr) {
+        return mensajeRepo.findByEntrenadorId(idEntr);
+    }
+
+    public Mensaje obtenerMensaje (Long id) {
+        var mens = mensajeRepo.findById(id);
+        if (mens.isPresent()) {
+            return mens.get();
+        } else {
+            throw new EntidadNoEncontradaException();
+        }
+    }
+
+    public Mensaje aniadirMensaje (Long idEntrenador, Mensaje m) {
+        if (entrenadorRepo.findById(idEntrenador).isEmpty())
+            throw new EntidadNoEncontradaException(); 
+        m.setIdMensaje(null);
+        m.setEntrenador(entrenadorRepo.findById(idEntrenador).get());
+        return mensajeRepo.save(m);
+    }
+
+    public void eliminarMensaje (Long id) {
+        if (mensajeRepo.existsById(id)) {
+            mensajeRepo.deleteById(id);
+        } else {
+            throw new EntidadNoEncontradaException();
+        }
+    }
+
+
+    // NO EXISTE UN PUT DE MENSAJE -> SE PUEDE COMPROBAR EN LA OPEN API DEL CV
+}

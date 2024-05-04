@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: es.uma.informatica.practica3.Practica3ApplicationTests$BaseDatosNoVacia
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.32 s - in es.uma.informatica.practica3.Practica3ApplicationTests$BaseDatosNoVacia
+es.uma.informatica.practica3.Practica3ApplicationTests$BaseDatosNoVacia.correctoNumeroDeIngredientes  Time elapsed: 0.067 s
+es.uma.informatica.practica3.Practica3ApplicationTests$BaseDatosNoVacia.devuelveListaVaciaProductos  Time elapsed: 0.058 s
+es.uma.informatica.practica3.Practica3ApplicationTests$BaseDatosNoVacia.productoConcreto  Time elapsed: 0.064 s
+es.uma.informatica.practica3.Practica3ApplicationTests$BaseDatosNoVacia.eliminarIngrediente  Time elapsed: 0.071 s
+es.uma.informatica.practica3.Practica3ApplicationTests$BaseDatosNoVacia.correctoConIngredienteConcreto  Time elapsed: 0.049 s
+es.uma.informatica.practica3.Practica3ApplicationTests$BaseDatosNoVacia.actualizarIngrediente  Time elapsed: 0.069 s
+es.uma.informatica.practica3.Practica3ApplicationTests$BaseDatosNoVacia.errorConIngredienteConcreto  Time elapsed: 0.043 s
+es.uma.informatica.practica3.Practica3ApplicationTests$BaseDatosNoVacia.aniadirProductoLista  Time elapsed: 0.057 s

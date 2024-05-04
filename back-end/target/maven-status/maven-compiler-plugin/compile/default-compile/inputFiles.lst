@@ -1,0 +1,13 @@
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/REST/codigo-estudiantes/src/main/java/es/uma/informatica/practica3/entidades/Producto.java
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/REST/codigo-estudiantes/src/main/java/es/uma/informatica/practica3/servicios/ProductoServicio.java
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/REST/codigo-estudiantes/src/main/java/es/uma/informatica/practica3/servicios/excepciones/EntidadNoEncontradaException.java
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/REST/codigo-estudiantes/src/main/java/es/uma/informatica/practica3/dtos/Links.java
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/REST/codigo-estudiantes/src/main/java/es/uma/informatica/practica3/Practica3Application.java
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/REST/codigo-estudiantes/src/main/java/es/uma/informatica/practica3/dtos/IngredienteDTO.java
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/REST/codigo-estudiantes/src/main/java/es/uma/informatica/practica3/repositorios/ProductoRepository.java
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/REST/codigo-estudiantes/src/main/java/es/uma/informatica/practica3/servicios/excepciones/EntidadExistenteException.java
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/REST/codigo-estudiantes/src/main/java/es/uma/informatica/practica3/controladores/ProductoRest.java
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/REST/codigo-estudiantes/src/main/java/es/uma/informatica/practica3/controladores/IngredienteRest.java
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/REST/codigo-estudiantes/src/main/java/es/uma/informatica/practica3/entidades/Ingrediente.java
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/REST/codigo-estudiantes/src/main/java/es/uma/informatica/practica3/repositorios/IngredienteRepository.java
+/home/javimp2003/UMA3eroFiles/Sistemas de Información para Internet/REST/codigo-estudiantes/src/main/java/es/uma/informatica/practica3/dtos/ProductoDTO.java

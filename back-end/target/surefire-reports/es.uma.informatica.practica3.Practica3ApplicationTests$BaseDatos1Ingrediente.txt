@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: es.uma.informatica.practica3.Practica3ApplicationTests$BaseDatos1Ingrediente
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.138 s - in es.uma.informatica.practica3.Practica3ApplicationTests$BaseDatos1Ingrediente
+es.uma.informatica.practica3.Practica3ApplicationTests.testGlobal  Time elapsed: 1.419 s
+es.uma.informatica.practica3.Practica3ApplicationTests$BaseDatos1Ingrediente.eliminarIngrediente  Time elapsed: 0.817 s
+es.uma.informatica.practica3.Practica3ApplicationTests$BaseDatos1Ingrediente.aniadirExistente  Time elapsed: 0.135 s
