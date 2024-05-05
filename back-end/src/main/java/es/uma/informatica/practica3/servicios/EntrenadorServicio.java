@@ -31,10 +31,10 @@ public class EntrenadorServicio {
         return entrenadorRepo.findByIdCentro(idCentro);
     }
 
-    public Entrenador obtenerEntrenador (Long id) {
-        var trainer = entrenadorRepo.findById(id);
-        if (trainer.isPresent()) {
-            return trainer.get();
+    public Optional<Entrenador> obtenerEntrenador (Long id) {
+        Optional<Entrenador> entrenador = this.entrenadorRepo.findById(id);
+        if (entrenador.isPresent()) {
+            return entrenador;
         } else {
             throw new EntidadNoEncontradaException();
         }
@@ -44,6 +44,7 @@ public class EntrenadorServicio {
         if (entrenadorRepo.existsById(ent.getId())) {
             throw new EntidadExistenteException();
         }
+        // Para buscar los mensajes asociados a él en la base de datos.
         refrescarMensajes(ent);
         return entrenadorRepo.save(ent);
     }

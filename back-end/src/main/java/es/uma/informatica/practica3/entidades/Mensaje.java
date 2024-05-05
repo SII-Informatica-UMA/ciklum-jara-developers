@@ -12,7 +12,6 @@ import jakarta.persistence.*;
 public abstract class Mensaje {
 
     @ManyToOne
-    @JoinColumn(foreignKey = @ForeignKey(name = "entrenador_mensaje_fk"))
     private Entrenador entrenador;
 
     private String asunto;
