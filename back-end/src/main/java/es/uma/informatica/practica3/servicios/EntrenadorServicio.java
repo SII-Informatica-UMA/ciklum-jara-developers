@@ -11,7 +11,6 @@ import es.uma.informatica.practica3.entidades.Entrenador;
 import es.uma.informatica.practica3.entidades.Mensaje;
 import es.uma.informatica.practica3.repositorios.EntrenadorRepository;
 import es.uma.informatica.practica3.repositorios.MensajeRepository;
-import es.uma.informatica.practica3.servicios.excepciones.EntidadExistenteException;
 import es.uma.informatica.practica3.servicios.excepciones.EntidadNoEncontradaException;
 
 @Service
@@ -41,20 +40,19 @@ public class EntrenadorServicio {
     }
 
     public Entrenador aniadirEntrenador (Entrenador ent) {
-        if (entrenadorRepo.existsById(ent.getId())) {
-            throw new EntidadExistenteException();
-        }
         // Para buscar los mensajes asociados a él en la base de datos.
         refrescarMensajes(ent);
-        return entrenadorRepo.save(ent);
+        return (Entrenador) entrenadorRepo.save(ent);
     }
 
     public void refrescarMensajes (Entrenador ent) {
-        var mensajesEnContexto = ent.getMensajes().stream()
-			.map(men -> refrescaMensaje(men)
-							.orElseThrow(() -> new EntidadNoEncontradaException()))
-			.collect(Collectors.toList());
-		ent.setMensajes(mensajesEnContexto);
+        if (ent.getMensajes() != null) {
+            var mensajesEnContexto = ent.getMensajes()
+                                        .stream()
+                                        .map(men -> refrescaMensaje(men).orElseThrow(() -> new EntidadNoEncontradaException()))
+                                        .collect(Collectors.toList());
+		    ent.setMensajes(mensajesEnContexto);
+        }
     }
 
     private Optional<Mensaje> refrescaMensaje (Mensaje mensj) {
@@ -85,23 +83,23 @@ public class EntrenadorServicio {
         return mensajeRepo.findByEntrenadorId(idEntr);
     }
 
-    public Mensaje obtenerMensaje (Long id) {
-        var mens = mensajeRepo.findById(id);
+    public Mensaje aniadirMensajeAsignado (Long idEntrenador, Mensaje mensaje) {
+        if (this.entrenadorRepo.findById(idEntrenador).isEmpty())
+          throw new EntidadNoEncontradaException();
+        mensaje.setIdMensaje(null);
+        mensaje.setEntrenador(this.entrenadorRepo.findById(idEntrenador).get());
+        return this.mensajeRepo.save(mensaje);
+    }
+
+    public Optional<Mensaje> obtenerMensaje (Long id) {
+        Optional<Mensaje> mens = mensajeRepo.findById(id);
         if (mens.isPresent()) {
-            return mens.get();
+            return mens;
         } else {
             throw new EntidadNoEncontradaException();
         }
     }
-
-    public Mensaje aniadirMensaje (Long idEntrenador, Mensaje m) {
-        if (entrenadorRepo.findById(idEntrenador).isEmpty())
-            throw new EntidadNoEncontradaException(); 
-        m.setIdMensaje(null);
-        m.setEntrenador(entrenadorRepo.findById(idEntrenador).get());
-        return mensajeRepo.save(m);
-    }
-
+    
     public void eliminarMensaje (Long id) {
         if (mensajeRepo.existsById(id)) {
             mensajeRepo.deleteById(id);
@@ -109,7 +107,6 @@ public class EntrenadorServicio {
             throw new EntidadNoEncontradaException();
         }
     }
-
 
     // NO EXISTE UN PUT DE MENSAJE -> SE PUEDE COMPROBAR EN LA OPEN API DEL CV
 }

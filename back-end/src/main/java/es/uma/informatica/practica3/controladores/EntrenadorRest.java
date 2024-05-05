@@ -8,8 +8,11 @@ import es.uma.informatica.practica3.servicios.excepciones.EntidadNoEncontradaExc
 
 import java.net.URI;
 import java.util.List;
-
+import java.util.Optional;
 import java.util.function.Function;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +34,9 @@ public class EntrenadorRest {
 
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
+    @Operation(description = "Obtener la lista de entrenadores asociados a un centro",
+                responses = {@ApiResponse(responseCode = "200", description = "Devuelve la lista de entrenadores"),
+                            @ApiResponse(responseCode = "403", description = "Acceso no autorizado")})
     public List<EntrenadorDTO> obtenerEntrenadores (@RequestParam(value = "centro", required = true) Long centroId) {
         return this.servicioEntrenadores.obtenerEntrenadores(centroId).stream()
         .map(EntrenadorDTO::fromEntity)
@@ -38,13 +44,19 @@ public class EntrenadorRest {
     }
 
     @GetMapping({"/{idEntrenador}"})
+    @Operation(description = "Obtener un entrenador concreto por su identificador",
+                responses = {@ApiResponse(responseCode = "200", description = "El entrenador existe"),
+                            @ApiResponse(responseCode = "404", description = "El entrenador no existe")})
     public ResponseEntity<EntrenadorDTO> getEntrenadorConcreto (@PathVariable Long idEntrenador) {
         return ResponseEntity.of(this.servicioEntrenadores.obtenerEntrenador(idEntrenador)
-            .map(EntrenadorDTO::fromEntity));
+                                    .map(EntrenadorDTO::fromEntity));
     }
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
+    @Operation(description = "Crear un nuevo entrenador",
+                responses = {@ApiResponse(responseCode = "201", description = "El entrenador se crea correctamente"),
+                            @ApiResponse(responseCode = "403", description = "Acceso no autorizado")})
     public ResponseEntity<EntrenadorDTO> aniadirEntrenador (@RequestParam(value = "centro", required = true) Long centroId, @RequestBody EntrenadorNuevoDTO entrenador, UriComponentsBuilder uriBuilder) {
         Entrenador newTrainer = entrenador.toEntity();
         newTrainer.setId(null);
@@ -63,11 +75,16 @@ public class EntrenadorRest {
     }
 
     @PutMapping({"/{idEntrenador}"})
+    @Operation(description = "Actualizar un entrenador",
+                responses = {@ApiResponse(responseCode = "200", description = "El entrenador se ha actualizado"),
+                            @ApiResponse(responseCode = "403", description = "Acceso no autorizado")})
     public EntrenadorDTO actualizarEntrenador (@PathVariable Long idEntrenador, @RequestBody EntrenadorDTO entrenador) {
-        if (servicioEntrenadores.obtenerEntrenador(idEntrenador).isPresent()) {
+        Optional<Entrenador> condTrainer = servicioEntrenadores.obtenerEntrenador(idEntrenador);
+        if (condTrainer.isPresent()) {
             entrenador.setId(idEntrenador);
-            Entrenador newTrainer = this.servicioEntrenadores.actualizarEntrenador(entrenador.toEntity());
-            return EntrenadorDTO.fromEntity(newTrainer);
+            Entrenador auxTrainer = entrenador.toEntity();
+            auxTrainer.setIdCentro(condTrainer.get().getIdCentro());
+            return EntrenadorDTO.fromEntity(this.servicioEntrenadores.actualizarEntrenador(auxTrainer));
         } else {
             // Es un poco redundate, pero no se entonces que devolver aqui...
             throw new EntidadNoEncontradaException();
@@ -75,6 +92,9 @@ public class EntrenadorRest {
     }
 
     @DeleteMapping({"/{idEntrenador}"})
+    @Operation(description = "Elimina el entrenador.",
+                responses = {@ApiResponse(responseCode = "200", description = "El entrenador se ha elminado"),
+                            @ApiResponse(responseCode = "404", description = "El entrenador no existe")})
     public void eliminarEntrenador (@PathVariable Long idEntrenador) {
         if (servicioEntrenadores.obtenerEntrenador(idEntrenador).isPresent()) {
             this.servicioEntrenadores.eliminarEntrenador(idEntrenador);

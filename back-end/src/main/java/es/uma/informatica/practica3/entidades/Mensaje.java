@@ -9,7 +9,7 @@ import java.util.Objects;
 import jakarta.persistence.*;
 
 @Entity
-public abstract class Mensaje {
+public class Mensaje {
 
     @ManyToOne
     private Entrenador entrenador;
