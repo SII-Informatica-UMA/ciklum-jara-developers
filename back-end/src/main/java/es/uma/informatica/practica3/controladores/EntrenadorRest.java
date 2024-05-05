@@ -58,6 +58,7 @@ public class EntrenadorRest {
                 responses = {@ApiResponse(responseCode = "201", description = "El entrenador se crea correctamente"),
                             @ApiResponse(responseCode = "403", description = "Acceso no autorizado")})
     public ResponseEntity<EntrenadorDTO> aniadirEntrenador (@RequestParam(value = "centro", required = true) Long centroId, @RequestBody EntrenadorNuevoDTO entrenador, UriComponentsBuilder uriBuilder) {
+        System.out.println("HOLA HE ENTRADO AQUI!!!");
         Entrenador newTrainer = entrenador.toEntity();
         newTrainer.setId(null);
         newTrainer.setIdCentro(centroId);

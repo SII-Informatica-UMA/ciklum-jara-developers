@@ -25,6 +25,10 @@ public class EntrenadorDTO extends EntrenadorNuevoDTO {
         this.id = id;
     }
 
+    public EntrenadorDTO (Long id) {
+        this.id = id;
+    }
+
     public static EntrenadorDTO fromEntity(Entrenador entrenador) {
         EntrenadorDTO aDevolver = new EntrenadorDTO();
         aDevolver.setId(entrenador.getId());

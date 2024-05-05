@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EntrenadorRest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">practica3</a> &gt; <a href="index.source.html" class="el_package">es.uma.informatica.practica3.controladores</a> &gt; <span class="el_source">EntrenadorRest.java</span></div><h1>EntrenadorRest.java</h1><pre class="source lang-java linenums">package es.uma.informatica.practica3.controladores;
+
+import es.uma.informatica.practica3.dtos.EntrenadorDTO;
+import es.uma.informatica.practica3.dtos.EntrenadorNuevoDTO;
+import es.uma.informatica.practica3.entidades.Entrenador;
+import es.uma.informatica.practica3.servicios.EntrenadorServicio;
+import es.uma.informatica.practica3.servicios.excepciones.EntidadNoEncontradaException;
+
+import java.net.URI;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Function;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
+
+@RestController
+@CrossOrigin
+@RequestMapping(&quot;/entrenador&quot;)
+public class EntrenadorRest {
+    private EntrenadorServicio servicioEntrenadores;
+
+<span class="fc" id="L29">    public EntrenadorRest (EntrenadorServicio servicioEntrenadores) {</span>
+<span class="fc" id="L30">        this.servicioEntrenadores = servicioEntrenadores;</span>
+<span class="fc" id="L31">    }</span>
+
+    // Para mirar los RequestParam y los RequestBody es MUY UTIL mirar la OpenAPI -&gt; aparece tal cual
+
+    @GetMapping
+    @ResponseStatus(code = HttpStatus.OK)
+    @Operation(description = &quot;Obtener la lista de entrenadores asociados a un centro&quot;,
+                responses = {@ApiResponse(responseCode = &quot;200&quot;, description = &quot;Devuelve la lista de entrenadores&quot;),
+                            @ApiResponse(responseCode = &quot;403&quot;, description = &quot;Acceso no autorizado&quot;)})
+    public List&lt;EntrenadorDTO&gt; obtenerEntrenadores (@RequestParam(value = &quot;centro&quot;, required = true) Long centroId) {
+<span class="nc" id="L41">        return this.servicioEntrenadores.obtenerEntrenadores(centroId).stream()</span>
+<span class="nc" id="L42">        .map(EntrenadorDTO::fromEntity)</span>
+<span class="nc" id="L43">        .toList();</span>
+    }
+
+    @GetMapping({&quot;/{idEntrenador}&quot;})
+    @Operation(description = &quot;Obtener un entrenador concreto por su identificador&quot;,
+                responses = {@ApiResponse(responseCode = &quot;200&quot;, description = &quot;El entrenador existe&quot;),
+                            @ApiResponse(responseCode = &quot;404&quot;, description = &quot;El entrenador no existe&quot;)})
+    public ResponseEntity&lt;EntrenadorDTO&gt; getEntrenadorConcreto (@PathVariable Long idEntrenador) {
+<span class="nc" id="L51">        return ResponseEntity.of(this.servicioEntrenadores.obtenerEntrenador(idEntrenador)</span>
+<span class="nc" id="L52">                                    .map(EntrenadorDTO::fromEntity));</span>
+    }
+
+    @PostMapping
+    @ResponseStatus(code = HttpStatus.CREATED)
+    @Operation(description = &quot;Crear un nuevo entrenador&quot;,
+                responses = {@ApiResponse(responseCode = &quot;201&quot;, description = &quot;El entrenador se crea correctamente&quot;),
+                            @ApiResponse(responseCode = &quot;403&quot;, description = &quot;Acceso no autorizado&quot;)})
+    public ResponseEntity&lt;EntrenadorDTO&gt; aniadirEntrenador (@RequestParam(value = &quot;centro&quot;, required = true) Long centroId, @RequestBody EntrenadorNuevoDTO entrenador, UriComponentsBuilder uriBuilder) {
+<span class="fc" id="L61">        System.out.println(&quot;HOLA HE ENTRADO AQUI!!!&quot;);</span>
+<span class="fc" id="L62">        Entrenador newTrainer = entrenador.toEntity();</span>
+<span class="fc" id="L63">        newTrainer.setId(null);</span>
+<span class="fc" id="L64">        newTrainer.setIdCentro(centroId);</span>
+<span class="fc" id="L65">        newTrainer = this.servicioEntrenadores.aniadirEntrenador(newTrainer);</span>
+<span class="fc" id="L66">        return ResponseEntity.created(UriGenerator(uriBuilder.build()).apply(newTrainer))</span>
+<span class="fc" id="L67">                                        .body(EntrenadorDTO.fromEntity(newTrainer));</span>
+    }
+
+    private Function&lt;Entrenador, URI&gt; UriGenerator (UriComponents uriBuilder) {
+<span class="fc" id="L71">        return trainer -&gt; UriComponentsBuilder.newInstance().uriComponents(uriBuilder)</span>
+<span class="fc" id="L72">                            .path(&quot;/entrenador&quot;)</span>
+<span class="fc" id="L73">                            .path(String.format(&quot;/%d&quot;, trainer.getId()))</span>
+<span class="fc" id="L74">                            .build()</span>
+<span class="fc" id="L75">                            .toUri();</span>
+    }
+
+    @PutMapping({&quot;/{idEntrenador}&quot;})
+    @Operation(description = &quot;Actualizar un entrenador&quot;,
+                responses = {@ApiResponse(responseCode = &quot;200&quot;, description = &quot;El entrenador se ha actualizado&quot;),
+                            @ApiResponse(responseCode = &quot;403&quot;, description = &quot;Acceso no autorizado&quot;)})
+    public EntrenadorDTO actualizarEntrenador (@PathVariable Long idEntrenador, @RequestBody EntrenadorDTO entrenador) {
+<span class="nc" id="L83">        Optional&lt;Entrenador&gt; condTrainer = servicioEntrenadores.obtenerEntrenador(idEntrenador);</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">        if (condTrainer.isPresent()) {</span>
+<span class="nc" id="L85">            entrenador.setId(idEntrenador);</span>
+<span class="nc" id="L86">            Entrenador auxTrainer = entrenador.toEntity();</span>
+<span class="nc" id="L87">            auxTrainer.setIdCentro(condTrainer.get().getIdCentro());</span>
+<span class="nc" id="L88">            return EntrenadorDTO.fromEntity(this.servicioEntrenadores.actualizarEntrenador(auxTrainer));</span>
+        } else {
+            // Es un poco redundate, pero no se entonces que devolver aqui...
+<span class="nc" id="L91">            throw new EntidadNoEncontradaException();</span>
+        }
+    }
+
+    @DeleteMapping({&quot;/{idEntrenador}&quot;})
+    @Operation(description = &quot;Elimina el entrenador.&quot;,
+                responses = {@ApiResponse(responseCode = &quot;200&quot;, description = &quot;El entrenador se ha elminado&quot;),
+                            @ApiResponse(responseCode = &quot;404&quot;, description = &quot;El entrenador no existe&quot;)})
+    public void eliminarEntrenador (@PathVariable Long idEntrenador) {
+<span class="nc bnc" id="L100" title="All 2 branches missed.">        if (servicioEntrenadores.obtenerEntrenador(idEntrenador).isPresent()) {</span>
+<span class="nc" id="L101">            this.servicioEntrenadores.eliminarEntrenador(idEntrenador);</span>
+<span class="nc" id="L102">        } else {</span>
+<span class="nc" id="L103">            throw new EntidadNoEncontradaException();</span>
+        }
+<span class="nc" id="L105">    }</span>
+
+
+    /* Esta anotación se utiliza para indicar que el método siguiente manejará cualquier excepción del
+    tipo EntrenadorNoExisteException que sea lanzada dentro del controlador o los métodos del controlador
+    anidados. */
+    @ExceptionHandler({EntidadNoEncontradaException.class})
+    @ResponseStatus(code = HttpStatus.NOT_FOUND)
+<span class="fc" id="L113">    public void tratamientoNotFoundException () {}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

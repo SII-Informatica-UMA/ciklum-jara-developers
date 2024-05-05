@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EntrenadorNuevoDTO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">practica3</a> &gt; <a href="index.source.html" class="el_package">es.uma.informatica.practica3.dtos</a> &gt; <span class="el_source">EntrenadorNuevoDTO.java</span></div><h1>EntrenadorNuevoDTO.java</h1><pre class="source lang-java linenums">package es.uma.informatica.practica3.dtos;
+
+import java.util.Date;
+
+import es.uma.informatica.practica3.entidades.Entrenador;
+
+public class EntrenadorNuevoDTO {
+    private Long idUsuario;
+  
+    private String telefono;
+    
+    private String direccion;
+    
+    private String dni;
+    
+    private Date fechaNacimiento;
+    
+    private Date fechaAlta;
+    
+    private Date fechaBaja;
+    
+    private String especialidad;
+    
+    private String titulacion;
+    
+    private String experiencia;
+    
+    private String observaciones;
+    
+    public void setIdUsuario(Long idUsuario) {
+<span class="fc" id="L31">        this.idUsuario = idUsuario;</span>
+<span class="fc" id="L32">    }</span>
+    
+    public void setTelefono(String telefono) {
+<span class="fc" id="L35">        this.telefono = telefono;</span>
+<span class="fc" id="L36">    }</span>
+    
+    public void setDireccion(String direccion) {
+<span class="fc" id="L39">        this.direccion = direccion;</span>
+<span class="fc" id="L40">    }</span>
+    
+    public void setDni(String dni) {
+<span class="fc" id="L43">        this.dni = dni;</span>
+<span class="fc" id="L44">    }</span>
+    
+    public void setFechaNacimiento(Date fechaNacimiento) {
+<span class="fc" id="L47">        this.fechaNacimiento = fechaNacimiento;</span>
+<span class="fc" id="L48">    }</span>
+    
+    public void setFechaAlta(Date fechaAlta) {
+<span class="fc" id="L51">        this.fechaAlta = fechaAlta;</span>
+<span class="fc" id="L52">    }</span>
+    
+    public void setFechaBaja(Date fechaBaja) {
+<span class="fc" id="L55">        this.fechaBaja = fechaBaja;</span>
+<span class="fc" id="L56">    }</span>
+    
+    public void setEspecialidad(String especialidad) {
+<span class="fc" id="L59">        this.especialidad = especialidad;</span>
+<span class="fc" id="L60">    }</span>
+    
+    public void setTitulacion(String titulacion) {
+<span class="fc" id="L63">        this.titulacion = titulacion;</span>
+<span class="fc" id="L64">    }</span>
+    
+    public void setExperiencia(String experiencia) {
+<span class="fc" id="L67">        this.experiencia = experiencia;</span>
+<span class="fc" id="L68">    }</span>
+    
+    public void setObservaciones(String observaciones) {
+<span class="fc" id="L71">        this.observaciones = observaciones;</span>
+<span class="fc" id="L72">    }</span>
+    
+<span class="fc" id="L74">    public EntrenadorNuevoDTO() {}</span>
+    
+    public EntrenadorNuevoDTO(Long idUsuario, String telefono, String direccion,
+                                String dni, Date fechaNacimiento, Date fechaAlta, Date fechaBaja,
+                                String especialidad, String titulacion, String experiencia,
+<span class="nc" id="L79">                                String observaciones) {</span>
+<span class="nc" id="L80">        this.idUsuario = idUsuario;</span>
+<span class="nc" id="L81">        this.telefono = telefono;</span>
+<span class="nc" id="L82">        this.direccion = direccion;</span>
+<span class="nc" id="L83">        this.dni = dni;</span>
+<span class="nc" id="L84">        this.fechaNacimiento = fechaNacimiento;</span>
+<span class="nc" id="L85">        this.fechaAlta = fechaAlta;</span>
+<span class="nc" id="L86">        this.fechaBaja = fechaBaja;</span>
+<span class="nc" id="L87">        this.especialidad = especialidad;</span>
+<span class="nc" id="L88">        this.titulacion = titulacion;</span>
+<span class="nc" id="L89">        this.experiencia = experiencia;</span>
+<span class="nc" id="L90">        this.observaciones = observaciones;</span>
+<span class="nc" id="L91">    }</span>
+    
+    public Long getIdUsuario() {
+<span class="fc" id="L94">        return this.idUsuario;</span>
+    }
+    
+    public String getTelefono() {
+<span class="fc" id="L98">        return this.telefono;</span>
+    }
+    
+    public String getDireccion() {
+<span class="fc" id="L102">        return this.direccion;</span>
+    }
+    
+    public String getDni() {
+<span class="fc" id="L106">        return this.dni;</span>
+    }
+    
+    public Date getFechaNacimiento() {
+<span class="fc" id="L110">        return this.fechaNacimiento;</span>
+    }
+    
+    public Date getFechaAlta() {
+<span class="fc" id="L114">        return this.fechaAlta;</span>
+    }
+    
+    public Date getFechaBaja() {
+<span class="fc" id="L118">        return this.fechaBaja;</span>
+    }
+    
+    public String getEspecialidad() {
+<span class="fc" id="L122">        return this.especialidad;</span>
+    }
+    
+    public String getTitulacion() {
+<span class="fc" id="L126">        return this.titulacion;</span>
+    }
+    
+    public String getExperiencia() {
+<span class="fc" id="L130">        return this.experiencia;</span>
+    }
+    
+    public String getObservaciones() {
+<span class="fc" id="L134">        return this.observaciones;</span>
+    }
+    
+    public static EntrenadorNuevoDTO fromEntity(Entrenador entrenador) {
+<span class="nc" id="L138">        EntrenadorNuevoDTO aDevolver = new EntrenadorNuevoDTO();</span>
+<span class="nc" id="L139">        aDevolver.setIdUsuario(entrenador.getIdUsuario());</span>
+<span class="nc" id="L140">        aDevolver.setTelefono(entrenador.getTelefono());</span>
+<span class="nc" id="L141">        aDevolver.setDireccion(entrenador.getDireccion());</span>
+<span class="nc" id="L142">        aDevolver.setDni(entrenador.getDni());</span>
+<span class="nc" id="L143">        aDevolver.setFechaNacimiento(entrenador.getFechaNacimiento());</span>
+<span class="nc" id="L144">        aDevolver.setFechaAlta(entrenador.getFechaAlta());</span>
+<span class="nc" id="L145">        aDevolver.setFechaBaja(entrenador.getFechaBaja());</span>
+<span class="nc" id="L146">        aDevolver.setEspecialidad(entrenador.getEspecialidad());</span>
+<span class="nc" id="L147">        aDevolver.setObservaciones(entrenador.getObservaciones());</span>
+<span class="nc" id="L148">        aDevolver.setTitulacion(entrenador.getTitulacion());</span>
+<span class="nc" id="L149">        aDevolver.setExperiencia(entrenador.getExperiencia());</span>
+<span class="nc" id="L150">        return aDevolver;</span>
+    }
+    
+    public Entrenador toEntity() {
+<span class="fc" id="L154">        Entrenador aDevolver = new Entrenador();</span>
+<span class="fc" id="L155">        aDevolver.setIdUsuario(this.idUsuario);</span>
+<span class="fc" id="L156">        aDevolver.setTelefono(this.telefono);</span>
+<span class="fc" id="L157">        aDevolver.setDireccion(this.direccion);</span>
+<span class="fc" id="L158">        aDevolver.setDni(this.dni);</span>
+<span class="fc" id="L159">        aDevolver.setFechaNacimiento(this.fechaNacimiento);</span>
+<span class="fc" id="L160">        aDevolver.setFechaAlta(this.fechaAlta);</span>
+<span class="fc" id="L161">        aDevolver.setFechaBaja(this.fechaBaja);</span>
+<span class="fc" id="L162">        aDevolver.setEspecialidad(this.especialidad);</span>
+<span class="fc" id="L163">        aDevolver.setTitulacion(this.titulacion);</span>
+<span class="fc" id="L164">        aDevolver.setExperiencia(this.experiencia);</span>
+<span class="fc" id="L165">        aDevolver.setObservaciones(this.observaciones);</span>
+<span class="fc" id="L166">        return aDevolver;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

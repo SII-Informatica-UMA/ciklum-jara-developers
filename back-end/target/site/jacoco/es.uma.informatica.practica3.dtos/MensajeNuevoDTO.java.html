@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MensajeNuevoDTO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">practica3</a> &gt; <a href="index.source.html" class="el_package">es.uma.informatica.practica3.dtos</a> &gt; <span class="el_source">MensajeNuevoDTO.java</span></div><h1>MensajeNuevoDTO.java</h1><pre class="source lang-java linenums">package es.uma.informatica.practica3.dtos;
+
+import es.uma.informatica.practica3.entidades.Mensaje;
+
+import java.util.List;
+
+public class MensajeNuevoDTO {
+    
+    private List&lt;DestinatarioDTO&gt; destinatarios;
+    
+    private List&lt;DestinatarioDTO&gt; copia;
+    
+    private List&lt;DestinatarioDTO&gt; copiaOculta;
+    
+    private String asunto;
+
+    private DestinatarioDTO remitente;
+    
+    private String contenido;
+    
+    public List&lt;DestinatarioDTO&gt; getDestinatarios() {
+<span class="nc" id="L22">        return destinatarios;</span>
+    }
+
+    public MensajeNuevoDTO(List&lt;DestinatarioDTO&gt; destinatarios, List&lt;DestinatarioDTO&gt; copia,
+<span class="nc" id="L26">            List&lt;DestinatarioDTO&gt; copiaOculta, String asunto, DestinatarioDTO remitente, String contenido) {</span>
+<span class="nc" id="L27">        this.destinatarios = destinatarios;</span>
+<span class="nc" id="L28">        this.copia = copia;</span>
+<span class="nc" id="L29">        this.copiaOculta = copiaOculta;</span>
+<span class="nc" id="L30">        this.asunto = asunto;</span>
+<span class="nc" id="L31">        this.remitente = remitente;</span>
+<span class="nc" id="L32">        this.contenido = contenido;</span>
+<span class="nc" id="L33">    }</span>
+
+<span class="nc" id="L35">    public MensajeNuevoDTO () {}</span>
+
+    public void setDestinatarios(List&lt;DestinatarioDTO&gt; destinatarios) {
+<span class="nc" id="L38">        this.destinatarios = destinatarios;</span>
+<span class="nc" id="L39">    }</span>
+
+    public List&lt;DestinatarioDTO&gt; getCopia() {
+<span class="nc" id="L42">        return copia;</span>
+    }
+
+    public void setCopia(List&lt;DestinatarioDTO&gt; copia) {
+<span class="nc" id="L46">        this.copia = copia;</span>
+<span class="nc" id="L47">    }</span>
+    
+    public List&lt;DestinatarioDTO&gt; getCopiaOculta() {
+<span class="nc" id="L50">        return copiaOculta;</span>
+    }
+
+    public void setCopiaOculta(List&lt;DestinatarioDTO&gt; copiaOculta) {
+<span class="nc" id="L54">        this.copiaOculta = copiaOculta;</span>
+<span class="nc" id="L55">    }</span>
+
+    public String getAsunto() {
+<span class="nc" id="L58">        return asunto;</span>
+    }
+
+    public void setAsunto(String asunto) {
+<span class="nc" id="L62">        this.asunto = asunto;</span>
+<span class="nc" id="L63">    }</span>
+
+    public DestinatarioDTO getRemitente() {
+<span class="nc" id="L66">        return remitente;</span>
+    }
+
+    public void setRemitente(DestinatarioDTO remitente) {
+<span class="nc" id="L70">        this.remitente = remitente;</span>
+<span class="nc" id="L71">    }</span>
+    
+    public String getContenido() {
+<span class="nc" id="L74">        return contenido;</span>
+    }
+    
+    public void setContenido(String contenido) {
+<span class="nc" id="L78">        this.contenido = contenido;</span>
+<span class="nc" id="L79">    }</span>
+
+    public Mensaje toEntity() {
+<span class="nc" id="L82">        Mensaje aDevolver = new Mensaje();</span>
+<span class="nc" id="L83">        aDevolver.setAsunto(this.asunto);</span>
+<span class="nc" id="L84">        aDevolver.setDestinatarios(DestinatarioDTO.toEntity(this.destinatarios));</span>
+<span class="nc" id="L85">        aDevolver.setCopia(DestinatarioDTO.toEntity(this.copia));</span>
+<span class="nc" id="L86">        aDevolver.setCopiaOculta(DestinatarioDTO.toEntity(this.copiaOculta));</span>
+<span class="nc" id="L87">        aDevolver.setRemitente(this.remitente.toEntity());</span>
+<span class="nc" id="L88">        aDevolver.setContenido(this.contenido);</span>
+<span class="nc" id="L89">        return aDevolver;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

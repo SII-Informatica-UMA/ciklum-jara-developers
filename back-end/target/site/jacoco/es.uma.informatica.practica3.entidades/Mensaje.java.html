@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Mensaje.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">practica3</a> &gt; <a href="index.source.html" class="el_package">es.uma.informatica.practica3.entidades</a> &gt; <span class="el_source">Mensaje.java</span></div><h1>Mensaje.java</h1><pre class="source lang-java linenums">package es.uma.informatica.practica3.entidades;
+
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import java.util.List;
+import java.util.Objects;
+
+import jakarta.persistence.*;
+
+@Entity
+public class Mensaje {
+
+    @ManyToOne
+    private Entrenador entrenador;
+
+    private String asunto;
+
+    @ElementCollection
+    @CollectionTable(foreignKey = @ForeignKey(name = &quot;mensaje_destinatario_fk&quot;),
+                    name = &quot;destinatarios&quot;,
+                    joinColumns = @JoinColumn(name = &quot;mensaje_id&quot;, referencedColumnName = &quot;idMensaje&quot;))
+    private List&lt;Destinatario&gt; destinatarios;
+
+    @ElementCollection
+    @CollectionTable(foreignKey = @ForeignKey(name = &quot;mensaje_copia_fk&quot;),
+                    name = &quot;copia&quot;,
+                    joinColumns = @JoinColumn(name = &quot;mensaje_id&quot;, referencedColumnName = &quot;idMensaje&quot;))
+    private List&lt;Destinatario&gt; copia; 
+
+    @ElementCollection
+    @CollectionTable(foreignKey = @ForeignKey(name = &quot;mensaje_copiaoculta_fk&quot;),
+                    name = &quot;copia_oculta&quot;,
+                    joinColumns = @JoinColumn(name = &quot;mensaje_id&quot;, referencedColumnName = &quot;idMensaje&quot;))
+    private List&lt;Destinatario&gt; copiaOculta;
+    
+    private Destinatario remitente;
+    
+    private String contenido;
+
+    @Id
+    @GeneratedValue
+    private Long idMensaje;
+  
+    
+<span class="fc" id="L46">    public Mensaje() {}</span>
+    
+<span class="nc" id="L48">    public Mensaje(Entrenador e, Long id, String asunto, List&lt;Destinatario&gt; destinatarios, List&lt;Destinatario&gt; copia, List&lt;Destinatario&gt; copiaOculta, Destinatario remitente, String contenido) {</span>
+<span class="nc" id="L49">        this.entrenador = e;</span>
+<span class="nc" id="L50">        this.idMensaje = id;</span>
+<span class="nc" id="L51">        this.asunto = asunto;</span>
+<span class="nc" id="L52">        this.destinatarios = destinatarios;</span>
+<span class="nc" id="L53">        this.copia = copia;</span>
+<span class="nc" id="L54">        this.copiaOculta = copiaOculta;</span>
+<span class="nc" id="L55">        this.remitente = remitente;</span>
+<span class="nc" id="L56">        this.contenido = contenido;</span>
+<span class="nc" id="L57">    }</span>
+
+    public Entrenador getEntrenador() {
+<span class="nc" id="L60">        return entrenador;</span>
+    }
+
+    public void setEntrenador(Entrenador entrenador) {
+<span class="nc" id="L64">        this.entrenador = entrenador;</span>
+<span class="nc" id="L65">    }</span>
+
+    public String getAsunto() {
+<span class="nc" id="L68">        return asunto;</span>
+    }
+
+    public void setAsunto(String asunto) {
+<span class="nc" id="L72">        this.asunto = asunto;</span>
+<span class="nc" id="L73">    }</span>
+
+    public List&lt;Destinatario&gt; getDestinatarios() {
+<span class="nc" id="L76">        return destinatarios;</span>
+    }
+
+    public void setDestinatarios(List&lt;Destinatario&gt; destinatarios) {
+<span class="nc" id="L80">        this.destinatarios = destinatarios;</span>
+<span class="nc" id="L81">    }</span>
+
+    public List&lt;Destinatario&gt; getCopia() {
+<span class="nc" id="L84">        return copia;</span>
+    }
+
+    public void setCopia(List&lt;Destinatario&gt; copia) {
+<span class="nc" id="L88">        this.copia = copia;</span>
+<span class="nc" id="L89">    }</span>
+
+    public List&lt;Destinatario&gt; getCopiaOculta() {
+<span class="nc" id="L92">        return copiaOculta;</span>
+    }
+
+    public void setCopiaOculta(List&lt;Destinatario&gt; copiaOculta) {
+<span class="nc" id="L96">        this.copiaOculta = copiaOculta;</span>
+<span class="nc" id="L97">    }</span>
+
+    public Destinatario getRemitente() {
+<span class="nc" id="L100">        return remitente;</span>
+    }
+
+    public void setRemitente(Destinatario remitente) {
+<span class="nc" id="L104">        this.remitente = remitente;</span>
+<span class="nc" id="L105">    }</span>
+
+    public String getContenido() {
+<span class="nc" id="L108">        return contenido;</span>
+    }
+
+    public void setContenido(String contenido) {
+<span class="nc" id="L112">        this.contenido = contenido;</span>
+<span class="nc" id="L113">    }</span>
+
+    public Long getIdMensaje() {
+<span class="nc" id="L116">        return idMensaje;</span>
+    }
+
+    public void setIdMensaje(Long idMensaje) {
+<span class="nc" id="L120">        this.idMensaje = idMensaje;</span>
+<span class="nc" id="L121">    }</span>
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L125">        return Objects.hash(idMensaje);</span>
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+<span class="nc bnc" id="L130" title="All 2 branches missed.">        if (this == obj)</span>
+<span class="nc" id="L131">            return true;</span>
+<span class="nc bnc" id="L132" title="All 2 branches missed.">        if (obj == null)</span>
+<span class="nc" id="L133">            return false;</span>
+<span class="nc bnc" id="L134" title="All 2 branches missed.">        if (getClass() != obj.getClass())</span>
+<span class="nc" id="L135">            return false;</span>
+<span class="nc" id="L136">        Mensaje other = (Mensaje) obj;</span>
+<span class="nc bnc" id="L137" title="All 2 branches missed.">        if (idMensaje == null) {</span>
+<span class="nc bnc" id="L138" title="All 2 branches missed.">            if (other.idMensaje != null)</span>
+<span class="nc" id="L139">                return false;</span>
+<span class="nc bnc" id="L140" title="All 2 branches missed.">        } else if (!idMensaje.equals(other.idMensaje))</span>
+<span class="nc" id="L141">            return false;</span>
+<span class="nc" id="L142">        return true;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L147">        return &quot;Mensaje(&quot; + idMensaje + &quot;, &quot; + asunto + &quot;, &quot; + contenido + &quot;, &quot;</span>
+<span class="nc" id="L148">                            + destinatarios.toString() + &quot;)&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

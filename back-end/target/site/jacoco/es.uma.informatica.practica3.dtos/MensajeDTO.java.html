@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MensajeDTO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">practica3</a> &gt; <a href="index.source.html" class="el_package">es.uma.informatica.practica3.dtos</a> &gt; <span class="el_source">MensajeDTO.java</span></div><h1>MensajeDTO.java</h1><pre class="source lang-java linenums">package es.uma.informatica.practica3.dtos;
+
+import es.uma.informatica.practica3.entidades.Mensaje;
+
+import java.util.List;
+
+public class MensajeDTO extends MensajeNuevoDTO {
+
+    private Long idMensaje;
+
+    public void setIdMensaje(Long idMensaje) {
+<span class="nc" id="L12">        this.idMensaje = idMensaje;</span>
+<span class="nc" id="L13">    }</span>
+
+    public Long getIdMensaje() {
+<span class="nc" id="L16">        return idMensaje;</span>
+    }
+
+<span class="nc" id="L19">    public MensajeDTO() {</span>
+        // Constructor defecto
+<span class="nc" id="L21">    }</span>
+
+    public MensajeDTO(List&lt;DestinatarioDTO&gt; destinatarios, List&lt;DestinatarioDTO&gt; copia,
+            List&lt;DestinatarioDTO&gt; copiaOculta, String asunto, DestinatarioDTO remitente, String contenido,
+            Long idMensaje) {
+<span class="nc" id="L26">        super(destinatarios, copia, copiaOculta, asunto, remitente, contenido);</span>
+<span class="nc" id="L27">        this.idMensaje = idMensaje;</span>
+<span class="nc" id="L28">    }</span>
+
+    public static MensajeDTO fromEntity (Mensaje mensaje) {
+<span class="nc" id="L31">        MensajeDTO aDevolver = new MensajeDTO();</span>
+<span class="nc" id="L32">        aDevolver.setAsunto(mensaje.getAsunto());</span>
+<span class="nc" id="L33">        aDevolver.setDestinatarios(DestinatarioDTO.fromEntity(mensaje.getDestinatarios()));</span>
+<span class="nc" id="L34">        aDevolver.setCopia(DestinatarioDTO.fromEntity(mensaje.getCopia()));</span>
+<span class="nc" id="L35">        aDevolver.setCopiaOculta(DestinatarioDTO.fromEntity(mensaje.getCopiaOculta()));</span>
+<span class="nc" id="L36">        aDevolver.setRemitente(DestinatarioDTO.fromEntity(mensaje.getRemitente()));</span>
+<span class="nc" id="L37">        aDevolver.setContenido(mensaje.getContenido());</span>
+<span class="nc" id="L38">        aDevolver.setIdMensaje(mensaje.getIdMensaje());</span>
+<span class="nc" id="L39">        return aDevolver;</span>
+    }
+      
+    public Mensaje toEntity() {
+<span class="nc" id="L43">        Mensaje aDevolver = new Mensaje();</span>
+<span class="nc" id="L44">        aDevolver.setIdMensaje(this.idMensaje);</span>
+<span class="nc" id="L45">        aDevolver.setAsunto(getAsunto());</span>
+<span class="nc" id="L46">        aDevolver.setDestinatarios(DestinatarioDTO.toEntity(getDestinatarios()));</span>
+<span class="nc" id="L47">        aDevolver.setCopia(DestinatarioDTO.toEntity(getCopia()));</span>
+<span class="nc" id="L48">        aDevolver.setCopiaOculta(DestinatarioDTO.toEntity(getCopiaOculta()));</span>
+<span class="nc" id="L49">        aDevolver.setRemitente(getRemitente().toEntity());</span>
+<span class="nc" id="L50">        aDevolver.setContenido(getContenido());</span>
+<span class="nc" id="L51">        return aDevolver;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

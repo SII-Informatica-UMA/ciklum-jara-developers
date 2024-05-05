@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Entrenador.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">practica3</a> &gt; <a href="index.source.html" class="el_package">es.uma.informatica.practica3.entidades</a> &gt; <span class="el_source">Entrenador.java</span></div><h1>Entrenador.java</h1><pre class="source lang-java linenums">package es.uma.informatica.practica3.entidades;
+
+import java.util.Date;
+import java.util.List;
+import java.util.Objects;
+
+import jakarta.persistence.*;
+
+@Entity
+public class Entrenador {
+
+    private Long idUsuario;
+
+    private String telefono;
+
+    private String direccion;
+
+    private String dni;
+
+    @Temporal(TemporalType.DATE)
+    private Date fechaNacimiento;
+
+    @Temporal(TemporalType.DATE)
+    private Date fechaAlta;
+
+    @Temporal(TemporalType.DATE)
+    private Date fechaBaja;
+
+    private String especialidad;
+    
+    private String titulacion;
+    
+    private String experiencia;
+    
+    private String observaciones;
+
+    @OneToMany(mappedBy = &quot;entrenador&quot;)
+    private List&lt;Mensaje&gt; mensajes;
+
+    @Id
+    @GeneratedValue
+    private Long id;
+    
+    private Long idCentro;
+
+
+
+<span class="fc" id="L48">    public Entrenador() {}</span>
+    
+    public Entrenador(Long idUsuario, String telefono, String direccion, String dni, Date fechaNacimiento,
+            Date fechaAlta, Date fechaBaja, String especialidad, String titulacion, String experiencia,
+<span class="nc" id="L52">            String observaciones, Long id, Long idCentro) {</span>
+<span class="nc" id="L53">        this.idUsuario = idUsuario;</span>
+<span class="nc" id="L54">        this.telefono = telefono;</span>
+<span class="nc" id="L55">        this.direccion = direccion;</span>
+<span class="nc" id="L56">        this.dni = dni;</span>
+<span class="nc" id="L57">        this.fechaNacimiento = fechaNacimiento;</span>
+<span class="nc" id="L58">        this.fechaAlta = fechaAlta;</span>
+<span class="nc" id="L59">        this.fechaBaja = fechaBaja;</span>
+<span class="nc" id="L60">        this.especialidad = especialidad;</span>
+<span class="nc" id="L61">        this.titulacion = titulacion;</span>
+<span class="nc" id="L62">        this.experiencia = experiencia;</span>
+<span class="nc" id="L63">        this.observaciones = observaciones;</span>
+<span class="nc" id="L64">        this.id = id;</span>
+<span class="nc" id="L65">        this.idCentro = idCentro;</span>
+<span class="nc" id="L66">    }</span>
+
+    public Long getIdUsuario() {
+<span class="fc" id="L69">        return idUsuario;</span>
+    }
+
+    public String getTelefono() {
+<span class="fc" id="L73">        return telefono;</span>
+    }
+
+    public String getDireccion() {
+<span class="fc" id="L77">        return direccion;</span>
+    }
+
+    public String getDni() {
+<span class="fc" id="L81">        return dni;</span>
+    }
+
+    public Date getFechaNacimiento() {
+<span class="fc" id="L85">        return fechaNacimiento;</span>
+    }
+
+    public Date getFechaAlta() {
+<span class="fc" id="L89">        return fechaAlta;</span>
+    }
+
+    public Date getFechaBaja() {
+<span class="fc" id="L93">        return fechaBaja;</span>
+    }
+
+    public String getEspecialidad() {
+<span class="fc" id="L97">        return especialidad;</span>
+    }
+
+    public String getTitulacion() {
+<span class="fc" id="L101">        return titulacion;</span>
+    }
+
+    public String getExperiencia() {
+<span class="fc" id="L105">        return experiencia;</span>
+    }
+
+    public String getObservaciones() {
+<span class="fc" id="L109">        return observaciones;</span>
+    }
+
+    public Long getId() {
+<span class="fc" id="L113">        return id;</span>
+    }
+
+    public Long getIdCentro() {
+<span class="nc" id="L117">        return idCentro;</span>
+    }
+
+    public List&lt;Mensaje&gt; getMensajes() {
+<span class="fc" id="L121">        return mensajes;</span>
+    }
+
+    public void setIdUsuario(Long idUsuario) {
+<span class="fc" id="L125">        this.idUsuario = idUsuario;</span>
+<span class="fc" id="L126">    }</span>
+
+    public void setTelefono(String telefono) {
+<span class="fc" id="L129">        this.telefono = telefono;</span>
+<span class="fc" id="L130">    }</span>
+
+    public void setDireccion(String direccion) {
+<span class="fc" id="L133">        this.direccion = direccion;</span>
+<span class="fc" id="L134">    }</span>
+
+    public void setDni(String dni) {
+<span class="fc" id="L137">        this.dni = dni;</span>
+<span class="fc" id="L138">    }</span>
+
+    public void setFechaNacimiento(Date fechaNacimiento) {
+<span class="fc" id="L141">        this.fechaNacimiento = fechaNacimiento;</span>
+<span class="fc" id="L142">    }</span>
+
+    public void setFechaAlta(Date fechaAlta) {
+<span class="fc" id="L145">        this.fechaAlta = fechaAlta;</span>
+<span class="fc" id="L146">    }</span>
+
+    public void setFechaBaja(Date fechaBaja) {
+<span class="fc" id="L149">        this.fechaBaja = fechaBaja;</span>
+<span class="fc" id="L150">    }</span>
+
+    public void setEspecialidad(String especialidad) {
+<span class="fc" id="L153">        this.especialidad = especialidad;</span>
+<span class="fc" id="L154">    }</span>
+
+    public void setTitulacion(String titulacion) {
+<span class="fc" id="L157">        this.titulacion = titulacion;</span>
+<span class="fc" id="L158">    }</span>
+
+    public void setExperiencia(String experiencia) {
+<span class="fc" id="L161">        this.experiencia = experiencia;</span>
+<span class="fc" id="L162">    }</span>
+
+    public void setObservaciones(String observaciones) {
+<span class="fc" id="L165">        this.observaciones = observaciones;</span>
+<span class="fc" id="L166">    }</span>
+
+    public void setId(Long id) {
+<span class="fc" id="L169">        this.id = id;</span>
+<span class="fc" id="L170">    }</span>
+
+    public void setIdCentro(Long idCentro) {
+<span class="fc" id="L173">        this.idCentro = idCentro;</span>
+<span class="fc" id="L174">    }</span>
+
+    public void setMensajes(List&lt;Mensaje&gt; mensajes) {
+<span class="nc" id="L177">        this.mensajes = mensajes;</span>
+<span class="nc" id="L178">    }</span>
+
+    @Override
+    public boolean equals(Object obj) {
+<span class="nc bnc" id="L182" title="All 2 branches missed.">        if (this == obj) {</span>
+<span class="nc" id="L183">            return true;</span>
+        }
+<span class="nc bnc" id="L185" title="All 4 branches missed.">        if (obj == null || getClass() != obj.getClass()) {</span>
+<span class="nc" id="L186">            return false;</span>
+        }
+<span class="nc" id="L188">        Entrenador entrenador = (Entrenador) obj;</span>
+<span class="nc bnc" id="L189" title="All 4 branches missed.">        return id != null &amp;&amp; id.equals(entrenador.id);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L194">        return Objects.hash(id);</span>
+    }
+
+
+    @Override
+    public String toString() {
+<span class="nc" id="L200">        return &quot;Entrenador &quot; + id + &quot;\n\t-&gt; Titulacion: &quot; + titulacion +</span>
+                                    &quot;\n\t-&gt; Experiencia: &quot; + experiencia +
+                                    &quot;\n\t-&gt; Telefono: &quot; + telefono;
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
