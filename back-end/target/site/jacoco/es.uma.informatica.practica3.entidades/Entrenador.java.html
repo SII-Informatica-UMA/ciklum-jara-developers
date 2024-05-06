@@ -47,9 +47,9 @@ public class Entrenador {
 
 <span class="fc" id="L48">    public Entrenador() {}</span>
     
-    public Entrenador(Long idUsuario, String telefono, String direccion, String dni, Date fechaNacimiento,
+<span class="nc" id="L50">    public Entrenador(Long idUsuario, String telefono, String direccion, String dni, Date fechaNacimiento,</span>
             Date fechaAlta, Date fechaBaja, String especialidad, String titulacion, String experiencia,
-<span class="nc" id="L52">            String observaciones, Long id, Long idCentro) {</span>
+            String observaciones, Long id, Long idCentro) {
 <span class="nc" id="L53">        this.idUsuario = idUsuario;</span>
 <span class="nc" id="L54">        this.telefono = telefono;</span>
 <span class="nc" id="L55">        this.direccion = direccion;</span>
@@ -114,7 +114,7 @@ public class Entrenador {
     }
 
     public Long getIdCentro() {
-<span class="nc" id="L117">        return idCentro;</span>
+<span class="fc" id="L117">        return idCentro;</span>
     }
 
     public List&lt;Mensaje&gt; getMensajes() {
@@ -197,9 +197,9 @@ public class Entrenador {
 
     @Override
     public String toString() {
-<span class="nc" id="L200">        return &quot;Entrenador &quot; + id + &quot;\n\t-&gt; Titulacion: &quot; + titulacion +</span>
-                                    &quot;\n\t-&gt; Experiencia: &quot; + experiencia +
-                                    &quot;\n\t-&gt; Telefono: &quot; + telefono;
+<span class="fc" id="L200">        return &quot;Entrenador &quot; + id + &quot;\n\t-&gt; Titulacion: &quot; + titulacion +</span>
+<span class="fc" id="L201">                                    &quot;\n\t-&gt; Experiencia: &quot; + experiencia +</span>
+<span class="fc" id="L202">                                    &quot;\n\t-&gt; Telefono: &quot; + telefono;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

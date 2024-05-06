@@ -2,7 +2,6 @@ package es.uma.informatica.practica3.servicios;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,6 +10,7 @@ import es.uma.informatica.practica3.entidades.Entrenador;
 import es.uma.informatica.practica3.entidades.Mensaje;
 import es.uma.informatica.practica3.repositorios.EntrenadorRepository;
 import es.uma.informatica.practica3.repositorios.MensajeRepository;
+import es.uma.informatica.practica3.servicios.excepciones.EntidadExistenteException;
 import es.uma.informatica.practica3.servicios.excepciones.EntidadNoEncontradaException;
 
 @Service
@@ -41,30 +41,16 @@ public class EntrenadorServicio {
 
     public Entrenador aniadirEntrenador (Entrenador ent) {
         // Para buscar los mensajes asociados a él en la base de datos.
-        refrescarMensajes(ent);
-        return (Entrenador) entrenadorRepo.save(ent);
-    }
-
-    public void refrescarMensajes (Entrenador ent) {
-        if (ent.getMensajes() != null) {
-            var mensajesEnContexto = ent.getMensajes()
-                                        .stream()
-                                        .map(men -> refrescaMensaje(men).orElseThrow(() -> new EntidadNoEncontradaException()))
-                                        .collect(Collectors.toList());
-		    ent.setMensajes(mensajesEnContexto);
+        if (!this.entrenadorRepo.findByIdUsuario(ent.getIdUsuario()).isPresent()) {
+            return (Entrenador) entrenadorRepo.save(ent);
+        } else {
+            throw new EntidadExistenteException();
         }
     }
 
-    private Optional<Mensaje> refrescaMensaje (Mensaje mensj) {
-		if (mensj.getIdMensaje()!=null) {
-			return mensajeRepo.findById(mensj.getIdMensaje());
-		} else {
-			return Optional.empty();
-		}
-	}
-
     public void eliminarEntrenador (Long id) {
         if (entrenadorRepo.existsById(id)) {
+            System.out.println("HE ENTRADO AQUI CON ID: " + id);
             entrenadorRepo.deleteById(id);
         } else {
             throw new EntidadNoEncontradaException();

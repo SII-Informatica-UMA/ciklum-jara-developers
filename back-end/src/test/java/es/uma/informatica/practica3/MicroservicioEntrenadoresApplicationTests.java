@@ -1,10 +1,14 @@
 package es.uma.informatica.practica3;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -23,7 +27,11 @@ import org.springframework.web.util.UriBuilder;
 import org.springframework.web.util.UriBuilderFactory;
 
 import es.uma.informatica.practica3.dtos.EntrenadorDTO;
+import es.uma.informatica.practica3.dtos.MensajeDTO;
+import es.uma.informatica.practica3.dtos.MensajeNuevoDTO;
+import es.uma.informatica.practica3.entidades.Destinatario;
 import es.uma.informatica.practica3.entidades.Entrenador;
+import es.uma.informatica.practica3.entidades.Mensaje;
 import es.uma.informatica.practica3.repositorios.EntrenadorRepository;
 import es.uma.informatica.practica3.repositorios.MensajeRepository;
 
@@ -74,6 +82,15 @@ class MicroservicioEntrenadoresApplicationTests {
 	// Extraido de la solucion del profesor del CV sobre el taller de pruebas de jUnit
 	private RequestEntity<Void> get(String scheme, String host, int port, String path) {
 		URI uri = uri(scheme, host,port, path);
+		var peticion = RequestEntity.get(uri)
+				.accept(MediaType.APPLICATION_JSON)
+				.build();
+		return peticion;
+	}
+
+	private RequestEntity<Void> get(String scheme, String host, int port, String path, String requestParam) {
+		URI uri = uriWithParam(scheme, host,port, path, requestParam);
+		System.out.println("La uri montada es: " + uri.toString());
 		var peticion = RequestEntity.get(uri)
 				.accept(MediaType.APPLICATION_JSON)
 				.build();
@@ -173,4 +190,131 @@ class MicroservicioEntrenadoresApplicationTests {
 			.endsWith("/"+allTrainers.get(0).getId());
 		}
 	}
+
+	@Nested
+	@DisplayName("cuando la base de datos tiene datos")
+	public class BaseDatosConDatos {
+
+		@BeforeEach
+		public void insertarDatos() {
+
+			var trainer = new Entrenador();
+			trainer.setIdUsuario(10L);
+			trainer.setDni("1111111K");
+			trainer.setExperiencia("Experiencia elevada");
+			trainer.setIdCentro(1L);
+			entrenadorRepo.save(trainer);
+
+			var mensaje1 = new Mensaje();
+			mensaje1.setAsunto("Asunto 1");
+			mensaje1.setEntrenador(trainer);
+			var mensaje2 = new Mensaje();
+			mensaje2.setAsunto("Asunto 2");
+			mensaje2.setEntrenador(trainer);
+			mensajeRepo.save(mensaje1);
+			mensajeRepo.save(mensaje2);
+
+			// PREGUNTARLE AL PROFESOR POR QUÉ NO GUARDA LOS MENSAJES EN LA BASE DE DATOS ???
+
+		}
+
+		@Test
+		@DisplayName("da error cuando inserta un entrenador que ya existe")
+		public void insertaEntrenadorExistente() {
+
+			EntrenadorDTO trainer = new EntrenadorDTO();
+			trainer.setIdUsuario(10L);
+
+			var peticion = post("http", "localhost",port, "/entrenador", "centro=1" ,trainer);
+
+			// Invocamos al servicio REST 
+			var respuesta = restTemplate.exchange(peticion,Void.class);
+
+			// Comprobamos el resultado
+			assertThat(respuesta.getStatusCode().value()).isEqualTo(500);
+		}
+
+		@Test
+		@DisplayName("es correcto cuando se obtiene la lista de entrenadores")
+		public void obtenerTodosEntrenadores() {
+			var peticion = get("http", "localhost",port, "/entrenador", "centro=1");
+
+			var respuesta = restTemplate.exchange(peticion,
+					new ParameterizedTypeReference<List<EntrenadorDTO>>() {});
+			
+			assertEquals(1, respuesta.getBody().size());
+		}
+
+		@Test
+		@DisplayName("es correcto cuando se obtiene un unico entrenador")
+		public void obtenerEntrenador() {
+			var peticion = get("http", "localhost",port, "/entrenador/1");
+
+			var respuesta = restTemplate.exchange(peticion,
+					new ParameterizedTypeReference<EntrenadorDTO>() {});
+			
+			assertThat(respuesta.getStatusCode().value()).isEqualTo(200);
+			assertThat(respuesta.getBody().getDni()).isEqualTo("1111111K");
+		}
+
+		@Test
+		@DisplayName("modificar un entrenador correctamente")
+		public void modificarEntrenador() {
+			EntrenadorDTO trainer = new EntrenadorDTO();
+			trainer.setDni("00000000K");
+			var peticion = put("http", "localhost",port, "/entrenador/1", trainer);
+
+			var respuesta = restTemplate.exchange(peticion, Void.class);
+
+			assertThat(respuesta.getStatusCode().value()).isEqualTo(200);
+			assertThat(entrenadorRepo.findById(1L).get().getDni()).isEqualTo("00000000K");
+		}
+
+		@Test
+		@DisplayName("da error al modificar un entrenador que no existe")
+		public void modificarEntrenadorInexistente() {
+			EntrenadorDTO trainer = new EntrenadorDTO();
+			trainer.setDni("00000000K");
+			var peticion = put("http", "localhost",port, "/entrenador/2", trainer);
+
+			var respuesta = restTemplate.exchange(peticion, Void.class);
+
+			assertThat(respuesta.getStatusCode().value()).isEqualTo(404);
+		}
+
+		@Test
+		@DisplayName("eliminar un entrenador correctamente")
+		public void eliminarEntrenador() {
+
+			Entrenador newTrainer = new Entrenador();
+			newTrainer.setIdUsuario(20L);
+			newTrainer.setDni("1111111K");
+			newTrainer.setExperiencia("Experiencia elevada");
+			newTrainer.setIdCentro(1L);
+			entrenadorRepo.save(newTrainer);
+
+			var peticion = delete("http", "localhost",port, "/entrenador/2");
+
+			var respuesta = restTemplate.exchange(peticion, Void.class);
+
+			assertThat(respuesta.getStatusCode().value()).isEqualTo(200);
+			assertThat(entrenadorRepo.count()).isEqualTo(1);
+		}
+
+		@Test
+		@DisplayName("es correcto cuando se obtiene la lista de mensajes")
+		public void obtenerTodosMensajes() {
+			var peticion = get("http", "localhost",port, "/mensaje/entrenador", "entrenador=1");
+
+			var respuesta = restTemplate.exchange(peticion,
+					new ParameterizedTypeReference<List<MensajeDTO>>() {});
+			
+			assertEquals(1, respuesta.getBody().size());
+		}
+
+		
+	}
+
+
+	
 }

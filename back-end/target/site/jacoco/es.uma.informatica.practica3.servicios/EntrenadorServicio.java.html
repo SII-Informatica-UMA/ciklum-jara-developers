@@ -2,7 +2,6 @@
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,6 +10,7 @@ import es.uma.informatica.practica3.entidades.Entrenador;
 import es.uma.informatica.practica3.entidades.Mensaje;
 import es.uma.informatica.practica3.repositorios.EntrenadorRepository;
 import es.uma.informatica.practica3.repositorios.MensajeRepository;
+import es.uma.informatica.practica3.servicios.excepciones.EntidadExistenteException;
 import es.uma.informatica.practica3.servicios.excepciones.EntidadNoEncontradaException;
 
 @Service
@@ -20,20 +20,20 @@ public class EntrenadorServicio {
 	private EntrenadorRepository entrenadorRepo;
     private MensajeRepository mensajeRepo;
 	
-	public EntrenadorServicio(EntrenadorRepository entrenadorRepo, 
-<span class="fc" id="L24">			MensajeRepository mensajeRepo) {</span>
+<span class="fc" id="L23">	public EntrenadorServicio(EntrenadorRepository entrenadorRepo, </span>
+			MensajeRepository mensajeRepo) {
 <span class="fc" id="L25">		this.entrenadorRepo = entrenadorRepo;</span>
 <span class="fc" id="L26">		this.mensajeRepo = mensajeRepo;</span>
 <span class="fc" id="L27">	}</span>
 	
 	public List&lt;Entrenador&gt; obtenerEntrenadores (Long idCentro) {
-<span class="nc" id="L30">        return entrenadorRepo.findByIdCentro(idCentro);</span>
+<span class="fc" id="L30">        return entrenadorRepo.findByIdCentro(idCentro);</span>
     }
 
     public Optional&lt;Entrenador&gt; obtenerEntrenador (Long id) {
 <span class="fc" id="L34">        Optional&lt;Entrenador&gt; entrenador = this.entrenadorRepo.findById(id);</span>
-<span class="pc bpc" id="L35" title="1 of 2 branches missed.">        if (entrenador.isPresent()) {</span>
-<span class="nc" id="L36">            return entrenador;</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        if (entrenador.isPresent()) {</span>
+<span class="fc" id="L36">            return entrenador;</span>
         } else {
 <span class="fc" id="L38">            throw new EntidadNoEncontradaException();</span>
         }
@@ -41,72 +41,58 @@ public class EntrenadorServicio {
 
     public Entrenador aniadirEntrenador (Entrenador ent) {
         // Para buscar los mensajes asociados a él en la base de datos.
-<span class="fc" id="L44">        refrescarMensajes(ent);</span>
-<span class="fc" id="L45">        return (Entrenador) entrenadorRepo.save(ent);</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        if (!this.entrenadorRepo.findByIdUsuario(ent.getIdUsuario()).isPresent()) {</span>
+<span class="fc" id="L45">            return (Entrenador) entrenadorRepo.save(ent);</span>
+        } else {
+<span class="fc" id="L47">            throw new EntidadExistenteException();</span>
+        }
     }
 
-    public void refrescarMensajes (Entrenador ent) {
-<span class="pc bpc" id="L49" title="1 of 2 branches missed.">        if (ent.getMensajes() != null) {</span>
-<span class="nc" id="L50">            var mensajesEnContexto = ent.getMensajes()</span>
-<span class="nc" id="L51">                                        .stream()</span>
-<span class="nc" id="L52">                                        .map(men -&gt; refrescaMensaje(men).orElseThrow(() -&gt; new EntidadNoEncontradaException()))</span>
-<span class="nc" id="L53">                                        .collect(Collectors.toList());</span>
-<span class="nc" id="L54">		    ent.setMensajes(mensajesEnContexto);</span>
-        }
-<span class="fc" id="L56">    }</span>
-
-    private Optional&lt;Mensaje&gt; refrescaMensaje (Mensaje mensj) {
-<span class="nc bnc" id="L59" title="All 2 branches missed.">		if (mensj.getIdMensaje()!=null) {</span>
-<span class="nc" id="L60">			return mensajeRepo.findById(mensj.getIdMensaje());</span>
-		} else {
-<span class="nc" id="L62">			return Optional.empty();</span>
-		}
-	}
-
     public void eliminarEntrenador (Long id) {
-<span class="nc bnc" id="L67" title="All 2 branches missed.">        if (entrenadorRepo.existsById(id)) {</span>
-<span class="nc" id="L68">            entrenadorRepo.deleteById(id);</span>
-        } else {
-<span class="nc" id="L70">            throw new EntidadNoEncontradaException();</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        if (entrenadorRepo.existsById(id)) {</span>
+<span class="fc" id="L53">            System.out.println(&quot;HE ENTRADO AQUI CON ID: &quot; + id);</span>
+<span class="fc" id="L54">            entrenadorRepo.deleteById(id);</span>
+<span class="fc" id="L55">        } else {</span>
+<span class="fc" id="L56">            throw new EntidadNoEncontradaException();</span>
         }
-<span class="nc" id="L72">    }</span>
+<span class="fc" id="L58">    }</span>
 
     public Entrenador actualizarEntrenador (Entrenador newTrainer) {
-<span class="nc bnc" id="L75" title="All 2 branches missed.">        if (entrenadorRepo.existsById(newTrainer.getId())) {</span>
-<span class="nc" id="L76">            return entrenadorRepo.save(newTrainer);</span>
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">        if (entrenadorRepo.existsById(newTrainer.getId())) {</span>
+<span class="fc" id="L62">            return entrenadorRepo.save(newTrainer);</span>
         } else {
-<span class="nc" id="L78">            throw new EntidadNoEncontradaException();</span>
+<span class="nc" id="L64">            throw new EntidadNoEncontradaException();</span>
         }
     }
 
     public List&lt;Mensaje&gt; obtenerMensajes (Long idEntr) {
-<span class="nc" id="L83">        return mensajeRepo.findByEntrenadorId(idEntr);</span>
+<span class="nc" id="L69">        return mensajeRepo.findByEntrenadorId(idEntr);</span>
     }
 
     public Mensaje aniadirMensajeAsignado (Long idEntrenador, Mensaje mensaje) {
-<span class="nc bnc" id="L87" title="All 2 branches missed.">        if (this.entrenadorRepo.findById(idEntrenador).isEmpty())</span>
-<span class="nc" id="L88">          throw new EntidadNoEncontradaException();</span>
-<span class="nc" id="L89">        mensaje.setIdMensaje(null);</span>
-<span class="nc" id="L90">        mensaje.setEntrenador(this.entrenadorRepo.findById(idEntrenador).get());</span>
-<span class="nc" id="L91">        return this.mensajeRepo.save(mensaje);</span>
+<span class="nc bnc" id="L73" title="All 2 branches missed.">        if (this.entrenadorRepo.findById(idEntrenador).isEmpty())</span>
+<span class="nc" id="L74">          throw new EntidadNoEncontradaException();</span>
+<span class="nc" id="L75">        mensaje.setIdMensaje(null);</span>
+<span class="nc" id="L76">        mensaje.setEntrenador(this.entrenadorRepo.findById(idEntrenador).get());</span>
+<span class="nc" id="L77">        return this.mensajeRepo.save(mensaje);</span>
     }
 
     public Optional&lt;Mensaje&gt; obtenerMensaje (Long id) {
-<span class="nc" id="L95">        Optional&lt;Mensaje&gt; mens = mensajeRepo.findById(id);</span>
-<span class="nc bnc" id="L96" title="All 2 branches missed.">        if (mens.isPresent()) {</span>
-<span class="nc" id="L97">            return mens;</span>
+<span class="nc" id="L81">        Optional&lt;Mensaje&gt; mens = mensajeRepo.findById(id);</span>
+<span class="nc bnc" id="L82" title="All 2 branches missed.">        if (mens.isPresent()) {</span>
+<span class="nc" id="L83">            return mens;</span>
         } else {
-<span class="nc" id="L99">            throw new EntidadNoEncontradaException();</span>
+<span class="nc" id="L85">            throw new EntidadNoEncontradaException();</span>
         }
     }
     
     public void eliminarMensaje (Long id) {
-<span class="nc bnc" id="L104" title="All 2 branches missed.">        if (mensajeRepo.existsById(id)) {</span>
-<span class="nc" id="L105">            mensajeRepo.deleteById(id);</span>
-        } else {
-<span class="nc" id="L107">            throw new EntidadNoEncontradaException();</span>
+<span class="nc bnc" id="L90" title="All 2 branches missed.">        if (mensajeRepo.existsById(id)) {</span>
+<span class="nc" id="L91">            mensajeRepo.deleteById(id);</span>
+<span class="nc" id="L92">        } else {</span>
+<span class="nc" id="L93">            throw new EntidadNoEncontradaException();</span>
         }
-<span class="nc" id="L109">    }</span>
+<span class="nc" id="L95">    }</span>
 
     // NO EXISTE UN PUT DE MENSAJE -&gt; SE PUEDE COMPROBAR EN LA OPEN API DEL CV
 }

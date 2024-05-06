@@ -54,7 +54,6 @@ public class MensajeRest {
                 responses = {@ApiResponse(responseCode = "201", description = "Se crea el mensaje y lo devuelve"),
                             @ApiResponse(responseCode = "403", description = "Acceso no autorizado")})
     public ResponseEntity<MensajeDTO> crearMensaje(@RequestParam(value = "entrenador", required = true) Long idEntrenador, @RequestBody MensajeNuevoDTO mensajeNuevoDTO, UriComponentsBuilder uriBuilder) {
-        System.out.println("Hola he entrado");
         Mensaje newMensaje = mensajeNuevoDTO.toEntity();
         URI uri = UriGenerator(UriComponentsBuilder.newInstance()
                                                     .build()).apply(newMensaje);

@@ -13,6 +13,7 @@ import es.uma.informatica.practica3.entidades.*;
 public interface EntrenadorRepository extends JpaRepository<Entrenador, Long> {
 	// Es necesario para encontrar los entrenadores por su id
 	Optional<Entrenador> findById(Long id);
+	Optional<Entrenador> findByIdUsuario(Long id);
 
 	// Metodos auxiliares
 	List<Entrenador> findByTitulacion(String title);

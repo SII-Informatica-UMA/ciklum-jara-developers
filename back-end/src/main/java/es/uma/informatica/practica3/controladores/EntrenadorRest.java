@@ -58,7 +58,6 @@ public class EntrenadorRest {
                 responses = {@ApiResponse(responseCode = "201", description = "El entrenador se crea correctamente"),
                             @ApiResponse(responseCode = "403", description = "Acceso no autorizado")})
     public ResponseEntity<EntrenadorDTO> aniadirEntrenador (@RequestParam(value = "centro", required = true) Long centroId, @RequestBody EntrenadorNuevoDTO entrenador, UriComponentsBuilder uriBuilder) {
-        System.out.println("HOLA HE ENTRADO AQUI!!!");
         Entrenador newTrainer = entrenador.toEntity();
         newTrainer.setId(null);
         newTrainer.setIdCentro(centroId);
@@ -81,15 +80,10 @@ public class EntrenadorRest {
                             @ApiResponse(responseCode = "403", description = "Acceso no autorizado")})
     public EntrenadorDTO actualizarEntrenador (@PathVariable Long idEntrenador, @RequestBody EntrenadorDTO entrenador) {
         Optional<Entrenador> condTrainer = servicioEntrenadores.obtenerEntrenador(idEntrenador);
-        if (condTrainer.isPresent()) {
-            entrenador.setId(idEntrenador);
-            Entrenador auxTrainer = entrenador.toEntity();
-            auxTrainer.setIdCentro(condTrainer.get().getIdCentro());
-            return EntrenadorDTO.fromEntity(this.servicioEntrenadores.actualizarEntrenador(auxTrainer));
-        } else {
-            // Es un poco redundate, pero no se entonces que devolver aqui...
-            throw new EntidadNoEncontradaException();
-        }
+        entrenador.setId(idEntrenador);
+        Entrenador auxTrainer = entrenador.toEntity();
+        auxTrainer.setIdCentro(condTrainer.get().getIdCentro());
+        return EntrenadorDTO.fromEntity(this.servicioEntrenadores.actualizarEntrenador(auxTrainer));
     }
 
     @DeleteMapping({"/{idEntrenador}"})
@@ -97,11 +91,7 @@ public class EntrenadorRest {
                 responses = {@ApiResponse(responseCode = "200", description = "El entrenador se ha elminado"),
                             @ApiResponse(responseCode = "404", description = "El entrenador no existe")})
     public void eliminarEntrenador (@PathVariable Long idEntrenador) {
-        if (servicioEntrenadores.obtenerEntrenador(idEntrenador).isPresent()) {
-            this.servicioEntrenadores.eliminarEntrenador(idEntrenador);
-        } else {
-            throw new EntidadNoEncontradaException();
-        }
+        this.servicioEntrenadores.eliminarEntrenador(idEntrenador);
     }
 
 
