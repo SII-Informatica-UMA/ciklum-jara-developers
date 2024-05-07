@@ -4,6 +4,7 @@ import es.uma.informatica.practica3.entidades.Destinatario.TipoDestinatario;
 import es.uma.informatica.practica3.entidades.Destinatario;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DestinatarioDTO {
     private Long id;
@@ -35,18 +36,29 @@ public class DestinatarioDTO {
     
     public static DestinatarioDTO fromEntity(Destinatario destinatario) {
         // No tiene mucho sentido ya que ambas clases tienen los mismos campos, pero asi lo indica la OpenAPI
-        DestinatarioDTO aDevolver = new DestinatarioDTO();
-        aDevolver.setId(destinatario.getId());
-        aDevolver.setTipo(destinatario.getTipo());
-        return aDevolver;
+        if (destinatario == null) {
+            return null;
+        } else {
+            DestinatarioDTO aDevolver = new DestinatarioDTO();
+            aDevolver.setId(destinatario.getId());
+            aDevolver.setTipo(destinatario.getTipo());
+            return aDevolver;
+        }
     }
     
     // Para las copias de destinatarios, que son List<Destinatario>
     public static List<DestinatarioDTO> fromEntity(List<Destinatario> destinatariosL) {
         // Se podria haber hecho iterando sobre toda la lista del parametro, y conviertiendo con fromEntity a DTO
         // Quizas incluso hubiese funcionado unicamente realizando el return del stream().map().toList()
-        return destinatariosL != null ? destinatariosL.stream().map(DestinatarioDTO::fromEntity).toList() : Collections.emptyList();
+        if (destinatariosL == null) {
+            return Collections.emptyList();
+        } else {
+            return destinatariosL.stream()
+                    .map(DestinatarioDTO::fromEntity)
+                    .collect(Collectors.toList());
+        }
     }
+
     
     public Destinatario toEntity() {
         Destinatario aDevolver = new Destinatario();
@@ -56,6 +68,11 @@ public class DestinatarioDTO {
     }
     
     public static List<Destinatario> toEntity(List<DestinatarioDTO> destinatariosL) {
-        return destinatariosL != null ? destinatariosL.stream().map(DestinatarioDTO::toEntity).toList() : Collections.emptyList();
+        if (destinatariosL != null) {
+            return destinatariosL != null ? destinatariosL.stream().map(DestinatarioDTO::toEntity).toList() : Collections.emptyList();
+        } else {
+            return Collections.emptyList();
+        }
+        
     }
 }

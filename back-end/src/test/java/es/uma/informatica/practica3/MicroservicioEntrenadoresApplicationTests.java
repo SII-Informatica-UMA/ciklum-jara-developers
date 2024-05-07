@@ -4,8 +4,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -29,7 +27,6 @@ import org.springframework.web.util.UriBuilderFactory;
 import es.uma.informatica.practica3.dtos.EntrenadorDTO;
 import es.uma.informatica.practica3.dtos.MensajeDTO;
 import es.uma.informatica.practica3.dtos.MensajeNuevoDTO;
-import es.uma.informatica.practica3.entidades.Destinatario;
 import es.uma.informatica.practica3.entidades.Entrenador;
 import es.uma.informatica.practica3.entidades.Mensaje;
 import es.uma.informatica.practica3.repositorios.EntrenadorRepository;
@@ -102,15 +99,6 @@ class MicroservicioEntrenadoresApplicationTests {
 		URI uri = uri(scheme, host,port, path);
 		var peticion = RequestEntity.delete(uri)
 				.build();
-		return peticion;
-	}
-
-	// Extraido de la solucion del profesor del CV sobre el taller de pruebas de jUnit
-	private <T> RequestEntity<T> post(String scheme, String host, int port, String path, T object) {
-		URI uri = uri(scheme, host,port, path);
-		var peticion = RequestEntity.post(uri)
-				.contentType(MediaType.APPLICATION_JSON)
-				.body(object);
 		return peticion;
 	}
 
@@ -309,10 +297,93 @@ class MicroservicioEntrenadoresApplicationTests {
 			var respuesta = restTemplate.exchange(peticion,
 					new ParameterizedTypeReference<List<MensajeDTO>>() {});
 			
-			assertEquals(1, respuesta.getBody().size());
+			assertEquals(2, respuesta.getBody().size());
 		}
 
-		
+		@Test
+		@DisplayName("es correcto cuando se obtiene un mensaje concreto")
+		public void obtenerUnMensaje() {
+			var peticion = get("http", "localhost",port, "/mensaje/entrenador/1");
+
+			var respuesta = restTemplate.exchange(peticion,
+					new ParameterizedTypeReference<MensajeDTO>() {});
+			
+			assertThat(respuesta.getStatusCode().value()).isEqualTo(200);
+			assertThat(respuesta.getBody().getAsunto()).isEqualTo("Asunto 1");
+		}
+
+		@Test
+		@DisplayName("inserta correctamente un mensaje")
+		public void insertaMensaje() {
+
+			MensajeNuevoDTO newMessage = new MensajeNuevoDTO();
+			newMessage.setAsunto("Asunto 3");
+			newMessage.setContenido("Contenido del mensaje 3");
+
+			var peticion = post("http", "localhost",port, "/mensaje/entrenador", "entrenador=1",newMessage);
+
+			// Invocamos al servicio REST
+			var respuesta = restTemplate.exchange(peticion,Void.class);
+
+			// Comprobamos el resultado
+			assertThat(respuesta.getStatusCode().value()).isEqualTo(201);
+
+			List<Mensaje> allMensajes = mensajeRepo.findAll();
+			assertThat(allMensajes).hasSize(3);
+		}
+
+		@Test
+		@DisplayName("elimina un mensaje correctamente")
+		public void eliminarMensaje() {
+
+			var peticion = delete("http", "localhost",port, "/mensaje/entrenador/1");
+
+			var respuesta = restTemplate.exchange(peticion, Void.class);
+
+			assertThat(respuesta.getStatusCode().value()).isEqualTo(200);
+			assertThat(mensajeRepo.count()).isEqualTo(1);
+		}
+
+		@Test
+		@DisplayName("devuelve error al eliminar un mensaje que no existe")
+		public void eliminarMensajeInexistente () {
+			var peticion = delete("http", "localhost",port, "/mensaje/entrenador/3");
+
+			var respuesta = restTemplate.exchange(peticion, Void.class);
+
+			assertThat(respuesta.getStatusCode().value()).isEqualTo(404);
+		}
+
+		@Test
+		@DisplayName("da error cuando se trata de insertar un nuevo mensaje asociado a un entrenador inexistente")
+		public void insertaIncorrectamenteMensaje() {
+
+			MensajeNuevoDTO newMessage = new MensajeNuevoDTO();
+			newMessage.setAsunto("Asunto 3");
+			newMessage.setContenido("Contenido del mensaje 3");
+
+			var peticion = post("http", "localhost",port, "/mensaje/entrenador", "entrenador=2",newMessage);
+
+			// Invocamos al servicio REST
+			var respuesta = restTemplate.exchange(peticion,Void.class);
+
+			// Comprobamos el resultado
+			assertThat(respuesta.getStatusCode().value()).isEqualTo(404);
+
+			List<Mensaje> allMensajes = mensajeRepo.findAll();
+			assertThat(allMensajes).hasSize(2);
+		}
+
+		@Test
+		@DisplayName("devuelve error al obtener un mensaje que no existe")
+		public void obtenerMensajeInexistente () {
+			var peticion = get("http", "localhost",port, "/mensaje/entrenador/3");
+
+			var respuesta = restTemplate.exchange(peticion,
+					new ParameterizedTypeReference<MensajeDTO>() {});
+			
+			assertThat(respuesta.getStatusCode().value()).isEqualTo(404);
+		}
 	}
 
 

@@ -9,16 +9,16 @@ public class MensajeDTO extends MensajeNuevoDTO {
     private Long idMensaje;
 
     public void setIdMensaje(Long idMensaje) {
-<span class="nc" id="L12">        this.idMensaje = idMensaje;</span>
-<span class="nc" id="L13">    }</span>
+<span class="fc" id="L12">        this.idMensaje = idMensaje;</span>
+<span class="fc" id="L13">    }</span>
 
     public Long getIdMensaje() {
-<span class="nc" id="L16">        return idMensaje;</span>
+<span class="fc" id="L16">        return idMensaje;</span>
     }
 
-<span class="nc" id="L19">    public MensajeDTO() {</span>
+<span class="fc" id="L19">    public MensajeDTO() {</span>
         // Constructor defecto
-<span class="nc" id="L21">    }</span>
+<span class="fc" id="L21">    }</span>
 
     public MensajeDTO(List&lt;DestinatarioDTO&gt; destinatarios, List&lt;DestinatarioDTO&gt; copia,
             List&lt;DestinatarioDTO&gt; copiaOculta, String asunto, DestinatarioDTO remitente, String contenido,
@@ -28,15 +28,15 @@ public class MensajeDTO extends MensajeNuevoDTO {
 <span class="nc" id="L28">    }</span>
 
     public static MensajeDTO fromEntity (Mensaje mensaje) {
-<span class="nc" id="L31">        MensajeDTO aDevolver = new MensajeDTO();</span>
-<span class="nc" id="L32">        aDevolver.setAsunto(mensaje.getAsunto());</span>
-<span class="nc" id="L33">        aDevolver.setDestinatarios(DestinatarioDTO.fromEntity(mensaje.getDestinatarios()));</span>
-<span class="nc" id="L34">        aDevolver.setCopia(DestinatarioDTO.fromEntity(mensaje.getCopia()));</span>
-<span class="nc" id="L35">        aDevolver.setCopiaOculta(DestinatarioDTO.fromEntity(mensaje.getCopiaOculta()));</span>
-<span class="nc" id="L36">        aDevolver.setRemitente(DestinatarioDTO.fromEntity(mensaje.getRemitente()));</span>
-<span class="nc" id="L37">        aDevolver.setContenido(mensaje.getContenido());</span>
-<span class="nc" id="L38">        aDevolver.setIdMensaje(mensaje.getIdMensaje());</span>
-<span class="nc" id="L39">        return aDevolver;</span>
+<span class="fc" id="L31">        MensajeDTO aDevolver = new MensajeDTO();</span>
+<span class="fc" id="L32">        aDevolver.setAsunto(mensaje.getAsunto());</span>
+<span class="fc" id="L33">        aDevolver.setDestinatarios(DestinatarioDTO.fromEntity(mensaje.getDestinatarios()));</span>
+<span class="fc" id="L34">        aDevolver.setCopia(DestinatarioDTO.fromEntity(mensaje.getCopia()));</span>
+<span class="fc" id="L35">        aDevolver.setCopiaOculta(DestinatarioDTO.fromEntity(mensaje.getCopiaOculta()));</span>
+<span class="fc" id="L36">        aDevolver.setRemitente(DestinatarioDTO.fromEntity(mensaje.getRemitente()));</span>
+<span class="fc" id="L37">        aDevolver.setContenido(mensaje.getContenido());</span>
+<span class="fc" id="L38">        aDevolver.setIdMensaje(mensaje.getIdMensaje());</span>
+<span class="fc" id="L39">        return aDevolver;</span>
     }
       
     public Mensaje toEntity() {

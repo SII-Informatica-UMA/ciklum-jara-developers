@@ -34,7 +34,7 @@ public class Entrenador {
     
     private String observaciones;
 
-    @OneToMany(mappedBy = &quot;entrenador&quot;)
+    @OneToMany(mappedBy = &quot;entrenador&quot;, cascade = CascadeType.REMOVE)
     private List&lt;Mensaje&gt; mensajes;
 
     @Id
@@ -118,7 +118,7 @@ public class Entrenador {
     }
 
     public List&lt;Mensaje&gt; getMensajes() {
-<span class="fc" id="L121">        return mensajes;</span>
+<span class="nc" id="L121">        return mensajes;</span>
     }
 
     public void setIdUsuario(Long idUsuario) {
@@ -197,9 +197,9 @@ public class Entrenador {
 
     @Override
     public String toString() {
-<span class="fc" id="L200">        return &quot;Entrenador &quot; + id + &quot;\n\t-&gt; Titulacion: &quot; + titulacion +</span>
-<span class="fc" id="L201">                                    &quot;\n\t-&gt; Experiencia: &quot; + experiencia +</span>
-<span class="fc" id="L202">                                    &quot;\n\t-&gt; Telefono: &quot; + telefono;</span>
+<span class="nc" id="L200">        return &quot;Entrenador &quot; + id + &quot;\n\t-&gt; Titulacion: &quot; + titulacion +</span>
+<span class="nc" id="L201">                                    &quot;\n\t-&gt; Experiencia: &quot; + experiencia +</span>
+<span class="nc" id="L202">                                    &quot;\n\t-&gt; Telefono: &quot; + telefono;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

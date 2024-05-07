@@ -58,15 +58,13 @@ public class EntrenadorServicio {
     }
 
     public Entrenador actualizarEntrenador (Entrenador newTrainer) {
-        if (entrenadorRepo.existsById(newTrainer.getId())) {
-            return entrenadorRepo.save(newTrainer);
-        } else {
-            throw new EntidadNoEncontradaException();
-        }
+        // Como si he llegado aqui, se que el newTrainer.id existe, entonces...
+        return entrenadorRepo.save(newTrainer);
     }
 
     public List<Mensaje> obtenerMensajes (Long idEntr) {
-        return mensajeRepo.findByEntrenadorId(idEntr);
+        List<Mensaje> messages = mensajeRepo.findByEntrenadorId(idEntr);
+        return messages;
     }
 
     public Mensaje aniadirMensajeAsignado (Long idEntrenador, Mensaje mensaje) {

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.671 s - in es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.374 s - in es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests

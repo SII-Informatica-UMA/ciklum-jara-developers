@@ -34,7 +34,7 @@ public class Entrenador {
     
     private String observaciones;
 
-    @OneToMany(mappedBy = "entrenador")
+    @OneToMany(mappedBy = "entrenador", cascade = CascadeType.REMOVE)
     private List<Mensaje> mensajes;
 
     @Id

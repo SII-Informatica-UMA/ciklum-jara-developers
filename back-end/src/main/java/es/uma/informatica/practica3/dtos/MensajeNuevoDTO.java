@@ -84,7 +84,7 @@ public class MensajeNuevoDTO {
         aDevolver.setDestinatarios(DestinatarioDTO.toEntity(this.destinatarios));
         aDevolver.setCopia(DestinatarioDTO.toEntity(this.copia));
         aDevolver.setCopiaOculta(DestinatarioDTO.toEntity(this.copiaOculta));
-        aDevolver.setRemitente(this.remitente.toEntity());
+        aDevolver.setRemitente(this.remitente != null ? this.remitente.toEntity() : null);
         aDevolver.setContenido(this.contenido);
         return aDevolver;
     }

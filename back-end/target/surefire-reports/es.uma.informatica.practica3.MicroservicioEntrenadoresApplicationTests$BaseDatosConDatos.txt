@@ -1,130 +1,17 @@
 -------------------------------------------------------------------------------
 Test set: es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 13.264 s <<< FAILURE! - in es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.eliminarEntrenador  Time elapsed: 1.066 s  <<< ERROR!
-org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session
-	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
-	at org.hibernate.collection.spi.PersistentBag.toString(PersistentBag.java:589)
-	at es.uma.informatica.practica3.entidades.Mensaje.toString(Mensaje.java:148)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
-	at java.base/java.util.AbstractCollection.toString(AbstractCollection.java:459)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertarDatos(MicroservicioEntrenadoresApplicationTests.java:217)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.modificarEntrenador  Time elapsed: 0.047 s  <<< ERROR!
-org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session
-	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
-	at org.hibernate.collection.spi.PersistentBag.toString(PersistentBag.java:589)
-	at es.uma.informatica.practica3.entidades.Mensaje.toString(Mensaje.java:148)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
-	at java.base/java.util.AbstractCollection.toString(AbstractCollection.java:459)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertarDatos(MicroservicioEntrenadoresApplicationTests.java:217)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertaEntrenadorExistente  Time elapsed: 0.04 s  <<< ERROR!
-org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session
-	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
-	at org.hibernate.collection.spi.PersistentBag.toString(PersistentBag.java:589)
-	at es.uma.informatica.practica3.entidades.Mensaje.toString(Mensaje.java:148)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
-	at java.base/java.util.AbstractCollection.toString(AbstractCollection.java:459)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertarDatos(MicroservicioEntrenadoresApplicationTests.java:217)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.modificarEntrenadorInexistente  Time elapsed: 0.099 s  <<< ERROR!
-org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session
-	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
-	at org.hibernate.collection.spi.PersistentBag.toString(PersistentBag.java:589)
-	at es.uma.informatica.practica3.entidades.Mensaje.toString(Mensaje.java:148)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
-	at java.base/java.util.AbstractCollection.toString(AbstractCollection.java:459)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertarDatos(MicroservicioEntrenadoresApplicationTests.java:217)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerEntrenador  Time elapsed: 0.031 s  <<< ERROR!
-org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session
-	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
-	at org.hibernate.collection.spi.PersistentBag.toString(PersistentBag.java:589)
-	at es.uma.informatica.practica3.entidades.Mensaje.toString(Mensaje.java:148)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
-	at java.base/java.util.AbstractCollection.toString(AbstractCollection.java:459)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertarDatos(MicroservicioEntrenadoresApplicationTests.java:217)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerTodosMensajes  Time elapsed: 0.022 s  <<< ERROR!
-org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session
-	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
-	at org.hibernate.collection.spi.PersistentBag.toString(PersistentBag.java:589)
-	at es.uma.informatica.practica3.entidades.Mensaje.toString(Mensaje.java:148)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
-	at java.base/java.util.AbstractCollection.toString(AbstractCollection.java:459)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertarDatos(MicroservicioEntrenadoresApplicationTests.java:217)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerTodosEntrenadores  Time elapsed: 0.032 s  <<< ERROR!
-org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session
-	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
-	at org.hibernate.collection.spi.PersistentBag.toString(PersistentBag.java:589)
-	at es.uma.informatica.practica3.entidades.Mensaje.toString(Mensaje.java:148)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
-	at java.base/java.util.AbstractCollection.toString(AbstractCollection.java:459)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertarDatos(MicroservicioEntrenadoresApplicationTests.java:217)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.509 s - in es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.eliminarEntrenador  Time elapsed: 1.167 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerMensajeInexistente  Time elapsed: 0.121 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.modificarEntrenador  Time elapsed: 0.116 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertaEntrenadorExistente  Time elapsed: 0.127 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.modificarEntrenadorInexistente  Time elapsed: 0.048 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerEntrenador  Time elapsed: 0.049 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.eliminarMensaje  Time elapsed: 0.052 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerUnMensaje  Time elapsed: 0.057 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.eliminarMensajeInexistente  Time elapsed: 0.031 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerTodosMensajes  Time elapsed: 0.054 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertaMensaje  Time elapsed: 0.061 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertaIncorrectamenteMensaje  Time elapsed: 0.048 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerTodosEntrenadores  Time elapsed: 0.041 s

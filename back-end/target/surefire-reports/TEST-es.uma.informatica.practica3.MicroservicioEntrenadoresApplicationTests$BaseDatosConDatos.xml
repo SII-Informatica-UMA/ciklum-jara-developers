@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="13.264" tests="7" errors="7" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="17.509" tests="13" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/javimp2003/JARA Developers/ciklum-jara-developers/back-end/target/surefire/surefirebooter-20240506201016691_3.jar /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end/target/surefire 2024-05-06T20-10-16_008-jvmRun1 surefire-20240506201016691_1tmp surefire_0-20240506201016691_2tmp"/>
+    <property name="sun.java.command" value="/home/javimp2003/JARA Developers/ciklum-jara-developers/back-end/target/surefire/surefirebooter-20240507203539945_3.jar /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end/target/surefire 2024-05-07T20-35-39_299-jvmRun1 surefire-20240507203539945_1tmp surefire_0-20240507203539945_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/javimp2003/JARA Developers/ciklum-jara-developers/back-end/target/test-classes:/home/javimp2003/JARA Developers/ciklum-jara-developers/back-end/target/classes:/home/javimp2003/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.2.5/spring-boot-starter-data-jpa-3.2.5.jar:/home/javimp2003/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.2.5/spring-boot-starter-aop-3.2.5.jar:/home/javimp2003/.m2/repository/org/springframework/spring-aop/6.1.6/spring-aop-6.1.6.jar:/home/javimp2003/.m2/repository/org/aspectj/aspectjweaver/1.9.22/aspectjweaver-1.9.22.jar:/home/javimp2003/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.5/spring-boot-starter-jdbc-3.2.5.jar:/home/javimp2003/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar:/home/javimp2003/.m2/repository/org/springframework/spring-jdbc/6.1.6/spring-jdbc-6.1.6.jar:/home/javimp2003/.m2/repository/org/hibernate/orm/hibernate-core/6.4.4.Final/hibernate-core-6.4.4.Final.jar:/home/javimp2003/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/javimp2003/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/javimp2003/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/home/javimp2003/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/home/javimp2003/.m2/repository/io/smallrye/jandex/3.1.2/jandex-3.1.2.jar:/home/javimp2003/.m2/repository/net/bytebuddy/byte-buddy/1.14.13/byte-buddy-1.14.13.jar:/home/javimp2003/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/home/javimp2003/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/home/javimp2003/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/home/javimp2003/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/home/javimp2003/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/home/javimp2003/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/javimp2003/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/home/javimp2003/.m2/repository/org/springframework/data/spring-data-jpa/3.2.5/spring-data-jpa-3.2.5.jar:/home/javimp2003/.m2/repository/org/springframework/data/spring-data-commons/3.2.5/spring-data-commons-3.2.5.jar:/home/javimp2003/.m2/repository/org/springframework/spring-orm/6.1.6/spring-orm-6.1.6.jar:/home/javimp2003/.m2/repository/org/springframework/spring-context/6.1.6/spring-context-6.1.6.jar:/home/javimp2003/.m2/repository/org/springframework/spring-tx/6.1.6/spring-tx-6.1.6.jar:/home/javimp2003/.m2/repository/org/springframework/spring-beans/6.1.6/spring-beans-6.1.6.jar:/home/javimp2003/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/javimp2003/.m2/repository/org/springframework/spring-aspects/6.1.6/spring-aspects-6.1.6.jar:/home/javimp2003/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.5/spring-boot-starter-web-3.2.5.jar:/home/javimp2003/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.5/spring-boot-starter-3.2.5.jar:/home/javimp2003/.m2/repository/org/springframework/boot/spring-boot/3.2.5/spring-boot-3.2.5.jar:/home/javimp2003/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.5/spring-boot-autoconfigure-3.2.5.jar:/home/javimp2003/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.5/spring-boot-starter-logging-3.2.5.jar:/home/javimp2003/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/home/javimp2003/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/home/javimp2003/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/home/javimp2003/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/home/javimp2003/.m2/repository/org/slf4j/jul-to-slf4j/2.0.13/jul-to-slf4j-2.0.13.jar:/home/javimp2003/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/home/javimp2003/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.5/spring-boot-starter-json-3.2.5.jar:/home/javimp2003/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.4/jackson-databind-2.15.4.jar:/home/javimp2003/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.4/jackson-annotations-2.15.4.jar:/home/javimp2003/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.4/jackson-core-2.15.4.jar:/home/javimp2003/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.4/jackson-datatype-jdk8-2.15.4.jar:/home/javimp2003/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.4/jackson-datatype-jsr310-2.15.4.jar:/home/javimp2003/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.4/jackson-module-parameter-names-2.15.4.jar:/home/javimp2003/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.5/spring-boot-starter-tomcat-3.2.5.jar:/home/javimp2003/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.20/tomcat-embed-core-10.1.20.jar:/home/javimp2003/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.20/tomcat-embed-el-10.1.20.jar:/home/javimp2003/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.20/tomcat-embed-websocket-10.1.20.jar:/home/javimp2003/.m2/repository/org/springframework/spring-web/6.1.6/spring-web-6.1.6.jar:/home/javimp2003/.m2/repository/io/micrometer/micrometer-observation/1.12.5/micrometer-observation-1.12.5.jar:/home/javimp2003/.m2/repository/io/micrometer/micrometer-commons/1.12.5/micrometer-commons-1.12.5.jar:/home/javimp2003/.m2/repository/org/springframework/spring-webmvc/6.1.6/spring-webmvc-6.1.6.jar:/home/javimp2003/.m2/repository/org/springframework/spring-expression/6.1.6/spring-expression-6.1.6.jar:/home/javimp2003/.m2/repository/org/projectlombok/lombok/1.18.32/lombok-1.18.32.jar:/home/javimp2003/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/home/javimp2003/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.2.5/spring-boot-starter-test-3.2.5.jar:/home/javimp2003/.m2/repository/org/springframework/boot/spring-boot-test/3.2.5/spring-boot-test-3.2.5.jar:/home/javimp2003/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.2.5/spring-boot-test-autoconfigure-3.2.5.jar:/home/javimp2003/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/home/javimp2003/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/home/javimp2003/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/home/javimp2003/.m2/repository/net/minidev/json-smart/2.5.1/json-smart-2.5.1.jar:/home/javimp2003/.m2/repository/net/minidev/accessors-smart/2.5.1/accessors-smart-2.5.1.jar:/home/javimp2003/.m2/repository/org/ow2/asm/asm/9.6/asm-9.6.jar:/home/javimp2003/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/home/javimp2003/.m2/repository/org/awaitility/awaitility/4.2.1/awaitility-4.2.1.jar:/home/javimp2003/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/javimp2003/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/home/javimp2003/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/home/javimp2003/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/javimp2003/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/home/javimp2003/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/javimp2003/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/home/javimp2003/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/home/javimp2003/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/home/javimp2003/.m2/repository/org/mockito/mockito-core/5.7.0/mockito-core-5.7.0.jar:/home/javimp2003/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.13/byte-buddy-agent-1.14.13.jar:/home/javimp2003/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/javimp2003/.m2/repository/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.jar:/home/javimp2003/.m2/repository/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar:/home/javimp2003/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/javimp2003/.m2/repository/org/springframework/spring-core/6.1.6/spring-core-6.1.6.jar:/home/javimp2003/.m2/repository/org/springframework/spring-jcl/6.1.6/spring-jcl-6.1.6.jar:/home/javimp2003/.m2/repository/org/springframework/spring-test/6.1.6/spring-test-6.1.6.jar:/home/javimp2003/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:/home/javimp2003/.m2/repository/io/springfox/springfox-boot-starter/3.0.0/springfox-boot-starter-3.0.0.jar:/home/javimp2003/.m2/repository/io/springfox/springfox-oas/3.0.0/springfox-oas-3.0.0.jar:/home/javimp2003/.m2/repository/io/swagger/core/v3/swagger-annotations/2.1.2/swagger-annotations-2.1.2.jar:/home/javimp2003/.m2/repository/io/swagger/core/v3/swagger-models/2.1.2/swagger-models-2.1.2.jar:/home/javimp2003/.m2/repository/io/springfox/springfox-spi/3.0.0/springfox-spi-3.0.0.jar:/home/javimp2003/.m2/repository/io/springfox/springfox-schema/3.0.0/springfox-schema-3.0.0.jar:/home/javimp2003/.m2/repository/io/springfox/springfox-core/3.0.0/springfox-core-3.0.0.jar:/home/javimp2003/.m2/repository/io/springfox/springfox-spring-web/3.0.0/springfox-spring-web-3.0.0.jar:/home/javimp2003/.m2/repository/io/github/classgraph/classgraph/4.8.83/classgraph-4.8.83.jar:/home/javimp2003/.m2/repository/io/springfox/springfox-spring-webmvc/3.0.0/springfox-spring-webmvc-3.0.0.jar:/home/javimp2003/.m2/repository/io/springfox/springfox-spring-webflux/3.0.0/springfox-spring-webflux-3.0.0.jar:/home/javimp2003/.m2/repository/io/springfox/springfox-swagger-common/3.0.0/springfox-swagger-common-3.0.0.jar:/home/javimp2003/.m2/repository/org/mapstruct/mapstruct/1.3.1.Final/mapstruct-1.3.1.Final.jar:/home/javimp2003/.m2/repository/io/springfox/springfox-data-rest/3.0.0/springfox-data-rest-3.0.0.jar:/home/javimp2003/.m2/repository/io/springfox/springfox-bean-validators/3.0.0/springfox-bean-validators-3.0.0.jar:/home/javimp2003/.m2/repository/io/springfox/springfox-swagger2/3.0.0/springfox-swagger2-3.0.0.jar:/home/javimp2003/.m2/repository/io/swagger/swagger-annotations/1.5.20/swagger-annotations-1.5.20.jar:/home/javimp2003/.m2/repository/io/swagger/swagger-models/1.5.20/swagger-models-1.5.20.jar:/home/javimp2003/.m2/repository/io/springfox/springfox-swagger-ui/3.0.0/springfox-swagger-ui-3.0.0.jar:/home/javimp2003/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar:/home/javimp2003/.m2/repository/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar:/home/javimp2003/.m2/repository/org/springframework/plugin/spring-plugin-core/2.0.0.RELEASE/spring-plugin-core-2.0.0.RELEASE.jar:/home/javimp2003/.m2/repository/org/springframework/plugin/spring-plugin-metadata/2.0.0.RELEASE/spring-plugin-metadata-2.0.0.RELEASE.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -32,7 +32,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="FILE_LOG_CHARSET" value="UTF-8"/>
     <property name="java.awt.headless" value="true"/>
-    <property name="surefire.real.class.path" value="/home/javimp2003/JARA Developers/ciklum-jara-developers/back-end/target/surefire/surefirebooter-20240506201016691_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/javimp2003/JARA Developers/ciklum-jara-developers/back-end/target/surefire/surefirebooter-20240507203539945_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.2+13-Ubuntu-122.04.1"/>
     <property name="user.name" value="javimp2003"/>
@@ -45,15 +45,15 @@
     <property name="localRepository" value="/home/javimp2003/.m2/repository"/>
     <property name="java.vendor.url.bug" value="Unknown"/>
     <property name="java.io.tmpdir" value="/tmp"/>
-    <property name="catalina.home" value="/tmp/tomcat.0.8164349225788704836"/>
-    <property name="com.zaxxer.hikari.pool_number" value="7"/>
+    <property name="catalina.home" value="/tmp/tomcat.0.16645113293598772664"/>
+    <property name="com.zaxxer.hikari.pool_number" value="13"/>
     <property name="java.version" value="21.0.2"/>
     <property name="user.dir" value="/home/javimp2003/JARA Developers/ciklum-jara-developers/back-end"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="PID" value="97292"/>
+    <property name="PID" value="59495"/>
     <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
-    <property name="catalina.base" value="/tmp/tomcat.0.6009586365583784872"/>
+    <property name="catalina.base" value="/tmp/tomcat.0.4921276046833255883"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
@@ -63,28 +63,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="eliminarEntrenador" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="1.066">
-    <error message="failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session" type="org.hibernate.LazyInitializationException"><![CDATA[org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session
-	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
-	at org.hibernate.collection.spi.PersistentBag.toString(PersistentBag.java:589)
-	at es.uma.informatica.practica3.entidades.Mensaje.toString(Mensaje.java:148)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
-	at java.base/java.util.AbstractCollection.toString(AbstractCollection.java:459)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertarDatos(MicroservicioEntrenadoresApplicationTests.java:217)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></error>
-    <system-out><![CDATA[20:10:18.244 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests]: MicroservicioEntrenadoresApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-20:10:18.484 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration es.uma.informatica.practica3.MicroservicioEntrenadoresApplication for test class es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests
-20:10:18.704 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos]: BaseDatosConDatos does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-20:10:18.708 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration es.uma.informatica.practica3.MicroservicioEntrenadoresApplication for test class es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos
+  <testcase name="eliminarEntrenador" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="1.167">
+    <system-out><![CDATA[20:35:41.577 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests]: MicroservicioEntrenadoresApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:35:41.844 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration es.uma.informatica.practica3.MicroservicioEntrenadoresApplication for test class es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests
+20:35:42.200 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos]: BaseDatosConDatos does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:35:42.207 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration es.uma.informatica.practica3.MicroservicioEntrenadoresApplication for test class es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -94,33 +77,37 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2024-05-06T20:10:19.234+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 97292 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
-2024-05-06T20:10:19.238+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
-2024-05-06T20:10:20.232+02:00  INFO 97292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-06T20:10:20.334+02:00  INFO 97292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 2 JPA repository interfaces.
-2024-05-06T20:10:21.248+02:00  INFO 97292 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2024-05-06T20:10:21.272+02:00  INFO 97292 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-06T20:10:21.273+02:00  INFO 97292 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-05-06T20:10:21.348+02:00  INFO 97292 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-06T20:10:21.350+02:00  INFO 97292 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2069 ms
-2024-05-06T20:10:21.406+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-06T20:10:21.876+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
-2024-05-06T20:10:21.878+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-06T20:10:21.900+02:00  INFO 97292 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
-2024-05-06T20:10:22.164+02:00  INFO 97292 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-06T20:10:22.265+02:00  INFO 97292 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-05-06T20:10:22.328+02:00  INFO 97292 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-06T20:10:22.733+02:00  INFO 97292 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-06T20:10:22.806+02:00  WARN 97292 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-05-06T20:10:24.584+02:00  INFO 97292 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-06T20:10:24.670+02:00  INFO 97292 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-06T20:10:25.209+02:00  INFO 97292 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-05-06T20:10:26.025+02:00  WARN 97292 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-06T20:10:26.618+02:00  INFO 97292 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 42669 (http) with context path ''
-2024-05-06T20:10:26.627+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 7.853 seconds (process running for 9.855)
-2024-05-06T20:10:27.681+02:00  INFO 97292 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-06T20:10:27.691+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-05-06T20:10:27.693+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-07T20:35:43.118+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 59495 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
+2024-05-07T20:35:43.121+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2024-05-07T20:35:44.460+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-07T20:35:44.535+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 2 JPA repository interfaces.
+2024-05-07T20:35:45.323+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-07T20:35:45.349+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07T20:35:45.350+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-07T20:35:45.458+02:00  INFO 59495 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07T20:35:45.459+02:00  INFO 59495 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2271 ms
+2024-05-07T20:35:45.627+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-07T20:35:46.476+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-05-07T20:35:46.480+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-07T20:35:46.509+02:00  INFO 59495 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-05-07T20:35:46.906+02:00  INFO 59495 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-07T20:35:47.100+02:00  INFO 59495 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-07T20:35:47.225+02:00  INFO 59495 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-07T20:35:47.884+02:00  INFO 59495 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-07T20:35:47.965+02:00  WARN 59495 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-07T20:35:49.543+02:00  INFO 59495 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-07T20:35:49.616+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:50.003+02:00  INFO 59495 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-07T20:35:50.725+02:00  WARN 59495 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-07T20:35:51.263+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 34171 (http) with context path ''
+2024-05-07T20:35:51.273+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 8.971 seconds (process running for 11.253)
+2024-05-07T20:35:52.037+02:00  INFO 59495 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07T20:35:52.038+02:00  INFO 59495 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07T20:35:52.041+02:00  INFO 59495 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+HE ENTRADO AQUI CON ID: 2
+2024-05-07T20:35:52.414+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:52.427+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-07T20:35:52.430+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 ]]></system-out>
     <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/home/javimp2003/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.13/byte-buddy-agent-1.14.13.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
@@ -128,24 +115,7 @@ WARNING: If a serviceability tool is not in use, please run with -Djdk.instrumen
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
 ]]></system-err>
   </testcase>
-  <testcase name="modificarEntrenador" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.047">
-    <error message="failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session" type="org.hibernate.LazyInitializationException"><![CDATA[org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session
-	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
-	at org.hibernate.collection.spi.PersistentBag.toString(PersistentBag.java:589)
-	at es.uma.informatica.practica3.entidades.Mensaje.toString(Mensaje.java:148)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
-	at java.base/java.util.AbstractCollection.toString(AbstractCollection.java:459)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertarDatos(MicroservicioEntrenadoresApplicationTests.java:217)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></error>
+  <testcase name="obtenerMensajeInexistente" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.121">
     <system-out><![CDATA[
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -155,51 +125,37 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2024-05-06T20:10:27.749+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 97292 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
-2024-05-06T20:10:27.749+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
-2024-05-06T20:10:27.933+02:00  INFO 97292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-06T20:10:27.942+02:00  INFO 97292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 2 JPA repository interfaces.
-2024-05-06T20:10:28.080+02:00  INFO 97292 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2024-05-06T20:10:28.082+02:00  INFO 97292 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-06T20:10:28.083+02:00  INFO 97292 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-05-06T20:10:28.101+02:00  INFO 97292 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-06T20:10:28.102+02:00  INFO 97292 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 351 ms
-2024-05-06T20:10:28.134+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-05-06T20:10:28.138+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:test user=SA
-2024-05-06T20:10:28.139+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-05-06T20:10:28.139+02:00  INFO 97292 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
-2024-05-06T20:10:28.173+02:00  INFO 97292 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-06T20:10:28.176+02:00  INFO 97292 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-06T20:10:28.181+02:00  INFO 97292 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-06T20:10:28.183+02:00  WARN 97292 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-05-06T20:10:28.304+02:00  INFO 97292 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-06T20:10:28.326+02:00  INFO 97292 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-06T20:10:28.418+02:00  WARN 97292 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-06T20:10:28.545+02:00  INFO 97292 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 33967 (http) with context path ''
-2024-05-06T20:10:28.550+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.834 seconds (process running for 11.778)
-2024-05-06T20:10:28.590+02:00  INFO 97292 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-06T20:10:28.597+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2024-05-06T20:10:28.599+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-05-07T20:35:52.509+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 59495 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
+2024-05-07T20:35:52.510+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2024-05-07T20:35:52.731+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-07T20:35:52.740+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 2 JPA repository interfaces.
+2024-05-07T20:35:52.879+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-07T20:35:52.880+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07T20:35:52.880+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-07T20:35:52.891+02:00  INFO 59495 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07T20:35:52.891+02:00  INFO 59495 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 378 ms
+2024-05-07T20:35:52.915+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-05-07T20:35:52.917+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:test user=SA
+2024-05-07T20:35:52.918+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-05-07T20:35:52.918+02:00  INFO 59495 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-05-07T20:35:52.951+02:00  INFO 59495 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-07T20:35:52.954+02:00  INFO 59495 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-07T20:35:52.960+02:00  INFO 59495 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-07T20:35:52.961+02:00  WARN 59495 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-07T20:35:53.092+02:00  INFO 59495 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-07T20:35:53.113+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:53.203+02:00  WARN 59495 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-07T20:35:53.334+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 39827 (http) with context path ''
+2024-05-07T20:35:53.337+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.876 seconds (process running for 13.318)
+2024-05-07T20:35:53.427+02:00  INFO 59495 --- [o-auto-2-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07T20:35:53.428+02:00  INFO 59495 --- [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07T20:35:53.429+02:00  INFO 59495 --- [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-07T20:35:53.451+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:53.458+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-05-07T20:35:53.459+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
 ]]></system-out>
   </testcase>
-  <testcase name="insertaEntrenadorExistente" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.04">
-    <error message="failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session" type="org.hibernate.LazyInitializationException"><![CDATA[org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session
-	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
-	at org.hibernate.collection.spi.PersistentBag.toString(PersistentBag.java:589)
-	at es.uma.informatica.practica3.entidades.Mensaje.toString(Mensaje.java:148)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
-	at java.base/java.util.AbstractCollection.toString(AbstractCollection.java:459)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertarDatos(MicroservicioEntrenadoresApplicationTests.java:217)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></error>
+  <testcase name="modificarEntrenador" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.116">
     <system-out><![CDATA[
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -209,51 +165,37 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2024-05-06T20:10:28.634+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 97292 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
-2024-05-06T20:10:28.635+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
-2024-05-06T20:10:28.820+02:00  INFO 97292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-06T20:10:28.830+02:00  INFO 97292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 2 JPA repository interfaces.
-2024-05-06T20:10:28.917+02:00  INFO 97292 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2024-05-06T20:10:28.918+02:00  INFO 97292 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-06T20:10:28.919+02:00  INFO 97292 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-05-06T20:10:28.929+02:00  INFO 97292 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-06T20:10:28.929+02:00  INFO 97292 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 291 ms
-2024-05-06T20:10:28.943+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2024-05-06T20:10:28.946+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:test user=SA
-2024-05-06T20:10:28.946+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2024-05-06T20:10:28.946+02:00  INFO 97292 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
-2024-05-06T20:10:28.983+02:00  INFO 97292 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-06T20:10:28.986+02:00  INFO 97292 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-06T20:10:28.990+02:00  INFO 97292 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-06T20:10:28.991+02:00  WARN 97292 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-05-06T20:10:29.131+02:00  INFO 97292 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-06T20:10:29.167+02:00  INFO 97292 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-06T20:10:29.292+02:00  WARN 97292 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-06T20:10:29.424+02:00  INFO 97292 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 40771 (http) with context path ''
-2024-05-06T20:10:29.428+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.821 seconds (process running for 12.655)
-2024-05-06T20:10:29.460+02:00  INFO 97292 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-06T20:10:29.468+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
-2024-05-06T20:10:29.469+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-05-07T20:35:53.491+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 59495 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
+2024-05-07T20:35:53.491+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2024-05-07T20:35:53.644+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-07T20:35:53.651+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.
+2024-05-07T20:35:53.719+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-07T20:35:53.720+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07T20:35:53.720+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-07T20:35:53.729+02:00  INFO 59495 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07T20:35:53.729+02:00  INFO 59495 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 236 ms
+2024-05-07T20:35:53.743+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-05-07T20:35:53.745+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:test user=SA
+2024-05-07T20:35:53.746+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-05-07T20:35:53.746+02:00  INFO 59495 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-05-07T20:35:53.782+02:00  INFO 59495 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-07T20:35:53.784+02:00  INFO 59495 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-07T20:35:53.787+02:00  INFO 59495 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-07T20:35:53.788+02:00  WARN 59495 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-07T20:35:53.885+02:00  INFO 59495 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-07T20:35:53.899+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:53.996+02:00  WARN 59495 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-07T20:35:54.118+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 37145 (http) with context path ''
+2024-05-07T20:35:54.121+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.655 seconds (process running for 14.101)
+2024-05-07T20:35:54.160+02:00  INFO 59495 --- [o-auto-3-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07T20:35:54.160+02:00  INFO 59495 --- [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07T20:35:54.161+02:00  INFO 59495 --- [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-07T20:35:54.230+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:54.235+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-05-07T20:35:54.237+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
 ]]></system-out>
   </testcase>
-  <testcase name="modificarEntrenadorInexistente" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.099">
-    <error message="failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session" type="org.hibernate.LazyInitializationException"><![CDATA[org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session
-	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
-	at org.hibernate.collection.spi.PersistentBag.toString(PersistentBag.java:589)
-	at es.uma.informatica.practica3.entidades.Mensaje.toString(Mensaje.java:148)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
-	at java.base/java.util.AbstractCollection.toString(AbstractCollection.java:459)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertarDatos(MicroservicioEntrenadoresApplicationTests.java:217)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></error>
+  <testcase name="insertaEntrenadorExistente" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.127">
     <system-out><![CDATA[
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -263,51 +205,105 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2024-05-06T20:10:29.503+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 97292 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
-2024-05-06T20:10:29.503+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
-2024-05-06T20:10:29.642+02:00  INFO 97292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-06T20:10:29.649+02:00  INFO 97292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.
-2024-05-06T20:10:29.724+02:00  INFO 97292 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2024-05-06T20:10:29.725+02:00  INFO 97292 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-06T20:10:29.726+02:00  INFO 97292 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-05-06T20:10:29.739+02:00  INFO 97292 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-06T20:10:29.740+02:00  INFO 97292 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 234 ms
-2024-05-06T20:10:29.757+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
-2024-05-06T20:10:29.761+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection conn30: url=jdbc:h2:mem:test user=SA
-2024-05-06T20:10:29.761+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
-2024-05-06T20:10:29.761+02:00  INFO 97292 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
-2024-05-06T20:10:29.784+02:00  INFO 97292 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-06T20:10:29.785+02:00  INFO 97292 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-06T20:10:29.788+02:00  INFO 97292 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-06T20:10:29.789+02:00  WARN 97292 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-05-06T20:10:29.870+02:00  INFO 97292 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-06T20:10:29.884+02:00  INFO 97292 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-06T20:10:29.950+02:00  WARN 97292 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-06T20:10:30.052+02:00  INFO 97292 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 40749 (http) with context path ''
-2024-05-06T20:10:30.054+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.579 seconds (process running for 13.282)
-2024-05-06T20:10:30.119+02:00  INFO 97292 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-06T20:10:30.131+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
-2024-05-06T20:10:30.152+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2024-05-07T20:35:54.272+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 59495 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
+2024-05-07T20:35:54.273+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2024-05-07T20:35:54.398+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-07T20:35:54.406+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2024-05-07T20:35:54.484+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-07T20:35:54.485+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07T20:35:54.485+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-07T20:35:54.494+02:00  INFO 59495 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07T20:35:54.495+02:00  INFO 59495 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 221 ms
+2024-05-07T20:35:54.506+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-05-07T20:35:54.509+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection conn30: url=jdbc:h2:mem:test user=SA
+2024-05-07T20:35:54.510+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2024-05-07T20:35:54.510+02:00  INFO 59495 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-05-07T20:35:54.531+02:00  INFO 59495 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-07T20:35:54.533+02:00  INFO 59495 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-07T20:35:54.536+02:00  INFO 59495 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-07T20:35:54.538+02:00  WARN 59495 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-07T20:35:54.635+02:00  INFO 59495 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-07T20:35:54.652+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:54.728+02:00  WARN 59495 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-07T20:35:54.813+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 42831 (http) with context path ''
+2024-05-07T20:35:54.815+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.572 seconds (process running for 14.796)
+La peticion post es: http://localhost:42831/entrenador?centro=1
+2024-05-07T20:35:54.838+02:00  INFO 59495 --- [o-auto-4-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07T20:35:54.839+02:00  INFO 59495 --- [o-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07T20:35:54.840+02:00  INFO 59495 --- [o-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-07T20:35:54.897+02:00 ERROR 59495 --- [o-auto-4-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: es.uma.informatica.practica3.servicios.excepciones.EntidadExistenteException] with root cause
+
+es.uma.informatica.practica3.servicios.excepciones.EntidadExistenteException: null
+	at es.uma.informatica.practica3.servicios.EntrenadorServicio.aniadirEntrenador(EntrenadorServicio.java:50) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-6.1.6.jar:6.1.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392) ~[spring-tx-6.1.6.jar:6.1.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720) ~[spring-aop-6.1.6.jar:6.1.6]
+	at es.uma.informatica.practica3.servicios.EntrenadorServicio$$SpringCGLIB$$0.aniadirEntrenador(<generated>) ~[classes/:na]
+	at es.uma.informatica.practica3.controladores.EntrenadorRest.aniadirEntrenador(EntrenadorRest.java:64) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.20.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.20.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-05-07T20:35:54.936+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:54.941+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2024-05-07T20:35:54.942+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
 ]]></system-out>
   </testcase>
-  <testcase name="obtenerEntrenador" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.031">
-    <error message="failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session" type="org.hibernate.LazyInitializationException"><![CDATA[org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session
-	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
-	at org.hibernate.collection.spi.PersistentBag.toString(PersistentBag.java:589)
-	at es.uma.informatica.practica3.entidades.Mensaje.toString(Mensaje.java:148)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
-	at java.base/java.util.AbstractCollection.toString(AbstractCollection.java:459)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertarDatos(MicroservicioEntrenadoresApplicationTests.java:217)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></error>
+  <testcase name="modificarEntrenadorInexistente" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.048">
     <system-out><![CDATA[
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -317,51 +313,37 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2024-05-06T20:10:30.205+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 97292 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
-2024-05-06T20:10:30.206+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
-2024-05-06T20:10:30.326+02:00  INFO 97292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-06T20:10:30.331+02:00  INFO 97292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 2 JPA repository interfaces.
-2024-05-06T20:10:30.395+02:00  INFO 97292 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2024-05-06T20:10:30.396+02:00  INFO 97292 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-06T20:10:30.396+02:00  INFO 97292 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-05-06T20:10:30.404+02:00  INFO 97292 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-06T20:10:30.405+02:00  INFO 97292 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 197 ms
-2024-05-06T20:10:30.414+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
-2024-05-06T20:10:30.417+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection conn40: url=jdbc:h2:mem:test user=SA
-2024-05-06T20:10:30.417+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
-2024-05-06T20:10:30.418+02:00  INFO 97292 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
-2024-05-06T20:10:30.444+02:00  INFO 97292 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-06T20:10:30.445+02:00  INFO 97292 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-06T20:10:30.448+02:00  INFO 97292 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-06T20:10:30.449+02:00  WARN 97292 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-05-06T20:10:30.536+02:00  INFO 97292 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-06T20:10:30.553+02:00  INFO 97292 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-06T20:10:30.644+02:00  WARN 97292 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-06T20:10:30.726+02:00  INFO 97292 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 38351 (http) with context path ''
-2024-05-06T20:10:30.732+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.571 seconds (process running for 13.96)
-2024-05-06T20:10:30.755+02:00  INFO 97292 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-06T20:10:30.761+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
-2024-05-06T20:10:30.762+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2024-05-07T20:35:54.974+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 59495 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
+2024-05-07T20:35:54.975+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2024-05-07T20:35:55.088+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-07T20:35:55.094+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 2 JPA repository interfaces.
+2024-05-07T20:35:55.149+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-07T20:35:55.150+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07T20:35:55.151+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-07T20:35:55.161+02:00  INFO 59495 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07T20:35:55.161+02:00  INFO 59495 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 185 ms
+2024-05-07T20:35:55.181+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2024-05-07T20:35:55.184+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection conn40: url=jdbc:h2:mem:test user=SA
+2024-05-07T20:35:55.185+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2024-05-07T20:35:55.186+02:00  INFO 59495 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-05-07T20:35:55.213+02:00  INFO 59495 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-07T20:35:55.215+02:00  INFO 59495 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-07T20:35:55.218+02:00  INFO 59495 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-07T20:35:55.219+02:00  WARN 59495 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-07T20:35:55.306+02:00  INFO 59495 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-07T20:35:55.319+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:55.385+02:00  WARN 59495 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-07T20:35:55.473+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 35957 (http) with context path ''
+2024-05-07T20:35:55.479+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.53 seconds (process running for 15.46)
+2024-05-07T20:35:55.497+02:00  INFO 59495 --- [o-auto-5-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07T20:35:55.497+02:00  INFO 59495 --- [o-auto-5-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07T20:35:55.499+02:00  INFO 59495 --- [o-auto-5-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-05-07T20:35:55.520+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:55.525+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2024-05-07T20:35:55.526+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
 ]]></system-out>
   </testcase>
-  <testcase name="obtenerTodosMensajes" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.022">
-    <error message="failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session" type="org.hibernate.LazyInitializationException"><![CDATA[org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session
-	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
-	at org.hibernate.collection.spi.PersistentBag.toString(PersistentBag.java:589)
-	at es.uma.informatica.practica3.entidades.Mensaje.toString(Mensaje.java:148)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
-	at java.base/java.util.AbstractCollection.toString(AbstractCollection.java:459)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertarDatos(MicroservicioEntrenadoresApplicationTests.java:217)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></error>
+  <testcase name="obtenerEntrenador" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.049">
     <system-out><![CDATA[
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -371,51 +353,37 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2024-05-06T20:10:30.787+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 97292 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
-2024-05-06T20:10:30.787+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
-2024-05-06T20:10:30.880+02:00  INFO 97292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-06T20:10:30.887+02:00  INFO 97292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.
-2024-05-06T20:10:31.000+02:00  INFO 97292 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2024-05-06T20:10:31.001+02:00  INFO 97292 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-06T20:10:31.001+02:00  INFO 97292 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-05-06T20:10:31.010+02:00  INFO 97292 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-06T20:10:31.010+02:00  INFO 97292 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 221 ms
-2024-05-06T20:10:31.022+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
-2024-05-06T20:10:31.028+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection conn50: url=jdbc:h2:mem:test user=SA
-2024-05-06T20:10:31.029+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
-2024-05-06T20:10:31.029+02:00  INFO 97292 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
-2024-05-06T20:10:31.072+02:00  INFO 97292 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-06T20:10:31.074+02:00  INFO 97292 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-06T20:10:31.078+02:00  INFO 97292 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-06T20:10:31.080+02:00  WARN 97292 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-05-06T20:10:31.235+02:00  INFO 97292 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-06T20:10:31.260+02:00  INFO 97292 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-06T20:10:31.342+02:00  WARN 97292 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-06T20:10:31.418+02:00  INFO 97292 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 33343 (http) with context path ''
-2024-05-06T20:10:31.421+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.652 seconds (process running for 14.648)
-2024-05-06T20:10:31.441+02:00  INFO 97292 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-06T20:10:31.444+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
-2024-05-06T20:10:31.445+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2024-05-07T20:35:55.558+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 59495 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
+2024-05-07T20:35:55.559+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2024-05-07T20:35:55.659+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-07T20:35:55.666+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.
+2024-05-07T20:35:55.726+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-07T20:35:55.727+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07T20:35:55.727+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-07T20:35:55.738+02:00  INFO 59495 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07T20:35:55.738+02:00  INFO 59495 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 175 ms
+2024-05-07T20:35:55.754+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2024-05-07T20:35:55.758+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection conn50: url=jdbc:h2:mem:test user=SA
+2024-05-07T20:35:55.759+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2024-05-07T20:35:55.760+02:00  INFO 59495 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-05-07T20:35:55.785+02:00  INFO 59495 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-07T20:35:55.790+02:00  INFO 59495 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-07T20:35:55.796+02:00  INFO 59495 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-07T20:35:55.797+02:00  WARN 59495 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-07T20:35:55.923+02:00  INFO 59495 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-07T20:35:55.939+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:56.004+02:00  WARN 59495 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-07T20:35:56.096+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 46833 (http) with context path ''
+2024-05-07T20:35:56.098+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.566 seconds (process running for 16.079)
+2024-05-07T20:35:56.120+02:00  INFO 59495 --- [o-auto-6-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07T20:35:56.120+02:00  INFO 59495 --- [o-auto-6-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07T20:35:56.121+02:00  INFO 59495 --- [o-auto-6-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-05-07T20:35:56.141+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:56.146+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2024-05-07T20:35:56.147+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
 ]]></system-out>
   </testcase>
-  <testcase name="obtenerTodosEntrenadores" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.032">
-    <error message="failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session" type="org.hibernate.LazyInitializationException"><![CDATA[org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: es.uma.informatica.practica3.entidades.Mensaje.destinatarios: could not initialize proxy - no Session
-	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
-	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
-	at org.hibernate.collection.spi.PersistentBag.toString(PersistentBag.java:589)
-	at es.uma.informatica.practica3.entidades.Mensaje.toString(Mensaje.java:148)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
-	at java.base/java.util.AbstractCollection.toString(AbstractCollection.java:459)
-	at java.base/java.lang.String.valueOf(String.java:4465)
-	at es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertarDatos(MicroservicioEntrenadoresApplicationTests.java:217)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></error>
+  <testcase name="eliminarMensaje" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.052">
     <system-out><![CDATA[
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -425,31 +393,280 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2024-05-06T20:10:31.462+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 97292 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
-2024-05-06T20:10:31.462+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
-2024-05-06T20:10:31.554+02:00  INFO 97292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-06T20:10:31.560+02:00  INFO 97292 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.
-2024-05-06T20:10:31.611+02:00  INFO 97292 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2024-05-06T20:10:31.613+02:00  INFO 97292 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-06T20:10:31.613+02:00  INFO 97292 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-05-06T20:10:31.624+02:00  INFO 97292 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-06T20:10:31.624+02:00  INFO 97292 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 161 ms
-2024-05-06T20:10:31.635+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
-2024-05-06T20:10:31.637+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection conn60: url=jdbc:h2:mem:test user=SA
-2024-05-06T20:10:31.638+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
-2024-05-06T20:10:31.638+02:00  INFO 97292 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
-2024-05-06T20:10:31.660+02:00  INFO 97292 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-06T20:10:31.661+02:00  INFO 97292 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-06T20:10:31.664+02:00  INFO 97292 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-06T20:10:31.666+02:00  WARN 97292 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-05-06T20:10:31.747+02:00  INFO 97292 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-06T20:10:31.768+02:00  INFO 97292 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-06T20:10:31.837+02:00  WARN 97292 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-06T20:10:31.922+02:00  INFO 97292 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 34167 (http) with context path ''
-2024-05-06T20:10:31.924+02:00  INFO 97292 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.475 seconds (process running for 15.151)
-2024-05-06T20:10:31.951+02:00  INFO 97292 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-06T20:10:31.956+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
-2024-05-06T20:10:31.956+02:00  INFO 97292 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2024-05-07T20:35:56.170+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 59495 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
+2024-05-07T20:35:56.171+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2024-05-07T20:35:56.259+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-07T20:35:56.264+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 2 JPA repository interfaces.
+2024-05-07T20:35:56.312+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-07T20:35:56.313+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07T20:35:56.314+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-07T20:35:56.321+02:00  INFO 59495 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07T20:35:56.322+02:00  INFO 59495 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 150 ms
+2024-05-07T20:35:56.337+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2024-05-07T20:35:56.340+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection conn60: url=jdbc:h2:mem:test user=SA
+2024-05-07T20:35:56.341+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2024-05-07T20:35:56.341+02:00  INFO 59495 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-05-07T20:35:56.366+02:00  INFO 59495 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-07T20:35:56.369+02:00  INFO 59495 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-07T20:35:56.372+02:00  INFO 59495 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-07T20:35:56.373+02:00  WARN 59495 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-07T20:35:56.448+02:00  INFO 59495 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-07T20:35:56.468+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:56.514+02:00  WARN 59495 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-07T20:35:56.596+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 39379 (http) with context path ''
+2024-05-07T20:35:56.598+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.446 seconds (process running for 16.578)
+2024-05-07T20:35:56.612+02:00  INFO 59495 --- [o-auto-7-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07T20:35:56.612+02:00  INFO 59495 --- [o-auto-7-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07T20:35:56.613+02:00  INFO 59495 --- [o-auto-7-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-07T20:35:56.647+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:56.650+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2024-05-07T20:35:56.650+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+]]></system-out>
+  </testcase>
+  <testcase name="obtenerUnMensaje" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.057">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-07T20:35:56.674+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 59495 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
+2024-05-07T20:35:56.674+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2024-05-07T20:35:56.757+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-07T20:35:56.766+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2024-05-07T20:35:56.816+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-07T20:35:56.816+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07T20:35:56.817+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-07T20:35:56.824+02:00  INFO 59495 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07T20:35:56.824+02:00  INFO 59495 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 149 ms
+2024-05-07T20:35:56.834+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2024-05-07T20:35:56.843+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection conn70: url=jdbc:h2:mem:test user=SA
+2024-05-07T20:35:56.843+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2024-05-07T20:35:56.843+02:00  INFO 59495 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-05-07T20:35:56.872+02:00  INFO 59495 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-07T20:35:56.873+02:00  INFO 59495 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-07T20:35:56.876+02:00  INFO 59495 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-07T20:35:56.877+02:00  WARN 59495 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-07T20:35:56.949+02:00  INFO 59495 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-07T20:35:56.966+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:57.021+02:00  WARN 59495 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-07T20:35:57.105+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 45241 (http) with context path ''
+2024-05-07T20:35:57.107+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.453 seconds (process running for 17.088)
+2024-05-07T20:35:57.131+02:00  INFO 59495 --- [o-auto-8-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07T20:35:57.132+02:00  INFO 59495 --- [o-auto-8-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07T20:35:57.133+02:00  INFO 59495 --- [o-auto-8-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-07T20:35:57.159+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:57.163+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2024-05-07T20:35:57.164+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+]]></system-out>
+  </testcase>
+  <testcase name="eliminarMensajeInexistente" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.031">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-07T20:35:57.191+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 59495 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
+2024-05-07T20:35:57.191+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2024-05-07T20:35:57.291+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-07T20:35:57.297+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 2 JPA repository interfaces.
+2024-05-07T20:35:57.346+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-07T20:35:57.348+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07T20:35:57.349+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-07T20:35:57.359+02:00  INFO 59495 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07T20:35:57.359+02:00  INFO 59495 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 166 ms
+2024-05-07T20:35:57.375+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2024-05-07T20:35:57.377+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-9 - Added connection conn80: url=jdbc:h2:mem:test user=SA
+2024-05-07T20:35:57.377+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2024-05-07T20:35:57.377+02:00  INFO 59495 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-05-07T20:35:57.396+02:00  INFO 59495 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-07T20:35:57.398+02:00  INFO 59495 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-07T20:35:57.402+02:00  INFO 59495 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-07T20:35:57.403+02:00  WARN 59495 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-07T20:35:57.501+02:00  INFO 59495 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-07T20:35:57.517+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:57.617+02:00  WARN 59495 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-07T20:35:57.714+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 44513 (http) with context path ''
+2024-05-07T20:35:57.716+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.546 seconds (process running for 17.697)
+2024-05-07T20:35:57.729+02:00  INFO 59495 --- [o-auto-9-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07T20:35:57.729+02:00  INFO 59495 --- [o-auto-9-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07T20:35:57.730+02:00  INFO 59495 --- [o-auto-9-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-07T20:35:57.744+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:57.747+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2024-05-07T20:35:57.747+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+]]></system-out>
+  </testcase>
+  <testcase name="obtenerTodosMensajes" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.054">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-07T20:35:57.768+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 59495 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
+2024-05-07T20:35:57.768+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2024-05-07T20:35:57.849+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-07T20:35:57.855+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.
+2024-05-07T20:35:57.909+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-07T20:35:57.910+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07T20:35:57.910+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-07T20:35:57.916+02:00  INFO 59495 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07T20:35:57.916+02:00  INFO 59495 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 146 ms
+2024-05-07T20:35:57.925+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2024-05-07T20:35:57.927+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-10 - Added connection conn90: url=jdbc:h2:mem:test user=SA
+2024-05-07T20:35:57.927+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2024-05-07T20:35:57.927+02:00  INFO 59495 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-05-07T20:35:57.949+02:00  INFO 59495 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-07T20:35:57.952+02:00  INFO 59495 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-07T20:35:57.954+02:00  INFO 59495 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-07T20:35:57.955+02:00  WARN 59495 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-07T20:35:58.031+02:00  INFO 59495 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-07T20:35:58.059+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:58.151+02:00  WARN 59495 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-07T20:35:58.225+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 35401 (http) with context path ''
+2024-05-07T20:35:58.226+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.473 seconds (process running for 18.207)
+La peticion post es: http://localhost:35401/mensaje/entrenador?entrenador=1
+La uri montada es: http://localhost:35401/mensaje/entrenador?entrenador=1
+2024-05-07T20:35:58.242+02:00  INFO 59495 --- [-auto-10-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07T20:35:58.242+02:00  INFO 59495 --- [-auto-10-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07T20:35:58.243+02:00  INFO 59495 --- [-auto-10-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-07T20:35:58.276+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:58.280+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2024-05-07T20:35:58.281+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+]]></system-out>
+  </testcase>
+  <testcase name="insertaMensaje" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.061">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-07T20:35:58.304+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 59495 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
+2024-05-07T20:35:58.304+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2024-05-07T20:35:58.395+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-07T20:35:58.407+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 2 JPA repository interfaces.
+2024-05-07T20:35:58.479+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-07T20:35:58.480+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07T20:35:58.481+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-07T20:35:58.488+02:00  INFO 59495 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07T20:35:58.488+02:00  INFO 59495 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 183 ms
+2024-05-07T20:35:58.498+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Starting...
+2024-05-07T20:35:58.501+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-11 - Added connection conn100: url=jdbc:h2:mem:test user=SA
+2024-05-07T20:35:58.501+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Start completed.
+2024-05-07T20:35:58.501+02:00  INFO 59495 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-05-07T20:35:58.517+02:00  INFO 59495 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-07T20:35:58.518+02:00  INFO 59495 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-07T20:35:58.520+02:00  INFO 59495 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-07T20:35:58.521+02:00  WARN 59495 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-07T20:35:58.596+02:00  INFO 59495 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-07T20:35:58.608+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:58.658+02:00  WARN 59495 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-07T20:35:58.725+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 33379 (http) with context path ''
+2024-05-07T20:35:58.727+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.442 seconds (process running for 18.707)
+La peticion post es: http://localhost:33379/mensaje/entrenador?entrenador=1
+2024-05-07T20:35:58.741+02:00  INFO 59495 --- [-auto-11-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07T20:35:58.741+02:00  INFO 59495 --- [-auto-11-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07T20:35:58.742+02:00  INFO 59495 --- [-auto-11-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-07T20:35:58.784+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:58.786+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown initiated...
+2024-05-07T20:35:58.787+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown completed.
+]]></system-out>
+  </testcase>
+  <testcase name="insertaIncorrectamenteMensaje" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.048">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-07T20:35:58.812+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 59495 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
+2024-05-07T20:35:58.812+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2024-05-07T20:35:58.906+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-07T20:35:58.910+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 2 JPA repository interfaces.
+2024-05-07T20:35:58.958+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-07T20:35:58.959+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07T20:35:58.959+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-07T20:35:58.969+02:00  INFO 59495 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07T20:35:58.969+02:00  INFO 59495 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 155 ms
+2024-05-07T20:35:58.979+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Starting...
+2024-05-07T20:35:58.981+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-12 - Added connection conn110: url=jdbc:h2:mem:test user=SA
+2024-05-07T20:35:58.981+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Start completed.
+2024-05-07T20:35:58.981+02:00  INFO 59495 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-05-07T20:35:58.995+02:00  INFO 59495 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-07T20:35:58.996+02:00  INFO 59495 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-07T20:35:58.999+02:00  INFO 59495 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-07T20:35:58.999+02:00  WARN 59495 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-07T20:35:59.073+02:00  INFO 59495 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-07T20:35:59.083+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:59.128+02:00  WARN 59495 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-07T20:35:59.194+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 40805 (http) with context path ''
+2024-05-07T20:35:59.196+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.404 seconds (process running for 19.177)
+La peticion post es: http://localhost:40805/mensaje/entrenador?entrenador=2
+2024-05-07T20:35:59.210+02:00  INFO 59495 --- [-auto-12-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07T20:35:59.210+02:00  INFO 59495 --- [-auto-12-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07T20:35:59.211+02:00  INFO 59495 --- [-auto-12-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-07T20:35:59.239+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:59.242+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown initiated...
+2024-05-07T20:35:59.243+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown completed.
+]]></system-out>
+  </testcase>
+  <testcase name="obtenerTodosEntrenadores" classname="es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos" time="0.041">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-07T20:35:59.262+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Starting MicroservicioEntrenadoresApplicationTests using Java 21.0.2 with PID 59495 (started by javimp2003 in /home/javimp2003/JARA Developers/ciklum-jara-developers/back-end)
+2024-05-07T20:35:59.263+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2024-05-07T20:35:59.342+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-07T20:35:59.350+02:00  INFO 59495 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2024-05-07T20:35:59.401+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-07T20:35:59.402+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07T20:35:59.403+02:00  INFO 59495 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-07T20:35:59.409+02:00  INFO 59495 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07T20:35:59.409+02:00  INFO 59495 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 143 ms
+2024-05-07T20:35:59.417+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Starting...
+2024-05-07T20:35:59.419+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-13 - Added connection conn120: url=jdbc:h2:mem:test user=SA
+2024-05-07T20:35:59.419+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Start completed.
+2024-05-07T20:35:59.419+02:00  INFO 59495 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-05-07T20:35:59.436+02:00  INFO 59495 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-07T20:35:59.437+02:00  INFO 59495 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-07T20:35:59.440+02:00  INFO 59495 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-07T20:35:59.441+02:00  WARN 59495 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-07T20:35:59.505+02:00  INFO 59495 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-07T20:35:59.515+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:59.584+02:00  WARN 59495 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-07T20:35:59.648+02:00  INFO 59495 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 39725 (http) with context path ''
+2024-05-07T20:35:59.651+02:00  INFO 59495 --- [           main] icroservicioEntrenadoresApplicationTests : Started MicroservicioEntrenadoresApplicationTests in 0.403 seconds (process running for 19.632)
+La peticion post es: http://localhost:39725/entrenador?centro=1
+La uri montada es: http://localhost:39725/entrenador?centro=1
+2024-05-07T20:35:59.674+02:00  INFO 59495 --- [-auto-13-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07T20:35:59.674+02:00  INFO 59495 --- [-auto-13-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07T20:35:59.675+02:00  INFO 59495 --- [-auto-13-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-07T20:35:59.691+02:00  INFO 59495 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-07T20:35:59.693+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown initiated...
+2024-05-07T20:35:59.694+02:00  INFO 59495 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown completed.
 ]]></system-out>
   </testcase>
 </testsuite>

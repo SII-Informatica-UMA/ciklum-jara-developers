@@ -80,6 +80,7 @@ public class EntrenadorRest {
                             @ApiResponse(responseCode = "403", description = "Acceso no autorizado")})
     public EntrenadorDTO actualizarEntrenador (@PathVariable Long idEntrenador, @RequestBody EntrenadorDTO entrenador) {
         Optional<Entrenador> condTrainer = servicioEntrenadores.obtenerEntrenador(idEntrenador);
+        // Si he pasado de esta linea, significa que el entrenador existe en la bbdd, porque de lo contrario se hubiera lanzado un error 404
         entrenador.setId(idEntrenador);
         Entrenador auxTrainer = entrenador.toEntity();
         auxTrainer.setIdCentro(condTrainer.get().getIdCentro());

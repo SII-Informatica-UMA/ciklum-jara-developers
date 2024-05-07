@@ -57,7 +57,7 @@ public class Mensaje {
 <span class="nc" id="L57">    }</span>
 
     public Entrenador getEntrenador() {
-<span class="nc" id="L60">        return entrenador;</span>
+<span class="fc" id="L60">        return entrenador;</span>
     }
 
     public void setEntrenador(Entrenador entrenador) {
@@ -65,7 +65,7 @@ public class Mensaje {
 <span class="fc" id="L65">    }</span>
 
     public String getAsunto() {
-<span class="nc" id="L68">        return asunto;</span>
+<span class="fc" id="L68">        return asunto;</span>
     }
 
     public void setAsunto(String asunto) {
@@ -73,52 +73,52 @@ public class Mensaje {
 <span class="fc" id="L73">    }</span>
 
     public List&lt;Destinatario&gt; getDestinatarios() {
-<span class="nc" id="L76">        return destinatarios;</span>
+<span class="fc" id="L76">        return destinatarios;</span>
     }
 
     public void setDestinatarios(List&lt;Destinatario&gt; destinatarios) {
-<span class="nc" id="L80">        this.destinatarios = destinatarios;</span>
-<span class="nc" id="L81">    }</span>
+<span class="fc" id="L80">        this.destinatarios = destinatarios;</span>
+<span class="fc" id="L81">    }</span>
 
     public List&lt;Destinatario&gt; getCopia() {
-<span class="nc" id="L84">        return copia;</span>
+<span class="fc" id="L84">        return copia;</span>
     }
 
     public void setCopia(List&lt;Destinatario&gt; copia) {
-<span class="nc" id="L88">        this.copia = copia;</span>
-<span class="nc" id="L89">    }</span>
+<span class="fc" id="L88">        this.copia = copia;</span>
+<span class="fc" id="L89">    }</span>
 
     public List&lt;Destinatario&gt; getCopiaOculta() {
-<span class="nc" id="L92">        return copiaOculta;</span>
+<span class="fc" id="L92">        return copiaOculta;</span>
     }
 
     public void setCopiaOculta(List&lt;Destinatario&gt; copiaOculta) {
-<span class="nc" id="L96">        this.copiaOculta = copiaOculta;</span>
-<span class="nc" id="L97">    }</span>
+<span class="fc" id="L96">        this.copiaOculta = copiaOculta;</span>
+<span class="fc" id="L97">    }</span>
 
     public Destinatario getRemitente() {
-<span class="nc" id="L100">        return remitente;</span>
+<span class="fc" id="L100">        return remitente;</span>
     }
 
     public void setRemitente(Destinatario remitente) {
-<span class="nc" id="L104">        this.remitente = remitente;</span>
-<span class="nc" id="L105">    }</span>
+<span class="fc" id="L104">        this.remitente = remitente;</span>
+<span class="fc" id="L105">    }</span>
 
     public String getContenido() {
-<span class="nc" id="L108">        return contenido;</span>
+<span class="fc" id="L108">        return contenido;</span>
     }
 
     public void setContenido(String contenido) {
-<span class="nc" id="L112">        this.contenido = contenido;</span>
-<span class="nc" id="L113">    }</span>
+<span class="fc" id="L112">        this.contenido = contenido;</span>
+<span class="fc" id="L113">    }</span>
 
     public Long getIdMensaje() {
-<span class="nc" id="L116">        return idMensaje;</span>
+<span class="fc" id="L116">        return idMensaje;</span>
     }
 
     public void setIdMensaje(Long idMensaje) {
-<span class="nc" id="L120">        this.idMensaje = idMensaje;</span>
-<span class="nc" id="L121">    }</span>
+<span class="fc" id="L120">        this.idMensaje = idMensaje;</span>
+<span class="fc" id="L121">    }</span>
 
     @Override
     public int hashCode() {
@@ -144,7 +144,7 @@ public class Mensaje {
 
     @Override
     public String toString() {
-<span class="nc" id="L147">        return &quot;Mensaje(&quot; + idMensaje + &quot;, &quot; + asunto + &quot;, &quot; + contenido + &quot;, &quot;</span>
+<span class="pc" id="L147">        return &quot;Mensaje(&quot; + idMensaje + &quot;, &quot; + asunto + &quot;, &quot; + contenido + &quot;, &quot;</span>
 <span class="nc" id="L148">                            + destinatarios.toString() + &quot;)&quot;;</span>
     }
 }

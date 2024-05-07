@@ -57,6 +57,7 @@ public class MensajeRest {
         Mensaje newMensaje = mensajeNuevoDTO.toEntity();
         URI uri = UriGenerator(UriComponentsBuilder.newInstance()
                                                     .build()).apply(newMensaje);
+
         return ResponseEntity.created(uri)
                             .body(MensajeDTO.fromEntity(this.servicioEntrenadores.aniadirMensajeAsignado(idEntrenador, newMensaje)));
     }
