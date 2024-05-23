@@ -2,98 +2,214 @@
 
 import java.util.List;
 import java.util.Optional;
-
+import es.uma.informatica.practica3.security.SecurityConfguration;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.HttpServerErrorException;
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
+import es.uma.informatica.practica3.dtos.GerenteDTO;
+import es.uma.informatica.practica3.dtos.IdGerenteDTO;
 import es.uma.informatica.practica3.entidades.Entrenador;
 import es.uma.informatica.practica3.entidades.Mensaje;
 import es.uma.informatica.practica3.repositorios.EntrenadorRepository;
 import es.uma.informatica.practica3.repositorios.MensajeRepository;
+import es.uma.informatica.practica3.servicios.excepciones.AccesoNoPermitidoException;
 import es.uma.informatica.practica3.servicios.excepciones.EntidadExistenteException;
 import es.uma.informatica.practica3.servicios.excepciones.EntidadNoEncontradaException;
+import es.uma.informatica.practica3.servicios.excepciones.PeticionHttpFallidaException;
+import java.util.NoSuchElementException;
 
 @Service
 @Transactional
 public class EntrenadorServicio {
 	
+    @Autowired
+    private RestTemplate restTemplate;
+
 	private EntrenadorRepository entrenadorRepo;
     private MensajeRepository mensajeRepo;
-	
-<span class="fc" id="L26">	public EntrenadorServicio(EntrenadorRepository entrenadorRepo, </span>
+
+    
+<span class="fc" id="L38">    public EntrenadorServicio(EntrenadorRepository entrenadorRepo, </span>
 			MensajeRepository mensajeRepo) {
-<span class="fc" id="L28">		this.entrenadorRepo = entrenadorRepo;</span>
-<span class="fc" id="L29">		this.mensajeRepo = mensajeRepo;</span>
-<span class="fc" id="L30">	}</span>
+<span class="fc" id="L40">		this.entrenadorRepo = entrenadorRepo;</span>
+<span class="fc" id="L41">		this.mensajeRepo = mensajeRepo;</span>
+<span class="fc" id="L42">	}</span>
+
+    public ResponseEntity&lt;GerenteDTO&gt; verificayencuentraGerente (Long idCentro) {
+        try {
+            // Construir la URL para obtener IdGerenteDTO
+<span class="fc" id="L47">            String url1 = &quot;http://localhost:8080/centro/&quot; + idCentro + &quot;/gerente&quot;;</span>
+            
+            // Configurar los headers, incluyendo el token de autorización
+<span class="fc" id="L50">            HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(new HttpHeaders());</span>
+
+            // Hacer la primera solicitud GET
+<span class="fc" id="L53">            ResponseEntity&lt;IdGerenteDTO&gt; response1 = restTemplate.exchange(url1, HttpMethod.GET, entity, IdGerenteDTO.class);</span>
+
+            // Construir la URL para la segunda solicitud
+<span class="fc" id="L56">            IdGerenteDTO gDto = response1.getBody();</span>
+
+            // Construir la URL para la segunda solicitud
+<span class="fc" id="L59">            String url2 = &quot;http://localhost:8080/gerente/&quot; + gDto.getIdGerente();</span>
+
+            // Hacer la segunda solicitud GET
+<span class="fc" id="L62">            ResponseEntity&lt;GerenteDTO&gt; response2 = restTemplate.exchange(url2, HttpMethod.GET, entity, GerenteDTO.class);</span>
+
+<span class="fc" id="L64">            return response2;  </span>
+<span class="fc" id="L65">        } catch (HttpClientErrorException e) {</span>
+            // Manejo de errores 4xx
+<span class="fc" id="L67">            throw new PeticionHttpFallidaException();</span>
+        }
+    }
+
 	
 	public List&lt;Entrenador&gt; obtenerEntrenadores (Long idCentro) {
-<span class="fc" id="L33">        return entrenadorRepo.findByIdCentro(idCentro);</span>
+
+<span class="fc" id="L74">        ResponseEntity&lt;GerenteDTO&gt; response2 = verificayencuentraGerente(idCentro);</span>
+
+<span class="fc bfc" id="L76" title="All 2 branches covered.">        if (response2.getBody().getIdUsuario().toString().equals(SecurityConfguration.getAuthenticatedUser().get().getUsername().toString())) {</span>
+<span class="fc" id="L77">            return entrenadorRepo.findByIdCentro(idCentro);</span>
+        } else {
+<span class="fc" id="L79">            throw new AccesoNoPermitidoException();</span>
+        }
+
     }
 
     public Optional&lt;Entrenador&gt; obtenerEntrenador (Long id) {
-<span class="fc" id="L37">        Optional&lt;Entrenador&gt; entrenador = this.entrenadorRepo.findById(id);</span>
-<span class="fc bfc" id="L38" title="All 2 branches covered.">        if (entrenador.isPresent()) {</span>
-<span class="fc" id="L39">            return entrenador;</span>
+        
+<span class="fc" id="L86">        Optional&lt;Entrenador&gt; entrenador = this.entrenadorRepo.findById(id);</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        if (entrenador.isPresent()) {</span>
+
+<span class="fc" id="L89">            ResponseEntity&lt;GerenteDTO&gt; response2 = verificayencuentraGerente(entrenador.get().getIdCentro());</span>
+
+            // Obtener el cuerpo de la respuesta de la segunda solicitud
+<span class="fc bfc" id="L92" title="All 2 branches covered.">            if (response2.getBody().getIdUsuario().toString().equals(SecurityConfguration.getAuthenticatedUser().get().getUsername().toString())) {</span>
+<span class="fc" id="L93">                return entrenador;</span>
+            } else {
+<span class="fc" id="L95">                throw new AccesoNoPermitidoException();</span>
+            }
+            
         } else {
-<span class="fc" id="L41">            throw new EntidadNoEncontradaException();</span>
+<span class="fc" id="L99">            throw new EntidadNoEncontradaException();</span>
         }
     }
 
     public Entrenador aniadirEntrenador (Entrenador ent) {
+
         // Para buscar los mensajes asociados a él en la base de datos.
-<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (!this.entrenadorRepo.findByIdUsuario(ent.getIdUsuario()).isPresent()) {</span>
-<span class="fc" id="L48">            return (Entrenador) entrenadorRepo.save(ent);</span>
+<span class="fc bfc" id="L106" title="All 2 branches covered.">        if (!this.entrenadorRepo.findByIdUsuario(ent.getIdUsuario()).isPresent()) {</span>
+            try {
+<span class="fc" id="L108">                String url1 = &quot;http://localhost:8080/usuario/&quot; + ent.getIdUsuario();</span>
+                
+                // Crear la entidad HTTP con los headers vacios
+<span class="fc" id="L111">                HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(new HttpHeaders());</span>
+
+                // Hacer la primera solicitud GET -&gt; NO DEVUELVE UN GERENTEDTO, PERO ERA NECESARIO DARLE UN TIPO A LA REQUESTENTITY SERIALIZABLE
+<span class="fc" id="L114">                ResponseEntity&lt;GerenteDTO&gt; response = restTemplate.exchange(url1, HttpMethod.GET, entity, GerenteDTO.class);</span>
+
+<span class="fc" id="L116">                return (Entrenador) entrenadorRepo.save(ent);</span>
+<span class="fc" id="L117">            } catch (HttpClientErrorException e) {</span>
+                // Manejo de errores 4xx
+<span class="fc" id="L119">                throw new PeticionHttpFallidaException();</span>
+            }
+
         } else {
-<span class="fc" id="L50">            throw new EntidadExistenteException();</span>
+<span class="fc" id="L123">            throw new EntidadExistenteException();</span>
         }
     }
 
     public void eliminarEntrenador (Long id) {
-<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (entrenadorRepo.existsById(id)) {</span>
-<span class="fc" id="L56">            System.out.println(&quot;HE ENTRADO AQUI CON ID: &quot; + id);</span>
-<span class="fc" id="L57">            entrenadorRepo.deleteById(id);</span>
-<span class="fc" id="L58">        } else {</span>
-<span class="fc" id="L59">            throw new EntidadNoEncontradaException();</span>
+<span class="fc bfc" id="L128" title="All 2 branches covered.">        if (entrenadorRepo.existsById(id)) {</span>
+<span class="fc" id="L129">            Optional&lt;Entrenador&gt; entrenador = this.entrenadorRepo.findById(id);</span>
+<span class="fc" id="L130">            ResponseEntity&lt;GerenteDTO&gt; response2 = verificayencuentraGerente(entrenador.get().getIdCentro());</span>
+
+            // Obtener el cuerpo de la respuesta de la segunda solicitud
+<span class="fc bfc" id="L133" title="All 2 branches covered.">            if (response2.getBody().getIdUsuario().toString().equals(SecurityConfguration.getAuthenticatedUser().get().getUsername().toString())) {</span>
+<span class="fc" id="L134">                entrenadorRepo.deleteById(id);</span>
+<span class="fc" id="L135">            } else {</span>
+<span class="fc" id="L136">                throw new AccesoNoPermitidoException();</span>
+            }
+        } else {
+<span class="fc" id="L139">            throw new EntidadNoEncontradaException();</span>
         }
-<span class="fc" id="L61">    }</span>
+<span class="fc" id="L141">    }</span>
 
     public Entrenador actualizarEntrenador (Entrenador newTrainer) {
-        // Como si he llegado aqui, se que el newTrainer.id existe, entonces...
-<span class="fc" id="L65">        return entrenadorRepo.save(newTrainer);</span>
+        // Como si he llegado aqui, se que el newTrainer.id existe y se ha comprobado el token,
+        // no es necesario realizar nada auxiliar...
+<span class="fc" id="L146">        return entrenadorRepo.save(newTrainer);</span>
     }
 
     public List&lt;Mensaje&gt; obtenerMensajes (Long idEntr) {
-<span class="fc" id="L69">        List&lt;Mensaje&gt; messages = mensajeRepo.findByEntrenadorId(idEntr);</span>
-<span class="fc" id="L70">        return messages;</span>
-    }
+        // Presuponemos que solo los entrenadores pueden acceder a sus mensajes...
+<span class="fc bfc" id="L151" title="All 2 branches covered.">        if (entrenadorRepo.existsById(idEntr)) {</span>
+<span class="fc" id="L152">            Optional&lt;Entrenador&gt; entrenador = this.entrenadorRepo.findById(idEntr);</span>
+<span class="fc bfc" id="L153" title="All 2 branches covered.">            if (entrenador.get().getIdUsuario().toString().equals(SecurityConfguration.getAuthenticatedUser().get().getUsername().toString())) {</span>
+<span class="fc" id="L154">                List&lt;Mensaje&gt; messages = mensajeRepo.findByEntrenadorId(idEntr);</span>
+<span class="fc" id="L155">                return messages;</span>
+            } else {
+<span class="fc" id="L157">                throw new AccesoNoPermitidoException();</span>
+            }
+        } else {
+<span class="fc" id="L160">            throw new EntidadNoEncontradaException();</span>
+        }
 
-    public Mensaje aniadirMensajeAsignado (Long idEntrenador, Mensaje mensaje) {
-<span class="fc bfc" id="L74" title="All 2 branches covered.">        if (this.entrenadorRepo.findById(idEntrenador).isEmpty())</span>
-<span class="fc" id="L75">          throw new EntidadNoEncontradaException();</span>
-<span class="fc" id="L76">        mensaje.setIdMensaje(null);</span>
-<span class="fc" id="L77">        mensaje.setEntrenador(this.entrenadorRepo.findById(idEntrenador).get());</span>
-<span class="fc" id="L78">        return this.mensajeRepo.save(mensaje);</span>
+
     }
 
     public Optional&lt;Mensaje&gt; obtenerMensaje (Long id) {
-<span class="fc" id="L82">        Optional&lt;Mensaje&gt; mens = mensajeRepo.findById(id);</span>
-<span class="fc bfc" id="L83" title="All 2 branches covered.">        if (mens.isPresent()) {</span>
-<span class="fc" id="L84">            return mens;</span>
+        // Presuponemos que solo los entrenadores pueden acceder a mensajes suyos concretos...
+<span class="fc" id="L168">        Optional&lt;Mensaje&gt; mens = mensajeRepo.findById(id);</span>
+<span class="fc bfc" id="L169" title="All 2 branches covered.">        if (mens.isPresent()) {</span>
+<span class="fc" id="L170">            Entrenador e = mens.get().getEntrenador();</span>
+<span class="fc bfc" id="L171" title="All 2 branches covered.">            if (e.getIdUsuario().toString().equals(SecurityConfguration.getAuthenticatedUser().get().getUsername().toString())) {</span>
+<span class="fc" id="L172">                return mens;</span>
+            } else {
+<span class="fc" id="L174">                throw new AccesoNoPermitidoException();</span>
+            }
         } else {
-<span class="fc" id="L86">            throw new EntidadNoEncontradaException();</span>
+<span class="fc" id="L177">            throw new EntidadNoEncontradaException();</span>
         }
     }
+
+    public Mensaje aniadirMensajeAsignado (Long idEntrenador, Mensaje mensaje) {
+        // Presuponemos que solo los entrenadores pueden declarar nuevos mensajes suyos...
+<span class="fc bfc" id="L183" title="All 2 branches covered.">        if (entrenadorRepo.existsById(idEntrenador)) {</span>
+<span class="fc" id="L184">            Optional&lt;Entrenador&gt; entrenador = this.entrenadorRepo.findById(idEntrenador);</span>
+<span class="fc bfc" id="L185" title="All 2 branches covered.">            if (entrenador.get().getIdUsuario().toString().equals(SecurityConfguration.getAuthenticatedUser().get().getUsername().toString())) {</span>
+<span class="fc" id="L186">                mensaje.setIdMensaje(null);</span>
+<span class="fc" id="L187">                mensaje.setEntrenador(this.entrenadorRepo.findById(idEntrenador).get());</span>
+<span class="fc" id="L188">                return this.mensajeRepo.save(mensaje);</span>
+            } else {
+<span class="fc" id="L190">                throw new AccesoNoPermitidoException();</span>
+            }
+        } else {
+<span class="fc" id="L193">            throw new EntidadNoEncontradaException();</span>
+        }
+        
+    }
+
     
     public void eliminarMensaje (Long id) {
-<span class="fc bfc" id="L91" title="All 2 branches covered.">        if (mensajeRepo.existsById(id)) {</span>
-<span class="fc" id="L92">            mensajeRepo.deleteById(id);</span>
-<span class="fc" id="L93">        } else {</span>
-<span class="fc" id="L94">            throw new EntidadNoEncontradaException();</span>
+        
+        // Presuponemos que solo los entrenadores pueden eliminar sus mensajes...
+        try {
+<span class="fc" id="L203">            Entrenador e = mensajeRepo.findById(id).get().getEntrenador();</span>
+<span class="fc bfc" id="L204" title="All 2 branches covered.">            if (e.getIdUsuario().toString().equals(SecurityConfguration.getAuthenticatedUser().get().getUsername().toString())) {</span>
+<span class="fc" id="L205">                mensajeRepo.deleteById(id);</span>
+<span class="fc" id="L206">            } else {</span>
+<span class="fc" id="L207">                throw new AccesoNoPermitidoException();</span>
+            }
+<span class="fc" id="L209">        } catch (NoSuchElementException e) {</span>
+<span class="fc" id="L210">            throw new EntidadNoEncontradaException();</span>
         }
-<span class="fc" id="L96">    }</span>
+<span class="fc" id="L212">    }</span>
 
     // NO EXISTE UN PUT DE MENSAJE -&gt; SE PUEDE COMPROBAR EN LA OPEN API DEL CV
 }

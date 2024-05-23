@@ -4,6 +4,7 @@ import es.uma.informatica.practica3.dtos.EntrenadorDTO;
 import es.uma.informatica.practica3.dtos.EntrenadorNuevoDTO;
 import es.uma.informatica.practica3.entidades.Entrenador;
 import es.uma.informatica.practica3.servicios.EntrenadorServicio;
+import es.uma.informatica.practica3.servicios.excepciones.AccesoNoPermitidoException;
 import es.uma.informatica.practica3.servicios.excepciones.EntidadNoEncontradaException;
 
 import java.net.URI;
@@ -26,9 +27,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class EntrenadorRest {
     private EntrenadorServicio servicioEntrenadores;
 
-<span class="fc" id="L29">    public EntrenadorRest (EntrenadorServicio servicioEntrenadores) {</span>
-<span class="fc" id="L30">        this.servicioEntrenadores = servicioEntrenadores;</span>
-<span class="fc" id="L31">    }</span>
+<span class="fc" id="L30">    public EntrenadorRest (EntrenadorServicio servicioEntrenadores) {</span>
+<span class="fc" id="L31">        this.servicioEntrenadores = servicioEntrenadores;</span>
+<span class="fc" id="L32">    }</span>
 
     // Para mirar los RequestParam y los RequestBody es MUY UTIL mirar la OpenAPI -&gt; aparece tal cual
 
@@ -38,9 +39,9 @@ public class EntrenadorRest {
                 responses = {@ApiResponse(responseCode = &quot;200&quot;, description = &quot;Devuelve la lista de entrenadores&quot;),
                             @ApiResponse(responseCode = &quot;403&quot;, description = &quot;Acceso no autorizado&quot;)})
     public List&lt;EntrenadorDTO&gt; obtenerEntrenadores (@RequestParam(value = &quot;centro&quot;, required = true) Long centroId) {
-<span class="fc" id="L41">        return this.servicioEntrenadores.obtenerEntrenadores(centroId).stream()</span>
-<span class="fc" id="L42">        .map(EntrenadorDTO::fromEntity)</span>
-<span class="fc" id="L43">        .toList();</span>
+<span class="fc" id="L42">        return this.servicioEntrenadores.obtenerEntrenadores(centroId).stream()</span>
+<span class="fc" id="L43">        .map(EntrenadorDTO::fromEntity)</span>
+<span class="fc" id="L44">        .toList();</span>
     }
 
     @GetMapping({&quot;/{idEntrenador}&quot;})
@@ -48,8 +49,8 @@ public class EntrenadorRest {
                 responses = {@ApiResponse(responseCode = &quot;200&quot;, description = &quot;El entrenador existe&quot;),
                             @ApiResponse(responseCode = &quot;404&quot;, description = &quot;El entrenador no existe&quot;)})
     public ResponseEntity&lt;EntrenadorDTO&gt; getEntrenadorConcreto (@PathVariable Long idEntrenador) {
-<span class="fc" id="L51">        return ResponseEntity.of(this.servicioEntrenadores.obtenerEntrenador(idEntrenador)</span>
-<span class="fc" id="L52">                                    .map(EntrenadorDTO::fromEntity));</span>
+<span class="fc" id="L52">        return ResponseEntity.of(this.servicioEntrenadores.obtenerEntrenador(idEntrenador)</span>
+<span class="fc" id="L53">                                    .map(EntrenadorDTO::fromEntity));</span>
     }
 
     @PostMapping
@@ -57,34 +58,37 @@ public class EntrenadorRest {
     @Operation(description = &quot;Crear un nuevo entrenador&quot;,
                 responses = {@ApiResponse(responseCode = &quot;201&quot;, description = &quot;El entrenador se crea correctamente&quot;),
                             @ApiResponse(responseCode = &quot;403&quot;, description = &quot;Acceso no autorizado&quot;)})
-    public ResponseEntity&lt;EntrenadorDTO&gt; aniadirEntrenador (@RequestParam(value = &quot;centro&quot;, required = true) Long centroId, @RequestBody EntrenadorNuevoDTO entrenador, UriComponentsBuilder uriBuilder) {
-<span class="fc" id="L61">        Entrenador newTrainer = entrenador.toEntity();</span>
-<span class="fc" id="L62">        newTrainer.setId(null);</span>
-<span class="fc" id="L63">        newTrainer.setIdCentro(centroId);</span>
-<span class="fc" id="L64">        newTrainer = this.servicioEntrenadores.aniadirEntrenador(newTrainer);</span>
-<span class="fc" id="L65">        return ResponseEntity.created(UriGenerator(uriBuilder.build()).apply(newTrainer))</span>
-<span class="fc" id="L66">                                        .body(EntrenadorDTO.fromEntity(newTrainer));</span>
+    public ResponseEntity&lt;EntrenadorDTO&gt; aniadirEntrenador (@RequestParam(value = &quot;centro&quot;, required = true) Long centroId,
+                                                            @RequestBody EntrenadorNuevoDTO entrenador,
+                                                            UriComponentsBuilder uriBuilder) {
+<span class="fc" id="L64">        Entrenador newTrainer = entrenador.toEntity();</span>
+<span class="fc" id="L65">        newTrainer.setId(null);</span>
+<span class="fc" id="L66">        newTrainer.setIdCentro(centroId);</span>
+<span class="fc" id="L67">        newTrainer = this.servicioEntrenadores.aniadirEntrenador(newTrainer);</span>
+<span class="fc" id="L68">        return ResponseEntity.created(UriGenerator(uriBuilder.build()).apply(newTrainer))</span>
+<span class="fc" id="L69">                                        .body(EntrenadorDTO.fromEntity(newTrainer));</span>
     }
 
     private Function&lt;Entrenador, URI&gt; UriGenerator (UriComponents uriBuilder) {
-<span class="fc" id="L70">        return trainer -&gt; UriComponentsBuilder.newInstance().uriComponents(uriBuilder)</span>
-<span class="fc" id="L71">                            .path(&quot;/entrenador&quot;)</span>
-<span class="fc" id="L72">                            .path(String.format(&quot;/%d&quot;, trainer.getId()))</span>
-<span class="fc" id="L73">                            .build()</span>
-<span class="fc" id="L74">                            .toUri();</span>
+<span class="fc" id="L73">        return trainer -&gt; UriComponentsBuilder.newInstance().uriComponents(uriBuilder)</span>
+<span class="fc" id="L74">                            .path(&quot;/entrenador&quot;)</span>
+<span class="fc" id="L75">                            .path(String.format(&quot;/%d&quot;, trainer.getId()))</span>
+<span class="fc" id="L76">                            .build()</span>
+<span class="fc" id="L77">                            .toUri();</span>
     }
 
     @PutMapping({&quot;/{idEntrenador}&quot;})
     @Operation(description = &quot;Actualizar un entrenador&quot;,
                 responses = {@ApiResponse(responseCode = &quot;200&quot;, description = &quot;El entrenador se ha actualizado&quot;),
                             @ApiResponse(responseCode = &quot;403&quot;, description = &quot;Acceso no autorizado&quot;)})
-    public EntrenadorDTO actualizarEntrenador (@PathVariable Long idEntrenador, @RequestBody EntrenadorDTO entrenador) {
-<span class="fc" id="L82">        Optional&lt;Entrenador&gt; condTrainer = servicioEntrenadores.obtenerEntrenador(idEntrenador);</span>
+    public EntrenadorDTO actualizarEntrenador (@PathVariable Long idEntrenador,
+                                               @RequestBody EntrenadorDTO entrenador) {
+<span class="fc" id="L86">        Optional&lt;Entrenador&gt; condTrainer = servicioEntrenadores.obtenerEntrenador(idEntrenador);</span>
         // Si he pasado de esta linea, significa que el entrenador existe en la bbdd, porque de lo contrario se hubiera lanzado un error 404
-<span class="fc" id="L84">        entrenador.setId(idEntrenador);</span>
-<span class="fc" id="L85">        Entrenador auxTrainer = entrenador.toEntity();</span>
-<span class="fc" id="L86">        auxTrainer.setIdCentro(condTrainer.get().getIdCentro());</span>
-<span class="fc" id="L87">        return EntrenadorDTO.fromEntity(this.servicioEntrenadores.actualizarEntrenador(auxTrainer));</span>
+<span class="fc" id="L88">        entrenador.setId(idEntrenador);</span>
+<span class="fc" id="L89">        Entrenador auxTrainer = entrenador.toEntity();</span>
+<span class="fc" id="L90">        auxTrainer.setIdCentro(condTrainer.get().getIdCentro());</span>
+<span class="fc" id="L91">        return EntrenadorDTO.fromEntity(this.servicioEntrenadores.actualizarEntrenador(auxTrainer));</span>
     }
 
     @DeleteMapping({&quot;/{idEntrenador}&quot;})
@@ -92,8 +96,8 @@ public class EntrenadorRest {
                 responses = {@ApiResponse(responseCode = &quot;200&quot;, description = &quot;El entrenador se ha elminado&quot;),
                             @ApiResponse(responseCode = &quot;404&quot;, description = &quot;El entrenador no existe&quot;)})
     public void eliminarEntrenador (@PathVariable Long idEntrenador) {
-<span class="fc" id="L95">        this.servicioEntrenadores.eliminarEntrenador(idEntrenador);</span>
-<span class="fc" id="L96">    }</span>
+<span class="fc" id="L99">        this.servicioEntrenadores.eliminarEntrenador(idEntrenador);</span>
+<span class="fc" id="L100">    }</span>
 
 
     /* Esta anotación se utiliza para indicar que el método siguiente manejará cualquier excepción del
@@ -101,6 +105,10 @@ public class EntrenadorRest {
     anidados. */
     @ExceptionHandler({EntidadNoEncontradaException.class})
     @ResponseStatus(code = HttpStatus.NOT_FOUND)
-<span class="fc" id="L104">    public void tratamientoNotFoundException () {}</span>
+<span class="fc" id="L108">    public void tratamientoNotFoundException () {}</span>
+
+    @ExceptionHandler({AccesoNoPermitidoException.class})
+    @ResponseStatus(code = HttpStatus.FORBIDDEN)
+<span class="fc" id="L112">    public void tratamientoNoAutorizadoException () {}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

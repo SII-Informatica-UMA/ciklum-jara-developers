@@ -4,6 +4,7 @@ import es.uma.informatica.practica3.dtos.EntrenadorDTO;
 import es.uma.informatica.practica3.dtos.EntrenadorNuevoDTO;
 import es.uma.informatica.practica3.entidades.Entrenador;
 import es.uma.informatica.practica3.servicios.EntrenadorServicio;
+import es.uma.informatica.practica3.servicios.excepciones.AccesoNoPermitidoException;
 import es.uma.informatica.practica3.servicios.excepciones.EntidadNoEncontradaException;
 
 import java.net.URI;
@@ -57,7 +58,9 @@ public class EntrenadorRest {
     @Operation(description = "Crear un nuevo entrenador",
                 responses = {@ApiResponse(responseCode = "201", description = "El entrenador se crea correctamente"),
                             @ApiResponse(responseCode = "403", description = "Acceso no autorizado")})
-    public ResponseEntity<EntrenadorDTO> aniadirEntrenador (@RequestParam(value = "centro", required = true) Long centroId, @RequestBody EntrenadorNuevoDTO entrenador, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<EntrenadorDTO> aniadirEntrenador (@RequestParam(value = "centro", required = true) Long centroId,
+                                                            @RequestBody EntrenadorNuevoDTO entrenador,
+                                                            UriComponentsBuilder uriBuilder) {
         Entrenador newTrainer = entrenador.toEntity();
         newTrainer.setId(null);
         newTrainer.setIdCentro(centroId);
@@ -78,7 +81,8 @@ public class EntrenadorRest {
     @Operation(description = "Actualizar un entrenador",
                 responses = {@ApiResponse(responseCode = "200", description = "El entrenador se ha actualizado"),
                             @ApiResponse(responseCode = "403", description = "Acceso no autorizado")})
-    public EntrenadorDTO actualizarEntrenador (@PathVariable Long idEntrenador, @RequestBody EntrenadorDTO entrenador) {
+    public EntrenadorDTO actualizarEntrenador (@PathVariable Long idEntrenador,
+                                               @RequestBody EntrenadorDTO entrenador) {
         Optional<Entrenador> condTrainer = servicioEntrenadores.obtenerEntrenador(idEntrenador);
         // Si he pasado de esta linea, significa que el entrenador existe en la bbdd, porque de lo contrario se hubiera lanzado un error 404
         entrenador.setId(idEntrenador);
@@ -102,4 +106,8 @@ public class EntrenadorRest {
     @ExceptionHandler({EntidadNoEncontradaException.class})
     @ResponseStatus(code = HttpStatus.NOT_FOUND)
     public void tratamientoNotFoundException () {}
+
+    @ExceptionHandler({AccesoNoPermitidoException.class})
+    @ResponseStatus(code = HttpStatus.FORBIDDEN)
+    public void tratamientoNoAutorizadoException () {}
 }

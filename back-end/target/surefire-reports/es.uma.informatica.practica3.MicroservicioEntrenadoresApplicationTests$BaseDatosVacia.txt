@@ -1,8 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosVacia
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.968 s - in es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosVacia
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosVacia.errorAlObtenerEntrenadorConcreto  Time elapsed: 0.029 s
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.11 s - in es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosVacia
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosVacia.errorAlObtenerEntrenadorConcreto  Time elapsed: 0.05 s
 es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosVacia.modificarEntrenadorInexistente  Time elapsed: 0.031 s
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosVacia.eliminarEntrenadorInexistente  Time elapsed: 0.027 s
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosVacia.insertaEntrenador  Time elapsed: 0.05 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosVacia.noinsertaEntrenador  Time elapsed: 0.034 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosVacia.eliminarEntrenadorInexistente  Time elapsed: 0.021 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosVacia.insertaEntrenador  Time elapsed: 0.043 s

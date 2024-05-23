@@ -1,17 +1,26 @@
 -------------------------------------------------------------------------------
 Test set: es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos
 -------------------------------------------------------------------------------
-Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.509 s - in es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.eliminarEntrenador  Time elapsed: 1.167 s
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerMensajeInexistente  Time elapsed: 0.121 s
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.modificarEntrenador  Time elapsed: 0.116 s
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertaEntrenadorExistente  Time elapsed: 0.127 s
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.modificarEntrenadorInexistente  Time elapsed: 0.048 s
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerEntrenador  Time elapsed: 0.049 s
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.926 s - in es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.noobtenerTodosEntrenadores  Time elapsed: 1.208 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.eliminarEntrenador  Time elapsed: 0.229 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerMensajeInexistente  Time elapsed: 0.067 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.modificarEntrenador  Time elapsed: 0.092 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertaEntrenadorExistente  Time elapsed: 0.089 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.noobtenerTodosMensajes2  Time elapsed: 0.05 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.modificarEntrenadorInexistente  Time elapsed: 0.049 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerEntrenador  Time elapsed: 0.054 s
 es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.eliminarMensaje  Time elapsed: 0.052 s
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerUnMensaje  Time elapsed: 0.057 s
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.eliminarMensajeInexistente  Time elapsed: 0.031 s
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerTodosMensajes  Time elapsed: 0.054 s
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertaMensaje  Time elapsed: 0.061 s
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertaIncorrectamenteMensaje  Time elapsed: 0.048 s
-es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerTodosEntrenadores  Time elapsed: 0.041 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerUnMensaje  Time elapsed: 0.044 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.eliminarMensajeInexistente  Time elapsed: 0.038 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.noinsertaMensaje  Time elapsed: 0.066 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerTodosMensajes  Time elapsed: 0.057 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.notFoundAlObtenerEntrenadorConcreto  Time elapsed: 0.049 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertaMensaje  Time elapsed: 0.069 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.insertaIncorrectamenteMensaje  Time elapsed: 0.05 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.noeliminarEntrenador  Time elapsed: 0.044 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.noeliminarMensaje  Time elapsed: 0.046 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.noobtenerUnMensaje  Time elapsed: 0.044 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.obtenerTodosEntrenadores  Time elapsed: 0.04 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.noobtenerTodosMensajes  Time elapsed: 0.034 s
+es.uma.informatica.practica3.MicroservicioEntrenadoresApplicationTests$BaseDatosConDatos.noobtenerEntrenador  Time elapsed: 0.044 s
